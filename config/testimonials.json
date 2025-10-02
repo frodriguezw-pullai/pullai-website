@@ -1,0 +1,44 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "client": "Seminarium",
+      "author": "Guadalupe Ureta",
+      "role": "Partner",
+      "avatar": "assets/img/testimonials/guadalupe-ureta.jpg",
+      "quote": "Pullai transformó nuestra estrategia de datos. En 6 meses reducimos costos en 40% y aumentamos la velocidad de insights en 10x.",
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "id": 2,
+      "client": "MyHotel",
+      "author": "Sebastián Manhood",
+      "role": "Co-Founder y Gerente de Operaciones",
+      "avatar": "assets/img/testimonials/sebastian-manhood.jpg",
+      "quote": "Los modelos predictivos de churn nos permitieron retener 25% más clientes. ROI increíble en el primer trimestre.",
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "id": 4,
+      "client": "ClouHR",
+      "author": "Claudia Castañón",
+      "role": "Director",
+      "avatar": "assets/img/testimonials/claudia-castanon.jpg",
+      "quote": "Los dashboards en tiempo real han revolucionado cómo tomamos decisiones. Ahora tenemos visibilidad completa de todas nuestras operaciones.",
+      "rating": 5,
+      "featured": true
+    },
+    {
+      "id": 3,
+      "client": "Airwork",
+      "author": "Raimundo Garcés",
+      "role": "Founder & CEO",
+      "avatar": "assets/img/testimonials/rai-garces.png",
+      "quote": "La migración de nuestro data warehouse fue impecable. Cero downtime y resultados inmediatos en performance.",
+      "rating": 5,
+      "featured": false
+    }
+  ]
+}

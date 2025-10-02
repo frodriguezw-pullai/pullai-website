@@ -1,0 +1,11 @@
+<svg width="280" height="50" viewBox="0 0 280 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon: Data pulse wave -->
+  <path d="M10 25 L15 15 L20 30 L25 10 L30 25 L35 20 L40 25" stroke="#00D9FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="25" cy="25" r="18" stroke="#00D9FF" stroke-width="2" fill="none" opacity="0.3"/>
+  <circle cx="25" cy="25" r="23" stroke="#FFFFFF" stroke-width="1" fill="none" opacity="0.2"/>
+
+  <!-- Text: Company Name -->
+  <text x="55" y="32" font-family="Poppins, sans-serif" font-size="20" font-weight="700" fill="#1F2937">
+    Pullai Data Partners
+  </text>
+</svg>

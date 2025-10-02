@@ -1,0 +1,67 @@
+{
+  "company": {
+    "name": "Pullai Data Partners",
+    "tagline": "Datos en decisiones inteligentes",
+    "description": "Transformamos datos en tu ventaja competitiva. Escala, innova y crece con nosotros."
+  },
+  "branding": {
+    "colors": {
+      "primary": "#2D185C",
+      "secondary": "#FF325D",
+      "accent": "#00D9FF",
+      "accent_secondary": "#FFFFFF",
+      "background": "#FFFFFF",
+      "background_dark": "#0F1419",
+      "text": "#1F2937",
+      "text_light": "#6B7280",
+      "text_on_dark": "#F9FAFB"
+    },
+    "typography": {
+      "heading": {
+        "family": "Poppins, sans-serif",
+        "weights": [
+          600,
+          700,
+          800
+        ],
+        "googleFont": "https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap"
+      },
+      "body": {
+        "family": "Inter, sans-serif",
+        "weights": [
+          400,
+          500,
+          600
+        ],
+        "googleFont": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      }
+    },
+    "logos": {
+      "light": "assets/img/logo-light.svg",
+      "dark": "assets/img/logo-dark.svg",
+      "favicon": "assets/img/favicon.ico"
+    }
+  },
+  "cta": {
+    "primary": {
+      "text": "Agendar reunión",
+      "link": "#contacto",
+      "action": "schedule"
+    },
+    "secondary": {
+      "text": "Ver servicios",
+      "link": "#servicios",
+      "action": "scroll"
+    }
+  },
+  "contact": {
+    "email": "contacto@pullaipartners.com",
+    "phone": "+569 9 1335852",
+    "address": "Camino a Cahuil 3728",
+    "social": {
+      "linkedin": "https://linkedin.com/company/pullai",
+      "twitter": "https://twitter.com/pullai",
+      "github": "https://github.com/pullai"
+    }
+  }
+}

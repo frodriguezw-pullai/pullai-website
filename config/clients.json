@@ -1,0 +1,32 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Seminarium",
+      "logo": "assets/img/clients/seminarium.png",
+      "industry": "Head Hunter",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "MyHotel",
+      "logo": "assets/img/clients/myhotel.png",
+      "industry": "Tecnología",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "name": "Airwork",
+      "logo": "assets/img/clients/airwork.png",
+      "industry": "Industrial",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "ClouHR",
+      "logo": "assets/img/clients/clouhr.png",
+      "industry": "Consultoría HR",
+      "featured": true
+    }
+  ]
+}
