@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Data Science - Insights predictivos que generan valor con modelos de ML y analítica avanzada">
+  <meta name="keywords" content="data science, machine learning, predictive analytics, churn prediction, forecasting">
+  <meta name="author" content="Pullai Data Partners">
+
+  <title>Data Science | Pullai Data Partners</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="assets/img/logo.png" alt="Pullai Data Partners">
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <nav class="breadcrumbs-nav">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <a href="index.html#servicios">Servicios</a>
+        <span>/</span>
+        <span class="current">Data Science</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="service-hero-content">
+        <h1>Data Science</h1>
+        <p class="tagline">Insights predictivos que generan valor</p>
+        <p class="description">
+          Modelos predictivos y analítica avanzada que anticipan tendencias, optimizan operaciones
+          y maximizan ingresos. Convertimos datos históricos en ventajas competitivas mediante
+          machine learning aplicado a problemas reales de negocio.
+        </p>
+        <div class="hero-cta">
+          <a href="index.html#contacto" class="btn btn-primary">Agendar consultoría</a>
+          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+        </div>
+      </div>
+      <div class="service-hero-icon">
+        <img src="assets/img/services/data-science.svg" alt="Data Science">
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Propositions -->
+  <section class="value-props">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué Data Science?</h2>
+        <p class="section-subtitle">
+          Predictive analytics que impactan el bottom line
+        </p>
+      </div>
+
+      <div class="value-props-grid">
+        <div class="value-prop-card">
+          <div class="value-prop-icon">🔮</div>
+          <h3>Anticipación de Tendencias</h3>
+          <p>
+            Forecasting de demanda, churn y revenue con modelos estadísticos y ML.
+            Planifica con 90%+ accuracy en horizontes de 3-6 meses.
+          </p>
+          <span class="value-prop-metric">90%+ accuracy</span>
+        </div>
+
+        <div class="value-prop-card">
+          <div class="value-prop-icon">💎</div>
+          <h3>Segmentación Inteligente</h3>
+          <p>
+            Clustering de clientes por comportamiento, valor y propensión. Personaliza
+            estrategias de marketing y producto por segmento.
+          </p>
+          <span class="value-prop-metric">+40% conversión</span>
+        </div>
+
+        <div class="value-prop-card">
+          <div class="value-prop-icon">📊</div>
+          <h3>Validación Estadística Rigurosa</h3>
+          <p>
+            Hipótesis testeadas con A/B testing, significance tests y confidence intervals.
+            No más decisiones basadas en correlaciones espurias.
+          </p>
+          <span class="value-prop-metric">95% confidence</span>
+        </div>
+
+        <div class="value-prop-card">
+          <div class="value-prop-icon">⚙️</div>
+          <h3>Modelos en Producción</h3>
+          <p>
+            MLOps para deployar modelos a producción con monitoring, retraining y
+            drift detection. Modelos que generan valor 24/7.
+          </p>
+          <span class="value-prop-metric">24/7 inference</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Detailed -->
+  <section id="capabilities" class="capabilities-detail">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestro Enfoque</h2>
+        <p class="section-subtitle">
+          Expertise en ML aplicado a casos de uso de negocio
+        </p>
+      </div>
+
+      <div class="capabilities-grid">
+        <!-- Capability 1 -->
+        <div class="capability-item">
+          <div class="capability-number">01</div>
+          <div class="capability-content">
+            <h3>Predicción de Demanda y Churn</h3>
+            <p>
+              Modelos de forecasting (ARIMA, Prophet, LSTM) para anticipar demanda de productos
+              y modelos de churn para identificar clientes en riesgo antes de que se vayan.
+            </p>
+            <ul class="capability-features">
+              <li>Forecasting con Prophet, ARIMA, LSTM</li>
+              <li>Churn prediction con XGBoost, LightGBM</li>
+              <li>Feature engineering basado en comportamiento</li>
+              <li>Calibración de probabilidades para scoring</li>
+              <li>Backtesting riguroso con datos históricos</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capability 2 -->
+        <div class="capability-item">
+          <div class="capability-number">02</div>
+          <div class="capability-content">
+            <h3>Segmentación de Clientes y LTV</h3>
+            <p>
+              Clustering (K-means, DBSCAN) para segmentar clientes por comportamiento. Modelos de
+              LTV (Lifetime Value) para priorizar acquisition y retention efforts.
+            </p>
+            <ul class="capability-features">
+              <li>RFM analysis y behavioral clustering</li>
+              <li>LTV prediction con survival models</li>
+              <li>Cohort analysis y retention curves</li>
+              <li>Propensity models para upsell/cross-sell</li>
+              <li>Personalización de campañas por segmento</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capability 3 -->
+        <div class="capability-item">
+          <div class="capability-number">03</div>
+          <div class="capability-content">
+            <h3>Detección de Patrones Heurísticos</h3>
+            <p>
+              Análisis exploratorio para descubrir patrones no obvios en datos. Anomaly detection
+              para fraude, outliers y eventos inusuales que requieren atención.
+            </p>
+            <ul class="capability-features">
+              <li>Exploratory Data Analysis (EDA) profunda</li>
+              <li>Anomaly detection (Isolation Forest, autoencoders)</li>
+              <li>Association rules mining (Market Basket Analysis)</li>
+              <li>Time series decomposition (trend, seasonality)</li>
+              <li>Causal inference para identificar drivers reales</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capability 4 -->
+        <div class="capability-item">
+          <div class="capability-number">04</div>
+          <div class="capability-content">
+            <h3>Validación Estadística Rigurosa</h3>
+            <p>
+              A/B testing con power analysis, multiple testing correction. Confidence intervals,
+              hypothesis testing y causal inference para decisiones fundamentadas.
+            </p>
+            <ul class="capability-features">
+              <li>A/B test design con power analysis</li>
+              <li>Bayesian A/B testing para early stopping</li>
+              <li>Multiple testing correction (Bonferroni, FDR)</li>
+              <li>Causal inference (propensity score matching, DiD)</li>
+              <li>Interpretabilidad de modelos (SHAP, LIME)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Casos de Éxito</h2>
+      </div>
+
+      <div class="use-cases-grid">
+        <!-- Use Case 1 -->
+        <div class="use-case-card">
+          <span class="use-case-label">SaaS / B2B</span>
+          <h3>Churn Prediction para SaaS B2B</h3>
+
+          <div class="use-case-flow">
+            <div class="flow-step">
+              <div class="flow-step-label">Problema</div>
+              <div class="flow-step-content">
+                SaaS B2B con 25% annual churn. Equipo de CS reactivo: contactaban clientes
+                después de que cancelaban. $2M ARR perdido anualmente.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Solución</div>
+              <div class="flow-step-content">
+                Modelo de churn con XGBoost usando features de uso de producto (logins, features
+                utilizadas, tickets de soporte). Scoring semanal para identificar at-risk accounts.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Resultado</div>
+              <div class="flow-step-content">
+                Churn reducido de 25% a 17% en 6 meses. CS team proactivo salva 40% de at-risk
+                accounts. Revenue recovery de $800K/año. ROI del proyecto: 8x.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 2 -->
+        <div class="use-case-card">
+          <span class="use-case-label">Retail / E-commerce</span>
+          <h3>Demand Forecasting para Retail</h3>
+
+          <div class="use-case-flow">
+            <div class="flow-step">
+              <div class="flow-step-label">Problema</div>
+              <div class="flow-step-content">
+                Retailer con stockouts frecuentes y overstock simultáneo. Forecasting manual
+                con Excel. 30% error rate en predicciones de demanda.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Solución</div>
+              <div class="flow-step-content">
+                Modelos de forecasting con Prophet + features de promociones, estacionalidad,
+                eventos especiales. Forecast a nivel SKU-tienda con horizonte de 4 semanas.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Resultado</div>
+              <div class="flow-step-content">
+                Error de forecasting reducido a 12% (MAPE). Stockouts -40%, overstock -35%.
+                Working capital liberado: $3M. Satisfacción de clientes +15% por disponibilidad.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 3 -->
+        <div class="use-case-card">
+          <span class="use-case-label">Fintech / Banking</span>
+          <h3>Customer LTV Segmentation</h3>
+
+          <div class="use-case-flow">
+            <div class="flow-step">
+              <div class="flow-step-label">Problema</div>
+              <div class="flow-step-content">
+                Fintech gastando igualmente en todos los clientes adquiridos. CAC alto ($200)
+                con LTV desconocido. Algunos clientes no generaban valor suficiente.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Solución</div>
+              <div class="flow-step-content">
+                Modelo de LTV prediction usando transacciones, productos contratados, demografía.
+                Segmentación en High/Medium/Low value. Estrategias diferenciadas por segmento.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Resultado</div>
+              <div class="flow-step-content">
+                Marketing budget reasignado a segmentos High LTV. CAC optimizado por segmento.
+                ROI de marketing +60%. LTV/CAC ratio mejorado de 2.5x a 4.2x.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-stack">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tecnologías y Frameworks</h2>
+        <p class="section-subtitle">
+          Stack de ML y data science que dominamos
+        </p>
+      </div>
+
+      <div class="tech-categories">
+        <!-- ML Frameworks -->
+        <div class="tech-category">
+          <h3>ML Frameworks & Libraries</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-name">Scikit-learn</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">XGBoost / LightGBM</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">TensorFlow / PyTorch</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Prophet / statsmodels</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MLOps & Deployment -->
+        <div class="tech-category">
+          <h3>MLOps & Deployment</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-name">MLflow</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Weights & Biases</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">SageMaker</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Databricks MLR</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analysis & Experimentation -->
+        <div class="tech-category">
+          <h3>Analysis & Experimentation</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-name">Python (Pandas, NumPy)</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">R (tidyverse)</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Jupyter / Databricks</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Optimizely / GrowthBook</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta">
+    <div class="container">
+      <h2>¿Listo para predecir el futuro de tu negocio?</h2>
+      <p>
+        Agenda una sesión de discovery gratuita. Identificaremos casos de uso de ML
+        con alto ROI para tu industria y negocio.
+      </p>
+      <a href="index.html#contacto" class="btn btn-primary">Agendar discovery session</a>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="related-services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Servicios Relacionados</h2>
+        <p class="section-subtitle">
+          Complementa tus modelos con infraestructura robusta
+        </p>
+      </div>
+
+      <div class="related-services-grid">
+        <a href="ingenieria-datos.html" class="related-service-card">
+          <img src="assets/img/services/ingenieria.svg" alt="Ingeniería de Datos" class="related-service-icon">
+          <h3>Ingeniería de Datos</h3>
+          <p>
+            Pipelines que alimentan tus modelos con features limpias y actualizadas.
+          </p>
+          <span class="related-service-link">Ver servicio</span>
+        </a>
+
+        <a href="business-intelligence.html" class="related-service-card">
+          <img src="assets/img/services/business-intelligence.svg" alt="Business Intelligence" class="related-service-icon">
+          <h3>Business Intelligence</h3>
+          <p>
+            Dashboards que visualizan predicciones y scores de tus modelos.
+          </p>
+          <span class="related-service-link">Ver servicio</span>
+        </a>
+
+        <a href="ai-genai.html" class="related-service-card">
+          <img src="assets/img/services/ai-genai.svg" alt="AI / GenAI" class="related-service-icon">
+          <h3>AI / GenAI</h3>
+          <p>
+            Agentes inteligentes que actúan sobre tus insights predictivos.
+          </p>
+          <span class="related-service-link">Ver servicio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/img/logo.png" alt="Pullai Data Partners">
+        </div>
+
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/pullai" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/pullai" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pullai Data Partners. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

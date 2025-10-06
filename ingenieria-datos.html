@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ingeniería de Datos - Pipelines escalables y eficientes para procesar grandes volúmenes de datos">
+  <meta name="keywords" content="data engineering, ETL, data pipelines, airflow, dbt, spark">
+  <meta name="author" content="Pullai Data Partners">
+
+  <title>Ingeniería de Datos | Pullai Data Partners</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="assets/img/logo.png" alt="Pullai Data Partners">
+        </a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <nav class="breadcrumbs-nav">
+        <a href="index.html">Inicio</a>
+        <span>/</span>
+        <a href="index.html#servicios">Servicios</a>
+        <span>/</span>
+        <span class="current">Ingeniería de Datos</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="service-hero-content">
+        <h1>Ingeniería de Datos</h1>
+        <p class="tagline">Pipelines escalables y eficientes</p>
+        <p class="description">
+          Migraciones, pipelines ETL y arquitecturas modernas para procesar grandes volúmenes de datos
+          de manera eficiente. Construimos infraestructura de datos robusta que escala con tu negocio
+          sin aumentar costos linealmente.
+        </p>
+        <div class="hero-cta">
+          <a href="index.html#contacto" class="btn btn-primary">Agendar consultoría</a>
+          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+        </div>
+      </div>
+      <div class="service-hero-icon">
+        <img src="assets/img/services/ingenieria.svg" alt="Ingeniería de Datos">
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Propositions -->
+  <section class="value-props">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">¿Por qué Ingeniería de Datos?</h2>
+        <p class="section-subtitle">
+          Infraestructura de datos que escala sin comprometer performance
+        </p>
+      </div>
+
+      <div class="value-props-grid">
+        <div class="value-prop-card">
+          <div class="value-prop-icon">⚡</div>
+          <h3>Procesamiento a Escala</h3>
+          <p>
+            Pipelines que procesan millones de registros en minutos, no horas. Arquitecturas
+            distribuidas con Spark para big data processing.
+          </p>
+          <span class="value-prop-metric">100M+ registros/día</span>
+        </div>
+
+        <div class="value-prop-card">
+          <div class="value-prop-icon">💰</div>
+          <h3>Optimización de Costos</h3>
+          <p>
+            Reducimos costos de cloud hasta en 50% mediante arquitecturas eficientes,
+            particionamiento inteligente y auto-scaling.
+          </p>
+          <span class="value-prop-metric">Hasta 50% ahorro</span>
+        </div>
+
+        <div class="value-prop-card">
+          <div class="value-prop-icon">🔄</div>
+          <h3>Confiabilidad 24/7</h3>
+          <p>
+            Pipelines resilientes con retry logic, alertas y monitoring. SLAs de
+            uptime >99.5% para cargas críticas de datos.
+          </p>
+          <span class="value-prop-metric">99.5% uptime</span>
+        </div>
+
+        <div class="value-prop-card">
+          <div class="value-prop-icon">🚀</div>
+          <h3>Migraciones Sin Downtime</h3>
+          <p>
+            Migramos desde legacy systems (on-prem, databases viejas) a cloud moderno
+            sin interrumpir operaciones de negocio.
+          </p>
+          <span class="value-prop-metric">Zero downtime</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capabilities Detailed -->
+  <section id="capabilities" class="capabilities-detail">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Nuestro Enfoque</h2>
+        <p class="section-subtitle">
+          Expertise en arquitecturas modernas de datos (batch, streaming, real-time)
+        </p>
+      </div>
+
+      <div class="capabilities-grid">
+        <!-- Capability 1 -->
+        <div class="capability-item">
+          <div class="capability-number">01</div>
+          <div class="capability-content">
+            <h3>Ingesta Incremental y Batch de Datos</h3>
+            <p>
+              Implementamos pipelines de ingesta desde múltiples fuentes (databases, APIs, archivos)
+              con estrategias incrementales (CDC) para minimizar carga y latencia.
+            </p>
+            <ul class="capability-features">
+              <li>Change Data Capture (CDC) con Debezium/Fivetran</li>
+              <li>Ingesta desde APIs REST/GraphQL</li>
+              <li>Batch processing de archivos (S3, SFTP)</li>
+              <li>Connectors para SaaS apps (Salesforce, HubSpot, etc.)</li>
+              <li>Schema evolution y versionado</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capability 2 -->
+        <div class="capability-item">
+          <div class="capability-number">02</div>
+          <div class="capability-content">
+            <h3>Orquestación con Airflow y Dagster</h3>
+            <p>
+              Orquestamos pipelines complejos con dependencias, retries y alertas. DAGs versionados
+              en Git con CI/CD para deployment automatizado.
+            </p>
+            <ul class="capability-features">
+              <li>DAGs modulares y reutilizables</li>
+              <li>Manejo de dependencias y backfills</li>
+              <li>Retry logic y circuit breakers</li>
+              <li>Alertas por Slack/PagerDuty en fallos</li>
+              <li>CI/CD con testing automatizado</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capability 3 -->
+        <div class="capability-item">
+          <div class="capability-number">03</div>
+          <div class="capability-content">
+            <h3>Transformaciones con dbt y Spark</h3>
+            <p>
+              Transformamos raw data en modelos analíticos usando dbt (SQL) para batch y Spark
+              para big data. Tests automatizados y documentación generada.
+            </p>
+            <ul class="capability-features">
+              <li>dbt models con testing y documentación</li>
+              <li>Incremental models para eficiencia</li>
+              <li>Spark jobs para PB-scale processing</li>
+              <li>Data quality tests automatizados</li>
+              <li>Lineage tracking end-to-end</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Capability 4 -->
+        <div class="capability-item">
+          <div class="capability-number">04</div>
+          <div class="capability-content">
+            <h3>Optimización de Costos en Cloud</h3>
+            <p>
+              Auditamos y optimizamos infraestructura existente: particionamiento, clustering,
+              auto-suspend, reserved capacity. FinOps para data teams.
+            </p>
+            <ul class="capability-features">
+              <li>Análisis de costos (compute, storage, egress)</li>
+              <li>Particionamiento y clustering strategies</li>
+              <li>Auto-suspend/resume para warehouses</li>
+              <li>Reserved instances y savings plans</li>
+              <li>Query optimization y caching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="use-cases">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Casos de Éxito</h2>
+      </div>
+
+      <div class="use-cases-grid">
+        <!-- Use Case 1 -->
+        <div class="use-case-card">
+          <span class="use-case-label">Fintech / Scale-up</span>
+          <h3>Migración de PostgreSQL a Snowflake</h3>
+
+          <div class="use-case-flow">
+            <div class="flow-step">
+              <div class="flow-step-label">Problema</div>
+              <div class="flow-step-content">
+                Fintech con 50M transacciones/mes en PostgreSQL on-prem. Queries lentos (+30s),
+                backups fallando, y equipo de 2 DBAs saturados.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Solución</div>
+              <div class="flow-step-content">
+                Migración a Snowflake con CDC incremental usando Fivetran. Pipelines de dbt
+                para transformaciones. Airflow para orquestación. Zero downtime migration.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Resultado</div>
+              <div class="flow-step-content">
+                Queries 10x más rápidos (30s → 3s). Backups automatizados. DBAs liberados para
+                proyectos estratégicos. Costos 30% menores vs. mantener on-prem.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 2 -->
+        <div class="use-case-card">
+          <span class="use-case-label">E-commerce / Retail</span>
+          <h3>Real-time Inventory Pipeline</h3>
+
+          <div class="use-case-flow">
+            <div class="flow-step">
+              <div class="flow-step-label">Problema</div>
+              <div class="flow-step-content">
+                E-commerce con inventory sync cada 6 horas. Vendían productos out-of-stock,
+                generando cancelaciones y NPS bajo.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Solución</div>
+              <div class="flow-step-content">
+                Pipeline real-time con Kafka + Flink. CDC desde ERP (SAP). Stream processing
+                para calcular available-to-promise inventory. Latencia <1 min.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Resultado</div>
+              <div class="flow-step-content">
+                Cancelaciones por stockout reducidas en 75%. NPS +12 puntos. Revenue recovery
+                de $500K/año por mejor inventory accuracy.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Case 3 -->
+        <div class="use-case-card">
+          <span class="use-case-label">SaaS / B2B</span>
+          <h3>Data Platform para Product Analytics</h3>
+
+          <div class="use-case-flow">
+            <div class="flow-step">
+              <div class="flow-step-label">Problema</div>
+              <div class="flow-step-content">
+                SaaS B2B sin visibilidad de user behavior. Eventos de producto dispersos en logs.
+                PM team sin datos para priorizar roadmap.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Solución</div>
+              <div class="flow-step-content">
+                Event streaming con Segment + BigQuery. dbt para modelar user journeys, funnels,
+                retention cohorts. Dashboards en Looker para PM team.
+              </div>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-step-label">Resultado</div>
+              <div class="flow-step-content">
+                PM team identifica feature adoption en días, no meses. Experimentos A/B con
+                significancia estadística. Roadmap data-driven resultó en +30% activation rate.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-stack">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Tecnologías y Frameworks</h2>
+        <p class="section-subtitle">
+          Stack moderno de data engineering
+        </p>
+      </div>
+
+      <div class="tech-categories">
+        <!-- Orchestration -->
+        <div class="tech-category">
+          <h3>Orchestration & Workflow</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-name">Apache Airflow</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Dagster</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Prefect</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Kestra</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Processing & Transformation -->
+        <div class="tech-category">
+          <h3>Processing & Transformation</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-name">dbt</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Apache Spark</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Apache Flink</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Kafka Streams</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ingestion & Integration -->
+        <div class="tech-category">
+          <h3>Ingestion & Integration</h3>
+          <div class="tech-grid">
+            <div class="tech-item">
+              <div class="tech-name">Fivetran</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Airbyte</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Debezium (CDC)</div>
+            </div>
+            <div class="tech-item">
+              <div class="tech-name">Kafka Connect</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="service-cta">
+    <div class="container">
+      <h2>¿Listo para modernizar tu infraestructura de datos?</h2>
+      <p>
+        Agenda una sesión de architecture review gratuita. Evaluaremos tu stack actual
+        e identificaremos oportunidades de optimización.
+      </p>
+      <a href="index.html#contacto" class="btn btn-primary">Agendar architecture review</a>
+    </div>
+  </section>
+
+  <!-- Related Services -->
+  <section class="related-services">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Servicios Relacionados</h2>
+        <p class="section-subtitle">
+          Maximiza el valor de tu infraestructura de datos
+        </p>
+      </div>
+
+      <div class="related-services-grid">
+        <a href="consultoria-datos.html" class="related-service-card">
+          <img src="assets/img/services/consultoria.svg" alt="Consultoría en Datos" class="related-service-icon">
+          <h3>Consultoría en Datos</h3>
+          <p>
+            Define la arquitectura y roadmap antes de implementar pipelines.
+          </p>
+          <span class="related-service-link">Ver servicio</span>
+        </a>
+
+        <a href="business-intelligence.html" class="related-service-card">
+          <img src="assets/img/services/business-intelligence.svg" alt="Business Intelligence" class="related-service-icon">
+          <h3>Business Intelligence</h3>
+          <p>
+            Dashboards alimentados por tus pipelines de datos robustos.
+          </p>
+          <span class="related-service-link">Ver servicio</span>
+        </a>
+
+        <a href="gobierno-datos.html" class="related-service-card">
+          <img src="assets/img/services/gobierno.svg" alt="Gobierno de Datos" class="related-service-icon">
+          <h3>Gobierno de Datos</h3>
+          <p>
+            Asegura calidad y compliance en tus pipelines con data governance.
+          </p>
+          <span class="related-service-link">Ver servicio</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/img/logo.png" alt="Pullai Data Partners">
+        </div>
+
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/pullai" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://twitter.com/pullai" target="_blank" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Pullai Data Partners. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
