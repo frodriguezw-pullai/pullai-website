@@ -156,53 +156,84 @@ function loadTestimonials() {
 // ========================================
 
 /**
- * Initialize contact form
+ * Initialize contact form with Formspree
  */
 function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const statusMessage = form.querySelector('.form-status');
+  const submitButton = form.querySelector('.form-submit');
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     // Get form data
-    const formData = {
-      name: form.querySelector('#name').value,
-      email: form.querySelector('#email').value,
-      company: form.querySelector('#company').value,
-      message: form.querySelector('#message').value
-    };
-
-    // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
-      alert('Por favor completa todos los campos requeridos.');
-      return;
-    }
+    const formData = new FormData(form);
+    const email = form.querySelector('#email').value;
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      alert('Por favor ingresa un email válido.');
+    if (!emailRegex.test(email)) {
+      showStatus('Por favor ingresa un email válido.', 'error');
       return;
     }
 
-    // Create mailto link with form data
-    const subject = encodeURIComponent(`Contacto desde web - ${formData.company || formData.name}`);
-    const body = encodeURIComponent(
-      `Nombre: ${formData.name}\n` +
-      `Email: ${formData.email}\n` +
-      `Empresa: ${formData.company || 'No especificada'}\n\n` +
-      `Mensaje:\n${formData.message}`
-    );
+    // Disable submit button
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
 
-    const mailtoLink = `mailto:contacto@pullaipartners.com?subject=${subject}&body=${body}`;
+    try {
+      // Send form data to Formspree
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-    // Open email client
-    window.location.href = mailtoLink;
-
-    // Reset form
-    form.reset();
+      if (response.ok) {
+        showStatus('¡Mensaje enviado! Te contactaremos pronto.', 'success');
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          showStatus(data.errors.map(error => error.message).join(', '), 'error');
+        } else {
+          showStatus('Hubo un error al enviar el mensaje. Por favor intenta de nuevo.', 'error');
+        }
+      }
+    } catch (error) {
+      showStatus('Error de conexión. Por favor verifica tu internet e intenta de nuevo.', 'error');
+    } finally {
+      // Re-enable submit button
+      submitButton.disabled = false;
+      submitButton.textContent = 'Enviar mensaje';
+    }
   });
+
+  function showStatus(message, type) {
+    if (!statusMessage) return;
+
+    statusMessage.textContent = message;
+    statusMessage.style.display = 'block';
+
+    if (type === 'success') {
+      statusMessage.style.backgroundColor = '#d4edda';
+      statusMessage.style.color = '#155724';
+      statusMessage.style.border = '1px solid #c3e6cb';
+    } else {
+      statusMessage.style.backgroundColor = '#f8d7da';
+      statusMessage.style.color = '#721c24';
+      statusMessage.style.border = '1px solid #f5c6cb';
+    }
+
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      statusMessage.style.display = 'none';
+    }, 5000);
+  }
 }
 
 // ========================================

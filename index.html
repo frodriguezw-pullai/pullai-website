@@ -481,7 +481,18 @@
         </div>
 
         <!-- Contact Form -->
-        <form class="contact-form">
+        <!--
+          CONFIGURACIÓN DEL FORMULARIO:
+          Para que los emails se envíen automáticamente a contacto@pullaipartners.com:
+          1. Ir a https://formspree.io/ y crear cuenta gratuita
+          2. Crear nuevo formulario con el email: contacto@pullaipartners.com
+          3. Obtener el Form ID (ejemplo: xpznzqko)
+          4. Reemplazar YOUR_FORM_ID abajo con tu Form ID real
+
+          Alternativa sin registro (máx 50 envíos/mes):
+          - Reemplazar action con: action="https://formspree.io/f/contacto@pullaipartners.com"
+        -->
+        <form class="contact-form" action="https://formspree.io/f/meorzbaj" method="POST">
           <div class="form-group">
             <label for="name">Nombre completo *</label>
             <input type="text" id="name" name="name" required>
@@ -489,7 +500,7 @@
 
           <div class="form-group">
             <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="_replyto" required>
           </div>
 
           <div class="form-group">
@@ -502,7 +513,12 @@
             <textarea id="message" name="message" required></textarea>
           </div>
 
+          <!-- Formspree hidden fields -->
+          <input type="hidden" name="_subject" value="Nuevo contacto desde Pullai Partners">
+          <input type="hidden" name="_next" value="#contacto">
+
           <button type="submit" class="form-submit">Enviar mensaje</button>
+          <p class="form-status" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 8px;"></p>
         </form>
       </div>
     </div>
