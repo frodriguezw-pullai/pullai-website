@@ -93,7 +93,6 @@
       <ul class="nav-menu">
         <li><a href="#servicios" class="nav-link">Servicios</a></li>
         <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="#equipo" class="nav-link">Equipo</a></li>
         <li><a href="#clientes" class="nav-link">Clientes</a></li>
         <li><a href="#contacto" class="nav-link">Contacto</a></li>
       </ul>
@@ -311,56 +310,6 @@
   </section>
 
   <!-- ========================================
-       Team Section
-       ======================================== -->
-  <section id="equipo">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Nuestro Equipo</h2>
-        <p class="section-subtitle">
-          Expertos en datos con experiencia en startups, scale-ups y Fortune 500
-        </p>
-      </div>
-
-      <div class="team-grid">
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="assets/img/team/felipe-rodriguez.jpg" alt="Felipe Rodríguez" loading="lazy">
-          </div>
-          <h3 class="team-name">Felipe Rodríguez</h3>
-          <p class="team-role">Founder & Managing Partner</p>
-          <p class="team-bio">
-            10+ años liderando transformaciones de datos en empresas Fortune 500. Especialista en estrategia de datos.
-          </p>
-        </div>
-
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="assets/img/team/matias-zuniga.jpg" alt="Matías Zúñiga" loading="lazy">
-          </div>
-          <h3 class="team-name">Matías Zúñiga</h3>
-          <p class="team-role">Lead Data Engineer</p>
-          <p class="team-bio">
-            Experto en arquitecturas cloud y pipelines de datos a escala. Certificado en AWS, GCP y Azure.
-          </p>
-        </div>
-
-        <div class="team-member">
-          <div class="team-photo">
-            <img src="assets/img/team/juan-serrano.jpg" alt="Juan Pablo Serrano" loading="lazy">
-          </div>
-          <h3 class="team-name">Juan Pablo Serrano</h3>
-          <p class="team-role">Founder & Finance</p>
-          <p class="team-bio">
-            Especialista en finanzas y tecnología, combina su experiencia en empresas multinacionales con la dirección estratégica de proyectos de alto impacto en el sector de la innovación.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================
        Clients & Testimonials Section
        ======================================== -->
   <section id="clientes">
@@ -520,6 +469,35 @@
           <button type="submit" class="form-submit">Enviar mensaje</button>
           <p class="form-status" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 8px;"></p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Strategic Alliances Section (Collapsible)
+       ======================================== -->
+  <section id="alianzas" class="alliances-section">
+    <div class="container">
+      <button class="alliances-toggle" onclick="toggleAlliances()">
+        <span>Alianzas Estratégicas</span>
+        <i class="fas fa-chevron-down alliances-icon"></i>
+      </button>
+
+      <div class="alliances-content" id="alliancesContent">
+        <p class="alliances-description">
+          Para asegurar que nuestros clientes cuenten con soluciones integrales, trabajamos con socios especializados en áreas complementarias.
+        </p>
+
+        <a href="https://www.3psadvisors.com" target="_blank" class="alliance-card">
+          <div class="alliance-logo">
+            <img src="assets/img/alliance/3ps.png" alt="3PS Advisors">
+          </div>
+          <div class="alliance-info">
+            <h4>3PS Advisors</h4>
+            <p>Asesoría financiera y estratégica. Tu equipo de Finanzas Corporativas.</p>
+          </div>
+          <i class="fas fa-external-link-alt alliance-link-icon"></i>
+        </a>
       </div>
     </div>
   </section>

@@ -465,11 +465,32 @@ if (document.readyState === 'loading') {
 }
 
 // ========================================
+// Strategic Alliances Toggle
+// ========================================
+
+/**
+ * Toggle the alliances section visibility
+ */
+function toggleAlliances() {
+  const button = document.querySelector('.alliances-toggle');
+  const content = document.getElementById('alliancesContent');
+
+  if (button && content) {
+    button.classList.toggle('active');
+    content.classList.toggle('open');
+  }
+}
+
+// Make function globally available
+window.toggleAlliances = toggleAlliances;
+
+// ========================================
 // Export for external use (if needed)
 // ========================================
 window.DataPulse = {
   loadConfig,
   loadClients,
   loadTestimonials,
-  init
+  init,
+  toggleAlliances
 };

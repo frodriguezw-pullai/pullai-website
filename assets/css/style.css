@@ -151,6 +151,144 @@ section {
   color: var(--color-accent);
 }
 
+/* ========================================
+   Strategic Alliances Section
+   ======================================== */
+.alliances-section {
+  padding: 40px 0;
+  background: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+}
+
+.alliances-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  transition: var(--transition-smooth);
+}
+
+.alliances-toggle:hover {
+  color: var(--color-primary);
+}
+
+.alliances-icon {
+  transition: transform 0.3s ease;
+}
+
+.alliances-toggle.active .alliances-icon {
+  transform: rotate(180deg);
+}
+
+.alliances-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 20px;
+}
+
+.alliances-content.open {
+  max-height: 400px;
+  padding: 30px 20px;
+}
+
+.alliances-description {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.alliance-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+}
+
+.alliance-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.alliance-logo {
+  flex-shrink: 0;
+  width: 80px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alliance-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.alliance-logo-fallback {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.alliance-info {
+  flex: 1;
+}
+
+.alliance-info h4 {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.alliance-info p {
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.alliance-link-icon {
+  color: var(--color-accent);
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.alliance-card:hover .alliance-link-icon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 480px) {
+  .alliance-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .alliance-link-icon {
+    display: none;
+  }
+}
+
 /* Mobile menu toggle */
 .mobile-menu-toggle {
   display: none;
