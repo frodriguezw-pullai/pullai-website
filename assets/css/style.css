@@ -790,6 +790,8 @@ section {
   line-height: 1.5;
   font-weight: 700;
   transition: var(--transition-smooth);
+  /* Protección visual adicional para legibilidad */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .service-bullet-box:hover {

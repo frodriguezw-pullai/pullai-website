@@ -252,7 +252,8 @@ function initScrollAnimations() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in-up');
+        entry.target.classList.add('visible');  // Para .scroll-reveal
+        entry.target.classList.add('fade-in-up');  // Mantener animación existente
         observer.unobserve(entry.target);
       }
     });
@@ -260,7 +261,7 @@ function initScrollAnimations() {
 
   // Observe elements
   const animatedElements = document.querySelectorAll(
-    '.service-card, .solution-card, .team-member, .testimonial-card, .client-logo'
+    '.scroll-reveal, .service-card, .solution-card, .team-member, .testimonial-card, .client-logo'
   );
 
   animatedElements.forEach(el => {
