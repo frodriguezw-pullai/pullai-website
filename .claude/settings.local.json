@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "WebFetch(domain:www.3psadvisors.com)",
+      "WebSearch",
+      "WebFetch(domain:3psadvisors.com)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAgregar sección colapsable de Alianzas Estratégicas\n\n- Nueva sección antes del footer con botón colapsable\n- Card de 3PS Advisors que abre su sitio web\n- Logo local de 3PS en assets/img/alliance/\n- Estilos CSS para animación de colapso\n- Función JS toggleAlliances\\(\\)\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:www.inditex.com)",
+      "Bash(dir:*)"
+    ]
+  }
+}
