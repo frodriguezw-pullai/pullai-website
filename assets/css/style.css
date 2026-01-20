@@ -629,7 +629,7 @@ section {
 
 .btn-secondary:hover {
   background: #ffffff;
-  color: var(--color-background);
+  color: #000000;
 }
 
 /* Scroll indicator */
