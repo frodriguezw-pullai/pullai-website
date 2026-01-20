@@ -632,6 +632,17 @@ section {
   color: #000000;
 }
 
+.btn-tertiary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.btn-tertiary:hover {
+  background: var(--color-text);
+  color: var(--color-background);
+}
+
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
