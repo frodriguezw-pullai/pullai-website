@@ -425,6 +425,20 @@ function isInViewport(element) {
 }
 
 // ========================================
+// Footer Year Update
+// ========================================
+
+/**
+ * Update copyright year in footer
+ */
+function updateCopyrightYear() {
+  const yearElement = document.getElementById('currentYear');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+}
+
+// ========================================
 // Initialization
 // ========================================
 
@@ -454,6 +468,7 @@ async function init() {
   initCTAActions();
   initActiveLinkHighlight();
   initLazyLoading();
+  updateCopyrightYear();
 
   console.log('Website initialized successfully');
 }
