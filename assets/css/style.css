@@ -623,12 +623,12 @@ section {
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-text);
-  border-color: var(--color-text);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 .btn-secondary:hover {
-  background: var(--color-text);
+  background: #ffffff;
   color: var(--color-background);
 }
 
