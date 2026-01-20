@@ -1,0 +1,16 @@
+# robots.txt for pullai.cl
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://pullai.cl/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Block common bot patterns
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
