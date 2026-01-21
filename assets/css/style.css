@@ -24,6 +24,11 @@
 
   --transition-smooth: all 0.2s ease;
   --shadow-minimal: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* Z-index hierarchy */
+  --z-navbar: 1000;
+  --z-sticky-titles: 100;
+  --z-content: 1;
 }
 
 /* ========================================
@@ -159,7 +164,7 @@ section {
   left: 0;
   right: 0;
   background: var(--color-background);
-  z-index: 1000;
+  z-index: var(--z-navbar);
   padding: 30px 0;
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition-smooth);
@@ -663,17 +668,38 @@ section {
 .section-header {
   text-align: center;
   margin-bottom: 80px;
+  /* Ahora solo contiene subtitle, sin padding superior */
+  padding-bottom: 20px;
 }
 
 @media (max-width: 1024px) {
   .section-header {
     margin-bottom: 60px;
   }
+
+  .section-title {
+    top: 90px; /* Ajustar para navbar tablet */
+  }
+
+  .service-title-inditex {
+    top: 90px;
+  }
 }
 
 @media (max-width: 768px) {
   .section-header {
     margin-bottom: 40px;
+    padding-bottom: 15px;
+  }
+
+  .section-title {
+    top: 80px; /* Ajustar para navbar mobile */
+    padding: 60px 20px 20px 20px;  /* Padding ajustado para mobile */
+  }
+
+  .service-title-inditex {
+    top: 80px;
+    padding: 15px 0;
   }
 }
 
@@ -685,16 +711,43 @@ section {
 
 .section-title {
   font-size: clamp(36px, 5vw, 56px);
-  font-weight: 300;
-  margin-bottom: 24px;
-  color: var(--color-primary);
-  position: relative;
-  display: inline-block;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-align: center;
+
+  /* STICKY POSITIONING */
+  position: sticky;
+  top: 100px;
+  z-index: var(--z-sticky-titles);
+  padding: 80px 40px 40px 40px;
+  transition: top 0.2s ease, box-shadow 0.2s ease;
+
+  /* Anti-blur para texto sticky */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-.section-title::after {
-  display: none;
+/* Background extension full-width */
+.section-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw; /* Usar margin en vez de transform para evitar blur */
+  width: 100vw;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+}
+
+/* Sombra cuando está sticky */
+.section-title.is-stuck {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .section-subtitle {
@@ -716,18 +769,24 @@ section {
   background: var(--color-background);
 }
 
-/* Text Section (Title + Description) */
-.service-text-section {
+/* Service Wrapper - Contains title + text + image for each service */
+.service-wrapper {
+  /* This wrapper is the sticky boundary for titles */
   position: relative;
+}
+
+/* Text Section (Description only - title is now outside) */
+.service-text-section {
   min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 40px 40px 80px 40px; /* Reduced top padding since title is now above */
   background: var(--color-background);
-  padding: 80px 40px;
 }
 
-.service-text-section:nth-of-type(even) {
+/* Alternate backgrounds for service sections */
+.service-wrapper:nth-of-type(even) .service-text-section {
   background: var(--color-background-light);
 }
 
@@ -736,14 +795,84 @@ section {
   text-align: center;
 }
 
+/* Ensure correct backgrounds for sticky titles */
+#servicios .section-title,
+#clientes .section-title {
+  background: var(--color-background);
+}
+
+#soluciones .section-title,
+#contacto .section-title {
+  background: var(--color-background-light);
+}
+
+/* Service sections alternate (inherited from parent) */
+
 .service-title-inditex {
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 400;
   color: var(--color-text);
-  margin-bottom: 24px;
+  margin-bottom: 0;
   letter-spacing: -0.01em;
   line-height: 1.2;
+  text-align: center;
+
+  /* STICKY POSITIONING */
+  position: sticky;
+  top: 100px; /* Altura del navbar */
+  z-index: var(--z-sticky-titles);
+  padding: 80px 40px 40px 40px; /* Top padding igual al de service-text-section para alineación */
+  transition: top 0.2s ease, box-shadow 0.2s ease;
+
+  /* Anti-blur para texto sticky */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
+
+/* Background extension full-width */
+.service-title-inditex::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw; /* Usar margin en vez de transform para evitar blur */
+  width: 100vw;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+}
+
+/* Sombra cuando está sticky */
+.service-title-inditex.is-stuck {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Ensure correct backgrounds for service titles based on wrapper */
+.service-wrapper:nth-of-type(odd) .service-title-inditex {
+  background: var(--color-background);        /* White */
+}
+
+.service-wrapper:nth-of-type(even) .service-title-inditex {
+  background: var(--color-background-light);  /* Light gray */
+}
+
+/* ========================================
+   Sticky Title Animation Over Images
+   ======================================== */
+
+/* Sin efectos cuando el título está sobre imagen */
+.service-title-inditex.over-image {
+  /* Ningún efecto - el título se ve igual en todas partes */
+}
+
+/* Sin cambios en el ::before cuando está sobre imagen */
+
+/* Animaciones eliminadas - sin efectos */
+
+/* Reducir intensidad en tablets */
+/* Sin efectos .over-image en ningún dispositivo */
 
 .service-description-inditex {
   font-size: clamp(16px, 2vw, 22px);

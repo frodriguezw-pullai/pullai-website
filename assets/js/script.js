@@ -88,6 +88,177 @@ function initNavigation() {
 }
 
 // ========================================
+// Sticky Section Titles
+// ========================================
+
+/**
+ * Initialize sticky title behavior
+ * Dynamically adjusts sticky position based on navbar height
+ */
+function initStickyTitles() {
+  const navbar = document.querySelector('.navbar');
+  const stickyElements = document.querySelectorAll('.section-title, .service-title-inditex');
+
+  if (!navbar || stickyElements.length === 0) return;
+
+  /**
+   * Update sticky positions based on current navbar height
+   */
+  function updateStickyPositions() {
+    const navbarHeight = navbar.offsetHeight;
+
+    stickyElements.forEach(element => {
+      element.style.top = `${navbarHeight}px`;
+    });
+  }
+
+  /**
+   * Detect when elements become "stuck" to add shadow effect
+   */
+  function initStuckDetection() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          // Element is "stuck" when it's not fully intersecting
+          const isStuck = entry.intersectionRatio < 1;
+          entry.target.classList.toggle('is-stuck', isStuck);
+        });
+      },
+      {
+        threshold: [1],
+        rootMargin: `-${navbar.offsetHeight}px 0px 0px 0px`
+      }
+    );
+
+    stickyElements.forEach(el => observer.observe(el));
+  }
+
+  // Debounce helper
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Update on scroll (navbar changes height when scrolled)
+  const debouncedUpdate = debounce(updateStickyPositions, 50);
+  window.addEventListener('scroll', debouncedUpdate);
+
+  // Update on resize
+  const debouncedResize = debounce(updateStickyPositions, 100);
+  window.addEventListener('resize', debouncedResize);
+
+  // Initial setup
+  updateStickyPositions();
+  initStuckDetection();
+
+  console.log('Sticky titles initialized');
+}
+
+// ========================================
+// Animated Sticky Titles Over Images
+// ========================================
+
+/**
+ * Detect when sticky titles are over image sections and add animation
+ * Uses IntersectionObserver for optimal performance
+ */
+function initStickyTitleImageAnimation() {
+  const serviceTitles = document.querySelectorAll('.service-title-inditex');
+  const imageSections = document.querySelectorAll('.service-image-section');
+
+  if (serviceTitles.length === 0 || imageSections.length === 0) return;
+
+  // Configuration
+  const NAVBAR_HEIGHT = document.querySelector('.navbar')?.offsetHeight || 110;
+
+  /**
+   * Check if title is positioned over an image section
+   * @param {Element} title - The sticky title element
+   * @returns {boolean} - True if title is over an image section
+   */
+  function isTitleOverImage(title) {
+    // Get title's bounding rect (its current sticky position)
+    const titleRect = title.getBoundingClientRect();
+    const titleCenterY = titleRect.top + (titleRect.height / 2);
+
+    // Check each image section
+    for (let imageSection of imageSections) {
+      const imageRect = imageSection.getBoundingClientRect();
+
+      // Check if title's center is within the image section's vertical bounds
+      if (titleCenterY >= imageRect.top && titleCenterY <= imageRect.bottom) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Update animation state for all titles
+   */
+  function updateTitleAnimations() {
+    serviceTitles.forEach(title => {
+      const overImage = isTitleOverImage(title);
+      title.classList.toggle('over-image', overImage);
+    });
+  }
+
+  // IntersectionObserver for image sections
+  // Triggers when any image section enters or exits viewport
+  const imageSectionObserver = new IntersectionObserver(
+    (entries) => {
+      // Any time an image section visibility changes, update all titles
+      updateTitleAnimations();
+    },
+    {
+      // Watch for any intersection change
+      threshold: Array.from({ length: 101 }, (_, i) => i / 100), // 0, 0.01, 0.02, ..., 1
+      rootMargin: `${NAVBAR_HEIGHT}px 0px 0px 0px` // Account for sticky offset
+    }
+  );
+
+  // Observe all image sections
+  imageSections.forEach(section => imageSectionObserver.observe(section));
+
+  // Also update on scroll (with requestAnimationFrame) as backup for edge cases
+  let scrollTimeout;
+  function handleScroll() {
+    if (scrollTimeout) {
+      window.cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = window.requestAnimationFrame(() => {
+      updateTitleAnimations();
+    });
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Update on resize
+  let resizeTimeout;
+  function handleResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      updateTitleAnimations();
+    }, 150);
+  }
+
+  window.addEventListener('resize', handleResize);
+
+  // Initial check
+  updateTitleAnimations();
+
+  console.log('Sticky title image animations initialized');
+}
+
+// ========================================
 // Dynamic Content Loading
 // ========================================
 
@@ -463,6 +634,8 @@ async function init() {
 
   // Initialize features
   initNavigation();
+  initStickyTitles();
+  // initStickyTitleImageAnimation(); // Desactivado - sin efectos sobre imágenes
   initContactForm();
   initScrollAnimations();
   initCTAActions();
