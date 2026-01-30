@@ -59,12 +59,16 @@
       </div>
 
       <ul class="nav-menu">
-        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
-        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="index.html#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link" data-i18n="nav.solutions">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
+
+      <button class="language-toggle" id="languageToggle" aria-label="Change language">
+        <span class="flag-icon">EN</span>
+      </button>
 
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -76,11 +80,11 @@
   <section class="breadcrumbs">
     <div class="container">
       <nav class="breadcrumbs-nav">
-        <a href="index.html">Inicio</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#servicios" data-i18n="breadcrumb.services">Servicios</a>
         <span>/</span>
-        <span class="current">Data Science</span>
+        <span class="current" data-i18n="breadcrumb.dataScience">Data Science</span>
       </nav>
     </div>
   </section>
@@ -89,16 +93,16 @@
   <section class="service-hero" style="background-image: url('assets/bg-img/data_science.jpeg');">
     <div class="container">
       <div class="service-hero-content">
-        <h1>Data Science</h1>
-        <p class="tagline">Insights predictivos que generan valor</p>
-        <p class="description">
+        <h1 data-i18n="dataSciencePage.hero.title">Data Science</h1>
+        <p class="tagline" data-i18n="dataSciencePage.hero.tagline">Insights predictivos que generan valor</p>
+        <p class="description" data-i18n="dataSciencePage.hero.description">
           Modelos predictivos y analítica avanzada que anticipan tendencias, optimizan operaciones
           y maximizan ingresos. Convertimos datos históricos en ventajas competitivas mediante
           machine learning aplicado a problemas reales de negocio.
         </p>
         <div class="hero-cta">
-          <a href="index.html#contacto" class="btn btn-primary">Agendar consultoría</a>
-          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+          <a href="index.html#contacto" class="btn btn-primary" data-i18n="dataSciencePage.hero.ctaPrimary">Agendar consultoría</a>
+          <a href="#capabilities" class="btn btn-secondary" data-i18n="dataSciencePage.hero.ctaSecondary">Nuestros servicios</a>
         </div>
       </div>
     </div>
@@ -108,8 +112,8 @@
   <section class="value-props">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">¿Por qué Data Science?</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="dataSciencePage.valueProps.title">¿Por qué Data Science?</h2>
+        <p class="section-subtitle" data-i18n="dataSciencePage.valueProps.subtitle">
           Predictive analytics que impactan el bottom line
         </p>
       </div>
@@ -117,42 +121,42 @@
       <div class="value-props-grid">
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Anticipación de Tendencias</h3>
-          <p>
+          <h3 data-i18n="dataSciencePage.valueProps.card1.title">Anticipación de Tendencias</h3>
+          <p data-i18n="dataSciencePage.valueProps.card1.description">
             Forecasting de demanda, churn y revenue con modelos estadísticos y ML.
             Planifica con 90%+ accuracy en horizontes de 3-6 meses.
           </p>
-          <span class="value-prop-metric">90%+ accuracy</span>
+          <span class="value-prop-metric" data-i18n="dataSciencePage.valueProps.card1.metric">90%+ accuracy</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Segmentación Inteligente</h3>
-          <p>
+          <h3 data-i18n="dataSciencePage.valueProps.card2.title">Segmentación Inteligente</h3>
+          <p data-i18n="dataSciencePage.valueProps.card2.description">
             Clustering de clientes por comportamiento, valor y propensión. Personaliza
             estrategias de marketing y producto por segmento.
           </p>
-          <span class="value-prop-metric">+40% conversión</span>
+          <span class="value-prop-metric" data-i18n="dataSciencePage.valueProps.card2.metric">+40% conversión</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Validación Estadística Rigurosa</h3>
-          <p>
+          <h3 data-i18n="dataSciencePage.valueProps.card3.title">Validación Estadística Rigurosa</h3>
+          <p data-i18n="dataSciencePage.valueProps.card3.description">
             Hipótesis testeadas con A/B testing, significance tests y confidence intervals.
             No más decisiones basadas en correlaciones espurias.
           </p>
-          <span class="value-prop-metric">95% confidence</span>
+          <span class="value-prop-metric" data-i18n="dataSciencePage.valueProps.card3.metric">95% confidence</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Modelos en Producción</h3>
-          <p>
+          <h3 data-i18n="dataSciencePage.valueProps.card4.title">Modelos en Producción</h3>
+          <p data-i18n="dataSciencePage.valueProps.card4.description">
             MLOps para deployar modelos a producción con monitoring, retraining y
             drift detection. Modelos que generan valor 24/7.
           </p>
-          <span class="value-prop-metric">24/7 inference</span>
+          <span class="value-prop-metric" data-i18n="dataSciencePage.valueProps.card4.metric">24/7 inference</span>
         </div>
       </div>
     </div>
@@ -162,8 +166,8 @@
   <section id="capabilities" class="capabilities-detail">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Nuestro Enfoque</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="dataSciencePage.capabilities.title">Nuestro Enfoque</h2>
+        <p class="section-subtitle" data-i18n="dataSciencePage.capabilities.subtitle">
           Expertise en ML aplicado a casos de uso de negocio
         </p>
       </div>
@@ -252,7 +256,7 @@
   <section class="use-cases">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Casos de Éxito</h2>
+        <h2 class="section-title" data-i18n="dataSciencePage.useCases.title">Casos de Éxito</h2>
       </div>
 
       <div class="use-cases-grid">
@@ -359,8 +363,8 @@
   <section class="tech-stack">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Tecnologías y Frameworks</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="dataSciencePage.techStack.title">Tecnologías y Frameworks</h2>
+        <p class="section-subtitle" data-i18n="dataSciencePage.techStack.subtitle">
           Stack de ML y data science que dominamos
         </p>
       </div>
@@ -429,12 +433,12 @@
   <!-- CTA Section -->
   <section class="service-cta" style="background-image: url('assets/bg-img/data_science.jpeg');">
     <div class="container">
-      <h2>¿Listo para predecir el futuro de tu negocio?</h2>
-      <p>
+      <h2 data-i18n="dataSciencePage.cta.title">¿Listo para predecir el futuro de tu negocio?</h2>
+      <p data-i18n="dataSciencePage.cta.description">
         Agenda una sesión de discovery gratuita. Identificaremos casos de uso de ML
         con alto ROI para tu industria y negocio.
       </p>
-      <a href="index.html#contacto" class="btn btn-primary">Agendar discovery session</a>
+      <a href="index.html#contacto" class="btn btn-primary" data-i18n="dataSciencePage.cta.button">Agendar discovery session</a>
     </div>
   </section>
 
@@ -442,8 +446,8 @@
   <section class="related-services">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Servicios Relacionados</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="dataSciencePage.relatedServices.title">Servicios Relacionados</h2>
+        <p class="section-subtitle" data-i18n="dataSciencePage.relatedServices.subtitle">
           Complementa tus modelos con infraestructura robusta
         </p>
       </div>

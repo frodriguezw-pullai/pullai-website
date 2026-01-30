@@ -59,12 +59,16 @@
       </div>
 
       <ul class="nav-menu">
-        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
-        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="index.html#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link" data-i18n="nav.solutions">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
+
+      <button class="language-toggle" id="languageToggle" aria-label="Change language">
+        <span class="flag-icon">EN</span>
+      </button>
 
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -76,11 +80,11 @@
   <section class="breadcrumbs">
     <div class="container">
       <nav class="breadcrumbs-nav">
-        <a href="index.html">Inicio</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#servicios" data-i18n="breadcrumb.services">Servicios</a>
         <span>/</span>
-        <span class="current">AI / GenAI</span>
+        <span class="current" data-i18n="breadcrumb.aiGenai">AI / GenAI</span>
       </nav>
     </div>
   </section>
@@ -89,16 +93,16 @@
   <section class="service-hero" style="background-image: url('assets/bg-img/ai_genai.jpg');">
     <div class="container">
       <div class="service-hero-content">
-        <h1>AI / GenAI</h1>
-        <p class="tagline">De datos a acciones automatizadas</p>
-        <p class="description">
+        <h1 data-i18n="aiGenaiPage.hero.title">AI / GenAI</h1>
+        <p class="tagline" data-i18n="aiGenaiPage.hero.tagline">De datos a acciones automatizadas</p>
+        <p class="description" data-i18n="aiGenaiPage.hero.description">
           Agentes inteligentes que automatizan procesos, aceleran ventas y potencian decisiones
           estratégicas. Convertimos datos en acciones mediante IA generativa y agentes autónomos
           que trabajan 24/7 para tu negocio.
         </p>
         <div class="hero-cta">
-          <a href="index.html#contacto" class="btn btn-primary">Agendar demo</a>
-          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+          <a href="index.html#contacto" class="btn btn-primary" data-i18n="aiGenaiPage.hero.ctaPrimary">Agendar demo</a>
+          <a href="#capabilities" class="btn btn-secondary" data-i18n="aiGenaiPage.hero.ctaSecondary">Nuestros servicios</a>
         </div>
       </div>
     </div>
@@ -108,8 +112,8 @@
   <section class="value-props">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">¿Por qué AI / GenAI?</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="aiGenaiPage.valueProps.title">¿Por qué AI / GenAI?</h2>
+        <p class="section-subtitle" data-i18n="aiGenaiPage.valueProps.subtitle">
           Automatización inteligente que escala tus operaciones sin headcount
         </p>
       </div>
@@ -117,42 +121,42 @@
       <div class="value-props-grid">
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Automatización Inteligente</h3>
-          <p>
+          <h3 data-i18n="aiGenaiPage.valueProps.card1.title">Automatización Inteligente</h3>
+          <p data-i18n="aiGenaiPage.valueProps.card1.description">
             Agentes que ejecutan tareas repetitivas con precisión humana. Liberan
             a tu equipo para enfocarse en trabajo estratégico de alto valor.
           </p>
-          <span class="value-prop-metric">80% tareas automatizadas</span>
+          <span class="value-prop-metric" data-i18n="aiGenaiPage.valueProps.card1.metric">80% tareas automatizadas</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Velocidad 10x</h3>
-          <p>
+          <h3 data-i18n="aiGenaiPage.valueProps.card2.title">Velocidad 10x</h3>
+          <p data-i18n="aiGenaiPage.valueProps.card2.description">
             Procesos que tomaban horas ahora se completan en minutos. Web scraping,
             análisis de datos y generación de reportes a velocidad de máquina.
           </p>
-          <span class="value-prop-metric">10x más rápido</span>
+          <span class="value-prop-metric" data-i18n="aiGenaiPage.valueProps.card2.metric">10x más rápido</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>ROI en Semanas</h3>
-          <p>
+          <h3 data-i18n="aiGenaiPage.valueProps.card3.title">ROI en Semanas</h3>
+          <p data-i18n="aiGenaiPage.valueProps.card3.description">
             Pilotos funcionales en 2-3 semanas. Valida el valor de IA antes de
             comprometer presupuestos grandes. Iteración rápida basada en feedback.
           </p>
-          <span class="value-prop-metric">2-3 semanas piloto</span>
+          <span class="value-prop-metric" data-i18n="aiGenaiPage.valueProps.card3.metric">2-3 semanas piloto</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Personalización a Escala</h3>
-          <p>
+          <h3 data-i18n="aiGenaiPage.valueProps.card4.title">Personalización a Escala</h3>
+          <p data-i18n="aiGenaiPage.valueProps.card4.description">
             GenAI para personalizar contenido, emails y propuestas para miles de
             clientes simultáneamente. Relevancia 1-to-1 a escala industrial.
           </p>
-          <span class="value-prop-metric">1000+ personalizado/día</span>
+          <span class="value-prop-metric" data-i18n="aiGenaiPage.valueProps.card4.metric">1000+ personalizado/día</span>
         </div>
       </div>
     </div>
@@ -162,8 +166,8 @@
   <section id="capabilities" class="capabilities-detail">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Nuestro Enfoque</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="aiGenaiPage.capabilities.title">Nuestro Enfoque</h2>
+        <p class="section-subtitle" data-i18n="aiGenaiPage.capabilities.subtitle">
           Expertise en IA aplicada a casos de uso de negocio reales
         </p>
       </div>
@@ -252,7 +256,7 @@
   <section class="use-cases">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Casos de Éxito</h2>
+        <h2 class="section-title" data-i18n="aiGenaiPage.useCases.title">Casos de Éxito</h2>
       </div>
 
       <div class="use-cases-grid">
@@ -359,8 +363,8 @@
   <section class="tech-stack">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Tecnologías y Frameworks</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="aiGenaiPage.techStack.title">Tecnologías y Frameworks</h2>
+        <p class="section-subtitle" data-i18n="aiGenaiPage.techStack.subtitle">
           Stack de IA y automatización que dominamos
         </p>
       </div>
@@ -429,12 +433,12 @@
   <!-- CTA Section -->
   <section class="service-cta" style="background-image: url('assets/bg-img/ai_genai.jpg');">
     <div class="container">
-      <h2>¿Listo para automatizar con IA?</h2>
-      <p>
+      <h2 data-i18n="aiGenaiPage.cta.title">¿Listo para automatizar con IA?</h2>
+      <p data-i18n="aiGenaiPage.cta.description">
         Agenda una sesión de ideación gratuita. Identificaremos procesos de tu empresa
         que pueden automatizarse con agentes inteligentes.
       </p>
-      <a href="index.html#contacto" class="btn btn-primary">Agendar sesión de ideación</a>
+      <a href="index.html#contacto" class="btn btn-primary" data-i18n="aiGenaiPage.cta.button">Agendar sesión de ideación</a>
     </div>
   </section>
 
@@ -442,8 +446,8 @@
   <section class="related-services">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Servicios Relacionados</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="aiGenaiPage.relatedServices.title">Servicios Relacionados</h2>
+        <p class="section-subtitle" data-i18n="aiGenaiPage.relatedServices.subtitle">
           Potencia tus agentes con datos y analytics
         </p>
       </div>

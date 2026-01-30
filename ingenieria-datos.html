@@ -59,12 +59,16 @@
       </div>
 
       <ul class="nav-menu">
-        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
-        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="index.html#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link" data-i18n="nav.solutions">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
+
+      <button class="language-toggle" id="languageToggle" aria-label="Change language">
+        <span class="flag-icon">EN</span>
+      </button>
 
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -76,11 +80,11 @@
   <section class="breadcrumbs">
     <div class="container">
       <nav class="breadcrumbs-nav">
-        <a href="index.html">Inicio</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#servicios" data-i18n="breadcrumb.services">Servicios</a>
         <span>/</span>
-        <span class="current">Ingeniería de Datos</span>
+        <span class="current" data-i18n="breadcrumb.ingenieria">Ingeniería de Datos</span>
       </nav>
     </div>
   </section>
@@ -89,16 +93,16 @@
   <section class="service-hero" style="background-image: url('assets/bg-img/ingenieria.jpeg');">
     <div class="container">
       <div class="service-hero-content">
-        <h1>Ingeniería de Datos</h1>
-        <p class="tagline">Pipelines escalables y eficientes</p>
-        <p class="description">
+        <h1 data-i18n="ingenieriaPage.hero.title">Ingeniería de Datos</h1>
+        <p class="tagline" data-i18n="ingenieriaPage.hero.tagline">Pipelines escalables y eficientes</p>
+        <p class="description" data-i18n="ingenieriaPage.hero.description">
           Migraciones, pipelines ETL y arquitecturas modernas para procesar grandes volúmenes de datos
           de manera eficiente. Construimos infraestructura de datos robusta que escala con tu negocio
           sin aumentar costos linealmente.
         </p>
         <div class="hero-cta">
-          <a href="index.html#contacto" class="btn btn-primary">Agendar consultoría</a>
-          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+          <a href="index.html#contacto" class="btn btn-primary" data-i18n="ingenieriaPage.hero.ctaPrimary">Agendar consultoría</a>
+          <a href="#capabilities" class="btn btn-secondary" data-i18n="ingenieriaPage.hero.ctaSecondary">Nuestros servicios</a>
         </div>
       </div>
     </div>
@@ -108,8 +112,8 @@
   <section class="value-props">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">¿Por qué Ingeniería de Datos?</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="ingenieriaPage.valueProps.title">¿Por qué Ingeniería de Datos?</h2>
+        <p class="section-subtitle" data-i18n="ingenieriaPage.valueProps.subtitle">
           Infraestructura de datos que escala sin comprometer performance
         </p>
       </div>
@@ -117,42 +121,42 @@
       <div class="value-props-grid">
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Procesamiento a Escala</h3>
-          <p>
+          <h3 data-i18n="ingenieriaPage.valueProps.card1.title">Procesamiento a Escala</h3>
+          <p data-i18n="ingenieriaPage.valueProps.card1.description">
             Pipelines que procesan millones de registros en minutos, no horas. Arquitecturas
             distribuidas con Spark para big data processing.
           </p>
-          <span class="value-prop-metric">100M+ registros/día</span>
+          <span class="value-prop-metric" data-i18n="ingenieriaPage.valueProps.card1.metric">100M+ registros/día</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Optimización de Costos</h3>
-          <p>
+          <h3 data-i18n="ingenieriaPage.valueProps.card2.title">Optimización de Costos</h3>
+          <p data-i18n="ingenieriaPage.valueProps.card2.description">
             Reducimos costos de cloud hasta en 50% mediante arquitecturas eficientes,
             particionamiento inteligente y auto-scaling.
           </p>
-          <span class="value-prop-metric">Hasta 50% ahorro</span>
+          <span class="value-prop-metric" data-i18n="ingenieriaPage.valueProps.card2.metric">Hasta 50% ahorro</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Confiabilidad 24/7</h3>
-          <p>
+          <h3 data-i18n="ingenieriaPage.valueProps.card3.title">Confiabilidad 24/7</h3>
+          <p data-i18n="ingenieriaPage.valueProps.card3.description">
             Pipelines resilientes con retry logic, alertas y monitoring. SLAs de
             uptime >99.5% para cargas críticas de datos.
           </p>
-          <span class="value-prop-metric">99.5% uptime</span>
+          <span class="value-prop-metric" data-i18n="ingenieriaPage.valueProps.card3.metric">99.5% uptime</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Migraciones Sin Downtime</h3>
-          <p>
+          <h3 data-i18n="ingenieriaPage.valueProps.card4.title">Migraciones Sin Downtime</h3>
+          <p data-i18n="ingenieriaPage.valueProps.card4.description">
             Migramos desde legacy systems (on-prem, databases viejas) a cloud moderno
             sin interrumpir operaciones de negocio.
           </p>
-          <span class="value-prop-metric">Zero downtime</span>
+          <span class="value-prop-metric" data-i18n="ingenieriaPage.valueProps.card4.metric">Zero downtime</span>
         </div>
       </div>
     </div>
@@ -162,8 +166,8 @@
   <section id="capabilities" class="capabilities-detail">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Nuestro Enfoque</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="ingenieriaPage.capabilities.title">Nuestro Enfoque</h2>
+        <p class="section-subtitle" data-i18n="ingenieriaPage.capabilities.subtitle">
           Expertise en arquitecturas modernas de datos (batch, streaming, real-time)
         </p>
       </div>
@@ -252,7 +256,7 @@
   <section class="use-cases">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Casos de Éxito</h2>
+        <h2 class="section-title" data-i18n="ingenieriaPage.useCases.title">Casos de Éxito</h2>
       </div>
 
       <div class="use-cases-grid">
@@ -359,8 +363,8 @@
   <section class="tech-stack">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Tecnologías y Frameworks</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="ingenieriaPage.techStack.title">Tecnologías y Frameworks</h2>
+        <p class="section-subtitle" data-i18n="ingenieriaPage.techStack.subtitle">
           Stack moderno de data engineering
         </p>
       </div>
@@ -429,12 +433,12 @@
   <!-- CTA Section -->
   <section class="service-cta" style="background-image: url('assets/bg-img/ingenieria.jpeg');">
     <div class="container">
-      <h2>¿Listo para modernizar tu infraestructura de datos?</h2>
-      <p>
+      <h2 data-i18n="ingenieriaPage.cta.title">¿Listo para modernizar tu infraestructura de datos?</h2>
+      <p data-i18n="ingenieriaPage.cta.description">
         Agenda una sesión de architecture review gratuita. Evaluaremos tu stack actual
         e identificaremos oportunidades de optimización.
       </p>
-      <a href="index.html#contacto" class="btn btn-primary">Agendar architecture review</a>
+      <a href="index.html#contacto" class="btn btn-primary" data-i18n="ingenieriaPage.cta.button">Agendar architecture review</a>
     </div>
   </section>
 
@@ -442,8 +446,8 @@
   <section class="related-services">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Servicios Relacionados</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="ingenieriaPage.relatedServices.title">Servicios Relacionados</h2>
+        <p class="section-subtitle" data-i18n="ingenieriaPage.relatedServices.subtitle">
           Maximiza el valor de tu infraestructura de datos
         </p>
       </div>

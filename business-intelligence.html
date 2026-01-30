@@ -59,12 +59,16 @@
       </div>
 
       <ul class="nav-menu">
-        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
-        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="index.html#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link" data-i18n="nav.solutions">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
+
+      <button class="language-toggle" id="languageToggle" aria-label="Change language">
+        <span class="flag-icon">EN</span>
+      </button>
 
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -76,11 +80,11 @@
   <section class="breadcrumbs">
     <div class="container">
       <nav class="breadcrumbs-nav">
-        <a href="index.html">Inicio</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#servicios" data-i18n="breadcrumb.services">Servicios</a>
         <span>/</span>
-        <span class="current">Business Intelligence</span>
+        <span class="current" data-i18n="breadcrumb.bi">Business Intelligence</span>
       </nav>
     </div>
   </section>
@@ -89,16 +93,16 @@
   <section class="service-hero" style="background-image: url('assets/bg-img/business_intelligence.jpeg');">
     <div class="container">
       <div class="service-hero-content">
-        <h1>Business Intelligence</h1>
-        <p class="tagline">Dashboards que impulsan decisiones</p>
-        <p class="description">
+        <h1 data-i18n="biPage.hero.title">Business Intelligence</h1>
+        <p class="tagline" data-i18n="biPage.hero.tagline">Dashboards que impulsan decisiones</p>
+        <p class="description" data-i18n="biPage.hero.description">
           Dashboards interactivos en tiempo real que transforman datos complejos en insights accionables
           para tu equipo ejecutivo. Convertimos métricas dispersas en narrativas visuales que guían
           decisiones estratégicas con confianza.
         </p>
         <div class="hero-cta">
-          <a href="index.html#contacto" class="btn btn-primary">Agendar demo</a>
-          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+          <a href="index.html#contacto" class="btn btn-primary" data-i18n="biPage.hero.ctaPrimary">Agendar demo</a>
+          <a href="#capabilities" class="btn btn-secondary" data-i18n="biPage.hero.ctaSecondary">Nuestros servicios</a>
         </div>
       </div>
     </div>
@@ -108,8 +112,8 @@
   <section class="value-props">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">¿Por qué Business Intelligence?</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="biPage.valueProps.title">¿Por qué Business Intelligence?</h2>
+        <p class="section-subtitle" data-i18n="biPage.valueProps.subtitle">
           Transforma datos en acción con visualizaciones que todos entienden
         </p>
       </div>
@@ -117,42 +121,42 @@
       <div class="value-props-grid">
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Insights en Tiempo Real</h3>
-          <p>
+          <h3 data-i18n="biPage.valueProps.card1.title">Insights en Tiempo Real</h3>
+          <p data-i18n="biPage.valueProps.card1.description">
             Dashboards que se actualizan automáticamente cada 15 minutos. Monitorea KPIs críticos
             sin esperar a reportes semanales obsoletos.
           </p>
-          <span class="value-prop-metric">15 min refresh</span>
+          <span class="value-prop-metric" data-i18n="biPage.valueProps.card1.metric">15 min refresh</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Decisiones Basadas en Datos</h3>
-          <p>
+          <h3 data-i18n="biPage.valueProps.card2.title">Decisiones Basadas en Datos</h3>
+          <p data-i18n="biPage.valueProps.card2.description">
             Elimina la toma de decisiones por intuición. Métricas claras, contextualizadas
             y accionables que todos los stakeholders entienden.
           </p>
-          <span class="value-prop-metric">100% data-driven</span>
+          <span class="value-prop-metric" data-i18n="biPage.valueProps.card2.metric">100% data-driven</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Implementación Rápida</h3>
-          <p>
+          <h3 data-i18n="biPage.valueProps.card3.title">Implementación Rápida</h3>
+          <p data-i18n="biPage.valueProps.card3.description">
             Primeros dashboards productivos en 3-4 semanas. Metodología ágil con sprints
             de 2 semanas y demos incrementales.
           </p>
-          <span class="value-prop-metric">3-4 semanas go-live</span>
+          <span class="value-prop-metric" data-i18n="biPage.valueProps.card3.metric">3-4 semanas go-live</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Self-Service Analytics</h3>
-          <p>
+          <h3 data-i18n="biPage.valueProps.card4.title">Self-Service Analytics</h3>
+          <p data-i18n="biPage.valueProps.card4.description">
             Empodera a equipos de negocio para explorar datos sin depender de IT.
             Modelos semánticos que garantizan consistencia.
           </p>
-          <span class="value-prop-metric">80% menos tickets IT</span>
+          <span class="value-prop-metric" data-i18n="biPage.valueProps.card4.metric">80% menos tickets IT</span>
         </div>
       </div>
     </div>
@@ -162,8 +166,8 @@
   <section id="capabilities" class="capabilities-detail">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Nuestro Enfoque</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="biPage.capabilities.title">Nuestro Enfoque</h2>
+        <p class="section-subtitle" data-i18n="biPage.capabilities.subtitle">
           Expertise en las principales plataformas de BI del mercado
         </p>
       </div>
@@ -271,7 +275,7 @@
   <section class="use-cases">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Casos de Éxito</h2>
+        <h2 class="section-title" data-i18n="biPage.useCases.title">Casos de Éxito</h2>
       </div>
 
       <div class="use-cases-grid">
@@ -378,8 +382,8 @@
   <section class="tech-stack">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Tecnologías y Plataformas</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="biPage.techStack.title">Tecnologías y Plataformas</h2>
+        <p class="section-subtitle" data-i18n="biPage.techStack.subtitle">
           Stack de BI que dominamos y recomendamos
         </p>
       </div>
@@ -448,12 +452,12 @@
   <!-- CTA Section -->
   <section class="service-cta" style="background-image: url('assets/bg-img/business_intelligence.jpeg');">
     <div class="container">
-      <h2>¿Listo para visualizar tus datos?</h2>
-      <p>
+      <h2 data-i18n="biPage.cta.title">¿Listo para visualizar tus datos?</h2>
+      <p data-i18n="biPage.cta.description">
         Agenda una demo gratuita donde te mostramos cómo transformar tus datos en dashboards
         accionables en menos de 4 semanas.
       </p>
-      <a href="index.html#contacto" class="btn btn-primary">Agendar demo gratuita</a>
+      <a href="index.html#contacto" class="btn btn-primary" data-i18n="biPage.cta.button">Agendar demo gratuita</a>
     </div>
   </section>
 
@@ -461,8 +465,8 @@
   <section class="related-services">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Servicios Relacionados</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="biPage.relatedServices.title">Servicios Relacionados</h2>
+        <p class="section-subtitle" data-i18n="biPage.relatedServices.subtitle">
           Complementa tus dashboards con estos servicios
         </p>
       </div>

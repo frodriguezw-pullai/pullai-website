@@ -61,12 +61,16 @@
       </div>
 
       <ul class="nav-menu">
-        <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="index.html#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="index.html#equipo" class="nav-link">Equipo</a></li>
-        <li><a href="index.html#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="index.html#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="index.html#soluciones" class="nav-link" data-i18n="nav.solutions">Soluciones</a></li>
+        <li><a href="index.html#equipo" class="nav-link" data-i18n="nav.team">Equipo</a></li>
+        <li><a href="index.html#clientes" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+        <li><a href="index.html#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
+
+      <button class="language-toggle" id="languageToggle" aria-label="Change language">
+        <span class="flag-icon">EN</span>
+      </button>
 
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -80,11 +84,11 @@
   <section class="breadcrumbs">
     <div class="container">
       <nav class="breadcrumbs-nav">
-        <a href="index.html">Inicio</a>
+        <a href="index.html" data-i18n="breadcrumb.home">Inicio</a>
         <span>/</span>
-        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#servicios" data-i18n="breadcrumb.services">Servicios</a>
         <span>/</span>
-        <span class="current">Consultoría en Datos</span>
+        <span class="current" data-i18n="breadcrumb.consultoria">Consultoría en Datos</span>
       </nav>
     </div>
   </section>
@@ -95,16 +99,16 @@
   <section class="service-hero" style="background-image: url('assets/bg-img/consultoria.jpg');">
     <div class="container">
       <div class="service-hero-content">
-        <h1>Consultoría en Datos</h1>
-        <p class="tagline">De la estrategia a la ejecución</p>
-        <p class="description">
+        <h1 data-i18n="consultoriaPage.hero.title">Consultoría en Datos</h1>
+        <p class="tagline" data-i18n="consultoriaPage.hero.tagline">De la estrategia a la ejecución</p>
+        <p class="description" data-i18n="consultoriaPage.hero.description">
           Diseñamos estrategias y rutas personalizadas para maximizar el valor de tu información
           al menor costo, con enfoque en resultados medibles. Transformamos tu visión de datos en
           un roadmap accionable con impacto real en el negocio.
         </p>
         <div class="hero-cta">
-          <a href="index.html#contacto" class="btn btn-primary">Agendar consultoría</a>
-          <a href="#capabilities" class="btn btn-secondary">Nuestros servicios</a>
+          <a href="index.html#contacto" class="btn btn-primary" data-i18n="consultoriaPage.hero.ctaPrimary">Agendar consultoría</a>
+          <a href="#capabilities" class="btn btn-secondary" data-i18n="consultoriaPage.hero.ctaSecondary">Nuestros servicios</a>
         </div>
       </div>
     </div>
@@ -116,8 +120,8 @@
   <section class="value-props">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">¿Por qué Consultoría en Datos?</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="consultoriaPage.valueProps.title">¿Por qué Consultoría en Datos?</h2>
+        <p class="section-subtitle" data-i18n="consultoriaPage.valueProps.subtitle">
           Convertimos la complejidad de los datos en ventajas competitivas claras
         </p>
       </div>
@@ -125,42 +129,42 @@
       <div class="value-props-grid">
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Casos de Uso de Alto Impacto</h3>
-          <p>
+          <h3 data-i18n="consultoriaPage.valueProps.card1.title">Casos de Uso de Alto Impacto</h3>
+          <p data-i18n="consultoriaPage.valueProps.card1.description">
             Identificamos y priorizamos iniciativas de datos que generan ROI medible en
             menos de 6 meses, evitando proyectos "vanity" sin retorno.
           </p>
-          <span class="value-prop-metric">6-12 meses ROI</span>
+          <span class="value-prop-metric" data-i18n="consultoriaPage.valueProps.card1.metric">6-12 meses ROI</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Optimización de Costos</h3>
-          <p>
+          <h3 data-i18n="consultoriaPage.valueProps.card2.title">Optimización de Costos</h3>
+          <p data-i18n="consultoriaPage.valueProps.card2.description">
             Reducimos costos de infraestructura y operaciones de datos hasta en un 40%
             mediante arquitecturas eficientes y tecnologías adecuadas.
           </p>
-          <span class="value-prop-metric">Hasta 40% ahorro</span>
+          <span class="value-prop-metric" data-i18n="consultoriaPage.valueProps.card2.metric">Hasta 40% ahorro</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Roadmap Accionable</h3>
-          <p>
+          <h3 data-i18n="consultoriaPage.valueProps.card3.title">Roadmap Accionable</h3>
+          <p data-i18n="consultoriaPage.valueProps.card3.description">
             Entregamos planes de implementación detallados con fases, hitos y métricas de
             éxito claras, no solo presentaciones teóricas.
           </p>
-          <span class="value-prop-metric">100% ejecutable</span>
+          <span class="value-prop-metric" data-i18n="consultoriaPage.valueProps.card3.metric">100% ejecutable</span>
         </div>
 
         <div class="value-prop-card">
           <div class="value-prop-icon"></div>
-          <h3>Resultados Rápidos</h3>
-          <p>
+          <h3 data-i18n="consultoriaPage.valueProps.card4.title">Resultados Rápidos</h3>
+          <p data-i18n="consultoriaPage.valueProps.card4.description">
             Validamos hipótesis con pilotos y PoCs en semanas, no meses, para demostrar
             valor temprano y ajustar la estrategia.
           </p>
-          <span class="value-prop-metric">2-4 semanas PoC</span>
+          <span class="value-prop-metric" data-i18n="consultoriaPage.valueProps.card4.metric">2-4 semanas PoC</span>
         </div>
       </div>
     </div>
@@ -172,8 +176,8 @@
   <section id="capabilities" class="capabilities-detail">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Nuestro Enfoque</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="consultoriaPage.capabilities.title">Nuestro Enfoque</h2>
+        <p class="section-subtitle" data-i18n="consultoriaPage.capabilities.subtitle">
           Metodologías probadas en startups, scale-ups y Fortune 500
         </p>
       </div>
@@ -265,7 +269,7 @@
   <section class="use-cases">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Casos de Éxito</h2>
+        <h2 class="section-title" data-i18n="consultoriaPage.useCases.title">Casos de Éxito</h2>
       </div>
 
       <div class="use-cases-grid">
@@ -374,8 +378,8 @@
   <section class="tech-stack">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Tecnologías y Frameworks</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="consultoriaPage.techStack.title">Tecnologías y Frameworks</h2>
+        <p class="section-subtitle" data-i18n="consultoriaPage.techStack.subtitle">
           Stack tecnológico que recomendamos y dominamos
         </p>
       </div>
@@ -446,12 +450,12 @@
        ======================================== -->
   <section class="service-cta" style="background-image: url('assets/bg-img/consultoria.jpg');">
     <div class="container">
-      <h2>¿Listo para diseñar tu estrategia de datos?</h2>
-      <p>
+      <h2 data-i18n="consultoriaPage.cta.title">¿Listo para diseñar tu estrategia de datos?</h2>
+      <p data-i18n="consultoriaPage.cta.description">
         Agenda una sesión de consultoría gratuita (30 min) para discutir tus desafíos de datos
         y cómo podemos ayudarte.
       </p>
-      <a href="index.html#contacto" class="btn btn-primary">Agendar consultoría gratuita</a>
+      <a href="index.html#contacto" class="btn btn-primary" data-i18n="consultoriaPage.cta.button">Agendar consultoría gratuita</a>
     </div>
   </section>
 
@@ -461,8 +465,8 @@
   <section class="related-services">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">Servicios Relacionados</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="consultoriaPage.relatedServices.title">Servicios Relacionados</h2>
+        <p class="section-subtitle" data-i18n="consultoriaPage.relatedServices.subtitle">
           Complementa tu estrategia con estos servicios
         </p>
       </div>
