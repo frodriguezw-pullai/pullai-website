@@ -773,7 +773,49 @@ const translations = {
     },
     solutions: {
       title: 'Soluciones por Área',
-      subtitle: 'Casos de uso específicos adaptados a tus necesidades empresariales'
+      subtitle: 'Casos de uso específicos adaptados a tus necesidades empresariales',
+      cards: [
+        {
+          title: 'Ventas & Growth',
+          description: 'Optimización de conversión y ROI mediante analítica predictiva.',
+          items: [
+            'Scoring predictivo de leads para priorización comercial inteligente',
+            'Segmentación dinámica de audiencias y micro-segmentación de mercado',
+            'Modelos de atribución multi-touch para optimización de inversión publicitaria',
+            'Predicción de churn (fuga) y diseño de estrategias de retención proactiva'
+          ]
+        },
+        {
+          title: 'Eficiencia Operativa',
+          description: 'Reducción de costos y optimización de recursos con datos en tiempo real.',
+          items: [
+            'Optimización de inventario y visibilidad total de la supply chain',
+            'Modelos de predicción de demanda y planificación de recursos operativos',
+            'Sistemas inteligentes de detección de anomalías operativas en tiempo real',
+            'Automatización de procesos complejos mediante la integración de RPA + IA'
+          ]
+        },
+        {
+          title: 'Customer Experience (CX)',
+          description: 'Maximización del valor de vida del cliente y fidelización inteligente.',
+          items: [
+            'Análisis de sentimiento y voz del cliente mediante procesamiento de lenguaje natural (NLP)',
+            'Modelos de Customer Lifetime Value (CLV) para segmentación por valor de cliente',
+            'Motores de recomendación y personalización de contenido impulsados por IA',
+            'Optimización de embudos de post-venta y sistemas de soporte técnico proactivo'
+          ]
+        },
+        {
+          title: 'Estrategia & Finanzas',
+          description: 'Inteligencia centralizada para la toma de decisiones de alto nivel (C-Suite).',
+          items: [
+            'Dashboards ejecutivos con visualización de KPIs críticos y salud del negocio',
+            'Modelos de forecasting financiero avanzado y proyecciones de flujo de caja',
+            'Análisis de rentabilidad detallado por producto, canal y unidad de negocio',
+            'Acompañamiento en la adopción de cultura de datos y alfabetización analítica'
+          ]
+        }
+      ]
     },
     infrastructure: {
       title: 'Nuestra Infraestructura: El Motor Detrás de la Data',
@@ -836,6 +878,18 @@ const translations = {
         submit: 'Enviar mensaje'
       }
     },
+    alliances: {
+      toggle: 'Alianzas Estratégicas',
+      description: 'Para asegurar que nuestros clientes cuenten con soluciones integrales, trabajamos con socios especializados en áreas complementarias.',
+      partners: [
+        {
+          description: 'Asesoría financiera y estratégica. Tu equipo de Finanzas Corporativas.'
+        }
+      ]
+    },
+    footer: {
+      copyright: 'Todos los derechos reservados.'
+    },
     languageButton: 'English',
     consultoriaPage: {
       hero: {
@@ -871,14 +925,145 @@ const translations = {
       },
       capabilities: {
         title: 'Nuestro Enfoque',
-        subtitle: 'Metodologías probadas en startups, scale-ups y Fortune 500'
+        subtitle: 'Metodologías probadas en startups, scale-ups y Fortune 500',
+        items: [
+          {
+            title: 'Descubrimiento de Casos de Uso de Alto Impacto',
+            description: 'Facilitamos workshops con stakeholders clave para identificar oportunidades de datos que realmente mueven la aguja del negocio. Priorizamos usando frameworks de impacto vs. esfuerzo.',
+            features: [
+              'Entrevistas con C-level y líderes de área',
+              'Análisis de pain points y oportunidades',
+              'Matriz de priorización (impacto vs. esfuerzo)',
+              'Definición de KPIs y métricas de éxito',
+              'Business case con proyección de ROI'
+            ]
+          },
+          {
+            title: 'Arquitectura de Datos Escalable y Eficiente',
+            description: 'Diseñamos arquitecturas modernas (cloud-native, lakehouse, mesh) adaptadas a tu escala y presupuesto. Evitamos sobre-ingeniería y optimizamos para costos operativos bajos.',
+            features: [
+              'Arquitectura cloud-native (AWS, GCP, Azure)',
+              'Patrones modernos: Data Lakehouse, Data Mesh',
+              'Estimación de costos TCO (Total Cost of Ownership)',
+              'Plan de migración desde legacy systems',
+              'Reference architecture documentada'
+            ]
+          },
+          {
+            title: 'Evaluación y Optimización de Costos',
+            description: 'Auditamos infraestructura existente para identificar ineficiencias y desperdicios. Optimizamos queries, storage y compute para reducir la factura cloud hasta en 50%.',
+            features: [
+              'Análisis de costos actuales (compute, storage, egress)',
+              'Identificación de recursos subutilizados',
+              'Optimización de queries y pipelines',
+              'Reserved instances y savings plans',
+              'Monitoreo continuo de costos (FinOps)'
+            ]
+          },
+          {
+            title: 'Pilotos y Pruebas de Concepto (PoCs)',
+            description: 'Validamos tecnologías y enfoques con pilotos rápidos (2-4 semanas) antes de comprometer presupuestos grandes. Demostramos valor tangible con datos reales.',
+            features: [
+              'Diseño de PoC con criterios de éxito claros',
+              'Implementación rápida con datos reales',
+              'Validación de hipótesis de negocio',
+              'Demo funcional para stakeholders',
+              'Recomendación go/no-go fundamentada'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Casos de Éxito'
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'Retail / E-commerce',
+            title: 'Estrategia de Personalización con Datos',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Startup de e-commerce con 500K usuarios no podía personalizar experiencia. Datos dispersos en 6 sistemas sin integración.'
+              },
+              {
+                label: 'Solución',
+                content: 'Diseñamos arquitectura de Customer Data Platform (CDP) con Segment + Snowflake. Definimos casos de uso: recomendaciones, email campaigns, abandono de carrito.'
+              },
+              {
+                label: 'Resultado',
+                content: '+35% en conversión de email campaigns, +22% en AOV (Average Order Value). ROI positivo en 4 meses. Stack implementado en 8 semanas.'
+              }
+            ]
+          },
+          {
+            label: 'Fintech / SaaS',
+            title: 'Reducción de Costos Cloud en 60%',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Scale-up con $150K/mes en AWS. Pipelines ineficientes procesando datos duplicados. Warehouses siempre encendidos.'
+              },
+              {
+                label: 'Solución',
+                content: 'Auditoría completa de recursos. Migración a Snowflake con auto-suspend. Optimización de queries y particionamiento. Reserved instances para workloads estables.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Costos reducidos a $60K/mes (60% ahorro = $1M/año). Queries 3x más rápidos. Playbook de FinOps documentado para el equipo.'
+              }
+            ]
+          },
+          {
+            label: 'Healthcare / Enterprise',
+            title: 'Roadmap de Modernización de Data Lake',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Empresa Fortune 500 con data lake legacy (Hadoop on-prem). Mantenimiento costoso y baja adopción por usuarios de negocio.'
+              },
+              {
+                label: 'Solución',
+                content: 'Estrategia de migración en fases a Databricks Lakehouse. PoC con caso de uso crítico (reportes regulatorios). Roadmap de 18 meses con 5 fases.'
+              },
+              {
+                label: 'Resultado',
+                content: 'PoC exitoso en 6 semanas. Buy-in de C-level logrado. Presupuesto aprobado para Fase 1 (migración de 3 workloads críticos). $2M en ahorro de infraestructura proyectado.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Tecnologías y Frameworks',
-        subtitle: 'Stack tecnológico que recomendamos y dominamos'
+        subtitle: 'Stack tecnológico que recomendamos y dominamos',
+        categories: [
+          {
+            title: 'Cloud Platforms',
+            items: [
+              'AWS',
+              'Google Cloud',
+              'Azure',
+              'Snowflake'
+            ]
+          },
+          {
+            title: 'Architecture Patterns',
+            items: [
+              'Data Lakehouse',
+              'Data Mesh',
+              'Lambda Architecture',
+              'Event-Driven'
+            ]
+          },
+          {
+            title: 'Frameworks & Methodologies',
+            items: [
+              'TOGAF',
+              'DAMA-DMBOK',
+              'DataOps',
+              'FinOps'
+            ]
+          }
+        ]
       },
       cta: {
         title: '¿Listo para diseñar tu estrategia de datos?',
@@ -887,7 +1072,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Servicios Relacionados',
-        subtitle: 'Complementa tu estrategia con estos servicios'
+        subtitle: 'Complementa tu estrategia con estos servicios',
+        cards: [
+          {
+            title: 'Gobierno de Datos',
+            description: 'Asegura calidad, seguridad y cumplimiento con políticas y procesos claros.'
+          },
+          {
+            title: 'Ingeniería de Datos',
+            description: 'Implementa pipelines y arquitecturas diseñadas en la fase de consultoría.'
+          },
+          {
+            title: 'Business Intelligence',
+            description: 'Dashboards y reportes que materializan los casos de uso identificados.'
+          }
+        ],
+        linkText: 'Ver servicio'
       }
     },
     biPage: {
@@ -924,14 +1124,156 @@ const translations = {
       },
       capabilities: {
         title: 'Nuestro Enfoque',
-        subtitle: 'Expertise en las principales plataformas de BI del mercado'
+        subtitle: 'Expertise en las principales plataformas de BI del mercado',
+        items: [
+          {
+            title: 'Modelado Semántico de Datos',
+            description: 'Diseñamos capas semánticas (star schema, OLAP cubes) que garantizan métricas consistentes across toda la organización. Un solo lugar donde se define "revenue", "CAC" o "churn".',
+            features: [
+              'Star schema y dimensional modeling',
+              'Business logic centralizada (métrica definitions)',
+              'Row-level security para acceso granular',
+              'Relaciones y jerarquías optimizadas',
+              'Documentación de métricas y KPIs'
+            ]
+          },
+          {
+            title: 'Dashboards en Power BI, Looker y Tableau',
+            description: 'Implementamos dashboards interactivos en la plataforma de tu elección. Diseño centrado en el usuario con drill-downs, filtros y exportaciones para diferentes audiencias.',
+            features: [
+              'Dashboards ejecutivos para C-level',
+              'Operational dashboards para equipos',
+              'Drilldowns y exploraciones ad-hoc',
+              'Mobile-responsive para decisiones on-the-go',
+              'Exportación a PDF y Excel'
+            ]
+          },
+          {
+            title: 'Plataformas de BI Self-Hosted',
+            description: 'Implementamos soluciones de BI open-source o self-hosted para máximo control y personalización. Ideal para empresas con requerimientos de data sovereignty o compliance estricto.',
+            features: [
+              'Metabase y Apache Superset deployment',
+              'Redash para queries ad-hoc colaborativas',
+              'Grafana para métricas y monitoring',
+              'Control total sobre infraestructura y datos',
+              'Customización sin límites de licencias'
+            ]
+          },
+          {
+            title: 'Alertas y Notificaciones Automatizadas',
+            description: 'Configura alertas basadas en thresholds para ser notificado cuando métricas clave se desvían. Proactividad en lugar de reactividad.',
+            features: [
+              'Alertas por email/Slack cuando KPI < threshold',
+              'Anomaly detection automatizado (ML-based)',
+              'Reportes programados (daily, weekly, monthly)',
+              'Notificaciones condicionales multi-step',
+              'Integración con sistemas de ticketing'
+            ]
+          },
+          {
+            title: 'Embedded Analytics en tus Aplicaciones',
+            description: 'Integra dashboards directamente en tu producto SaaS para que tus clientes accedan a analytics sin salir de tu app. White-label y multi-tenant.',
+            features: [
+              'Embedded iframes con SSO/SAML',
+              'White-label (branding personalizado)',
+              'Multi-tenancy con row-level security',
+              'APIs para embedding programático',
+              'Usage analytics y monetización'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Casos de Éxito'
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'SaaS / B2B',
+            title: 'Dashboard Ejecutivo para Scale-up SaaS',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'CEO de SaaS B2B con $10M ARR no tenía visibilidad real-time de métricas clave. Reportes manuales en Excel con datos de semana pasada.'
+              },
+              {
+                label: 'Solución',
+                content: 'Dashboard ejecutivo en Looker con MRR, CAC, LTV, churn y pipeline de ventas. Actualización cada 15 min desde Salesforce, Stripe y data warehouse.'
+              },
+              {
+                label: 'Resultado',
+                content: 'CEO toma decisiones estratégicas 3x más rápido. Identificación temprana de churn permitió reducirlo en 18%. Board meetings con datos actualizados en tiempo real.'
+              }
+            ]
+          },
+          {
+            label: 'E-commerce / Retail',
+            title: 'Operational Dashboards para E-commerce',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Equipo de operaciones revisando 10+ herramientas para monitorear inventario, fulfillment y customer support. Datos inconsistentes entre sistemas.'
+              },
+              {
+                label: 'Solución',
+                content: 'Dashboards operacionales en Power BI: inventory levels, order fulfillment SLAs, support tickets. Capa semántica unifica métricas de Shopify, Zendesk, NetSuite.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Reducción de 40% en stockouts por visibilidad de inventario. SLA de fulfillment mejorado de 72h a 48h. Equipo de ops ahorra 15h/semana en reporting manual.'
+              }
+            ]
+          },
+          {
+            label: 'Fintech / Embedded',
+            title: 'Embedded Analytics para Clientes B2B',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Fintech B2B sin analytics para sus clientes empresariales. Pedían reportes custom constantemente, generando carga operativa al equipo.'
+              },
+              {
+                label: 'Solución',
+                content: 'Embedded analytics en Tableau con white-label. Cada cliente accede a dashboards personalizados (transacciones, fees, reconciliación) dentro del portal.'
+              },
+              {
+                label: 'Resultado',
+                content: 'NPS de clientes +25 puntos. Reducción de 90% en solicitudes de reportes custom. Analytics embedded se convirtió en feature diferencial en ventas.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Tecnologías y Plataformas',
-        subtitle: 'Stack de BI que dominamos y recomendamos'
+        subtitle: 'Stack de BI que dominamos y recomendamos',
+        categories: [
+          {
+            title: 'BI Platforms',
+            items: [
+              'Power BI',
+              'Looker',
+              'Tableau',
+              'Metabase'
+            ]
+          },
+          {
+            title: 'Semantic Layer & Modeling',
+            items: [
+              'dbt Metrics',
+              'LookML (Looker)',
+              'Power BI Dataflows',
+              'Cube.js'
+            ]
+          },
+          {
+            title: 'Data Sources & Warehouses',
+            items: [
+              'Snowflake',
+              'BigQuery',
+              'Redshift',
+              'Databricks'
+            ]
+          }
+        ]
       },
       cta: {
         title: '¿Listo para visualizar tus datos?',
@@ -940,7 +1282,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Servicios Relacionados',
-        subtitle: 'Complementa tus dashboards con estos servicios'
+        subtitle: 'Complementa tus dashboards con estos servicios',
+        cards: [
+          {
+            title: 'Ingeniería de Datos',
+            description: 'Pipelines robustos que alimentan tus dashboards con datos limpios y actualizados.'
+          },
+          {
+            title: 'Data Science',
+            description: 'Añade predictive analytics a tus dashboards con modelos de forecasting y churn.'
+          },
+          {
+            title: 'Gobierno de Datos',
+            description: 'Asegura que tus dashboards muestran datos confiables y gobernados.'
+          }
+        ],
+        linkText: 'Ver servicio'
       }
     },
     dataSciencePage: {
@@ -977,14 +1334,145 @@ const translations = {
       },
       capabilities: {
         title: 'Nuestro Enfoque',
-        subtitle: 'Expertise en ML aplicado a casos de uso de negocio'
+        subtitle: 'Expertise en ML aplicado a casos de uso de negocio',
+        items: [
+          {
+            title: 'Predicción de Demanda y Churn',
+            description: 'Modelos de forecasting (ARIMA, Prophet, LSTM) para anticipar demanda de productos y modelos de churn para identificar clientes en riesgo antes de que se vayan.',
+            features: [
+              'Forecasting con Prophet, ARIMA, LSTM',
+              'Churn prediction con XGBoost, LightGBM',
+              'Feature engineering basado en comportamiento',
+              'Calibración de probabilidades para scoring',
+              'Backtesting riguroso con datos históricos'
+            ]
+          },
+          {
+            title: 'Segmentación de Clientes y LTV',
+            description: 'Clustering (K-means, DBSCAN) para segmentar clientes por comportamiento. Modelos de LTV (Lifetime Value) para priorizar acquisition y retention efforts.',
+            features: [
+              'RFM analysis y behavioral clustering',
+              'LTV prediction con survival models',
+              'Cohort analysis y retention curves',
+              'Propensity models para upsell/cross-sell',
+              'Personalización de campañas por segmento'
+            ]
+          },
+          {
+            title: 'Detección de Patrones Heurísticos',
+            description: 'Análisis exploratorio para descubrir patrones no obvios en datos. Anomaly detection para fraude, outliers y eventos inusuales que requieren atención.',
+            features: [
+              'Exploratory Data Analysis (EDA) profunda',
+              'Anomaly detection (Isolation Forest, autoencoders)',
+              'Association rules mining (Market Basket Analysis)',
+              'Time series decomposition (trend, seasonality)',
+              'Causal inference para identificar drivers reales'
+            ]
+          },
+          {
+            title: 'Validación Estadística Rigurosa',
+            description: 'A/B testing con power analysis, multiple testing correction. Confidence intervals, hypothesis testing y causal inference para decisiones fundamentadas.',
+            features: [
+              'A/B test design con power analysis',
+              'Bayesian A/B testing para early stopping',
+              'Multiple testing correction (Bonferroni, FDR)',
+              'Causal inference (propensity score matching, DiD)',
+              'Interpretabilidad de modelos (SHAP, LIME)'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Casos de Éxito'
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'SaaS / B2B',
+            title: 'Churn Prediction para SaaS B2B',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'SaaS B2B con 25% annual churn. Equipo de CS reactivo: contactaban clientes después de que cancelaban. $2M ARR perdido anualmente.'
+              },
+              {
+                label: 'Solución',
+                content: 'Modelo de churn con XGBoost usando features de uso de producto (logins, features utilizadas, tickets de soporte). Scoring semanal para identificar at-risk accounts.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Churn reducido de 25% a 17% en 6 meses. CS team proactivo salva 40% de at-risk accounts. Revenue recovery de $800K/año. ROI del proyecto: 8x.'
+              }
+            ]
+          },
+          {
+            label: 'Retail / E-commerce',
+            title: 'Demand Forecasting para Retail',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Retailer con stockouts frecuentes y overstock simultáneo. Forecasting manual con Excel. 30% error rate en predicciones de demanda.'
+              },
+              {
+                label: 'Solución',
+                content: 'Modelos de forecasting con Prophet + features de promociones, estacionalidad, eventos especiales. Forecast a nivel SKU-tienda con horizonte de 4 semanas.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Error de forecasting reducido a 12% (MAPE). Stockouts -40%, overstock -35%. Working capital liberado: $3M. Satisfacción de clientes +15% por disponibilidad.'
+              }
+            ]
+          },
+          {
+            label: 'Fintech / Banking',
+            title: 'Customer LTV Segmentation',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Fintech gastando igualmente en todos los clientes adquiridos. CAC alto ($200) con LTV desconocido. Algunos clientes no generaban valor suficiente.'
+              },
+              {
+                label: 'Solución',
+                content: 'Modelo de LTV prediction usando transacciones, productos contratados, demografía. Segmentación en High/Medium/Low value. Estrategias diferenciadas por segmento.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Marketing budget reasignado a segmentos High LTV. CAC optimizado por segmento. ROI de marketing +60%. LTV/CAC ratio mejorado de 2.5x a 4.2x.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Tecnologías y Frameworks',
-        subtitle: 'Stack de ML y data science que dominamos'
+        subtitle: 'Stack de ML y data science que dominamos',
+        categories: [
+          {
+            title: 'ML Frameworks & Libraries',
+            items: [
+              'Scikit-learn',
+              'XGBoost / LightGBM',
+              'TensorFlow / PyTorch',
+              'Prophet / statsmodels'
+            ]
+          },
+          {
+            title: 'MLOps & Deployment',
+            items: [
+              'MLflow',
+              'Weights & Biases',
+              'SageMaker',
+              'Databricks MLR'
+            ]
+          },
+          {
+            title: 'Analysis & Experimentation',
+            items: [
+              'Python (Pandas, NumPy)',
+              'R (tidyverse)',
+              'Jupyter / Databricks',
+              'Optimizely / GrowthBook'
+            ]
+          }
+        ]
       },
       cta: {
         title: '¿Listo para predecir el futuro de tu negocio?',
@@ -993,7 +1481,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Servicios Relacionados',
-        subtitle: 'Complementa tus modelos con infraestructura robusta'
+        subtitle: 'Complementa tus modelos con infraestructura robusta',
+        cards: [
+          {
+            title: 'Ingeniería de Datos',
+            description: 'Pipelines que alimentan tus modelos con features limpias y actualizadas.'
+          },
+          {
+            title: 'Business Intelligence',
+            description: 'Dashboards que visualizan predicciones y scores de tus modelos.'
+          },
+          {
+            title: 'AI / GenAI',
+            description: 'Agentes inteligentes que actúan sobre tus insights predictivos.'
+          }
+        ],
+        linkText: 'Ver servicio'
       }
     },
     gobiernoPage: {
@@ -1030,14 +1533,145 @@ const translations = {
       },
       capabilities: {
         title: 'Nuestro Enfoque',
-        subtitle: 'Framework completo de Data Governance basado en DAMA-DMBOK'
+        subtitle: 'Framework completo de Data Governance basado en DAMA-DMBOK',
+        items: [
+          {
+            title: 'Modelo RACI y Roles de Datos',
+            description: 'Definimos estructura organizacional con roles clave: Chief Data Officer, Data Owners, Data Stewards, Data Custodians. Matriz RACI para clarificar responsabilidades.',
+            features: [
+              'Definición de roles y responsabilidades',
+              'Matriz RACI por dominio de datos',
+              'Job descriptions para nuevos roles',
+              'Modelo de governance operativo',
+              'Comité de datos y cadencia de reuniones'
+            ]
+          },
+          {
+            title: 'Catálogo de Datos Centralizado',
+            description: 'Implementamos data catalog (Alation, Collibra, Atlan) con metadata enriquecido, lineage automatizado y búsqueda inteligente. Single source of truth para data assets.',
+            features: [
+              'Setup de herramienta de data catalog',
+              'Metadata harvesting automatizado',
+              'Data lineage end-to-end',
+              'Business glossary y términos de negocio',
+              'Search y discovery para self-service'
+            ]
+          },
+          {
+            title: 'SLAs de Calidad de Datos (Data Quality)',
+            description: 'Establecemos dimensiones de calidad (accuracy, completeness, timeliness) con métricas y thresholds. Monitoreo automatizado con alertas en caso de degradación.',
+            features: [
+              'Definición de dimensiones de calidad',
+              'SLAs por dataset crítico (accuracy, completeness, etc.)',
+              'Implementación de data quality checks',
+              'Dashboards de monitoreo en tiempo real',
+              'Procesos de remediación y escalamiento'
+            ]
+          },
+          {
+            title: 'Políticas de Acceso, Privacidad y Seguridad',
+            description: 'Diseñamos políticas de acceso (RBAC), clasificación de datos (PII, confidencial), y procesos de compliance (GDPR, CCPA). Auditoría de accesos y data retention.',
+            features: [
+              'Clasificación de datos (público, interno, confidencial, PII)',
+              'Políticas RBAC (role-based access control)',
+              'Procesos de data privacy (GDPR, CCPA)',
+              'Data retention y archiving policies',
+              'Auditoría de accesos y compliance reporting'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Casos de Éxito'
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'Fintech / Banking',
+            title: 'Compliance GDPR en 90 Días',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Fintech procesando datos de clientes EU sin compliance GDPR. Riesgo de multas de hasta €20M. No había inventario de datos personales.'
+              },
+              {
+                label: 'Solución',
+                content: 'Inventario completo de PII en 2 semanas. Implementación de políticas de acceso, retention y right-to-be-forgotten. Data catalog con clasificación automatizada.'
+              },
+              {
+                label: 'Resultado',
+                content: '100% compliance GDPR en 90 días. Certificación SOC 2 Type II lograda. Procesos documentados y auditables. Riesgo legal eliminado.'
+              }
+            ]
+          },
+          {
+            label: 'Healthcare / Enterprise',
+            title: 'Programa de Data Quality en Hospital',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Hospital con 15% de errores en datos de pacientes. Reportes regulatorios rechazados. Decisiones clínicas basadas en datos incorrectos.'
+              },
+              {
+                label: 'Solución',
+                content: 'Implementación de Great Expectations para validación automatizada. Definición de SLAs por dataset crítico. Dashboard de data quality para C-level.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Errores reducidos a 3% en 6 meses. Reportes regulatorios aprobados en primer intento. Mayor confianza en decisiones clínicas. ROI medible en reducción de re-trabajos.'
+              }
+            ]
+          },
+          {
+            label: 'E-commerce / Scale-up',
+            title: 'Data Catalog para Self-Service Analytics',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Analistas de negocio gastaban 60% del tiempo buscando datos correctos. 150+ tablas en warehouse sin documentación. Duplicación de esfuerzos.'
+              },
+              {
+                label: 'Solución',
+                content: 'Implementación de Atlan como data catalog. Harvesting automático de metadata. Business glossary con 200+ términos. Training para analistas.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Tiempo de búsqueda reducido en 80%. Self-service analytics habilitado. Data discovery en 2 minutos vs. 2 horas. NPS de analistas: 9/10.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Tecnologías y Frameworks',
-        subtitle: 'Stack de herramientas de Data Governance'
+        subtitle: 'Stack de herramientas de Data Governance',
+        categories: [
+          {
+            title: 'Data Catalog & Lineage',
+            items: [
+              'Alation',
+              'Collibra',
+              'Atlan',
+              'OpenMetadata'
+            ]
+          },
+          {
+            title: 'Data Quality',
+            items: [
+              'Great Expectations',
+              'Monte Carlo',
+              'Soda',
+              'dbt Tests'
+            ]
+          },
+          {
+            title: 'Frameworks & Standards',
+            items: [
+              'DAMA-DMBOK',
+              'DCAM',
+              'GDPR',
+              'SOC 2'
+            ]
+          }
+        ]
       },
       cta: {
         title: '¿Listo para gobernar tus datos?',
@@ -1046,7 +1680,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Servicios Relacionados',
-        subtitle: 'Complementa tu programa de governance'
+        subtitle: 'Complementa tu programa de governance',
+        cards: [
+          {
+            title: 'Consultoría en Datos',
+            description: 'Define la estrategia de datos antes de implementar governance.'
+          },
+          {
+            title: 'Ingeniería de Datos',
+            description: 'Implementa pipelines con data quality checks integrados.'
+          },
+          {
+            title: 'Data Science',
+            description: 'Modelos confiables requieren datos gobernados y de calidad.'
+          }
+        ],
+        linkText: 'Ver servicio'
       }
     },
     ingenieriaPage: {
@@ -1083,14 +1732,145 @@ const translations = {
       },
       capabilities: {
         title: 'Nuestro Enfoque',
-        subtitle: 'Expertise en arquitecturas modernas de datos (batch, streaming, real-time)'
+        subtitle: 'Expertise en arquitecturas modernas de datos (batch, streaming, real-time)',
+        items: [
+          {
+            title: 'Ingesta Incremental y Batch de Datos',
+            description: 'Implementamos pipelines de ingesta desde múltiples fuentes (databases, APIs, archivos) con estrategias incrementales (CDC) para minimizar carga y latencia.',
+            features: [
+              'Change Data Capture (CDC) con Debezium/Fivetran',
+              'Ingesta desde APIs REST/GraphQL',
+              'Batch processing de archivos (S3, SFTP)',
+              'Connectors para SaaS apps (Salesforce, HubSpot, etc.)',
+              'Schema evolution y versionado'
+            ]
+          },
+          {
+            title: 'Orquestación con Airflow y Dagster',
+            description: 'Orquestamos pipelines complejos con dependencias, retries y alertas. DAGs versionados en Git con CI/CD para deployment automatizado.',
+            features: [
+              'DAGs modulares y reutilizables',
+              'Manejo de dependencias y backfills',
+              'Retry logic y circuit breakers',
+              'Alertas por Slack/PagerDuty en fallos',
+              'CI/CD con testing automatizado'
+            ]
+          },
+          {
+            title: 'Transformaciones con dbt y Spark',
+            description: 'Transformamos raw data en modelos analíticos usando dbt (SQL) para batch y Spark para big data. Tests automatizados y documentación generada.',
+            features: [
+              'dbt models con testing y documentación',
+              'Incremental models para eficiencia',
+              'Spark jobs para PB-scale processing',
+              'Data quality tests automatizados',
+              'Lineage tracking end-to-end'
+            ]
+          },
+          {
+            title: 'Optimización de Costos en Cloud',
+            description: 'Auditamos y optimizamos infraestructura existente: particionamiento, clustering, auto-suspend, reserved capacity. FinOps para data teams.',
+            features: [
+              'Análisis de costos (compute, storage, egress)',
+              'Particionamiento y clustering strategies',
+              'Auto-suspend/resume para warehouses',
+              'Reserved instances y savings plans',
+              'Query optimization y caching'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Casos de Éxito'
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'Fintech / Scale-up',
+            title: 'Migración de PostgreSQL a Snowflake',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Fintech con 50M transacciones/mes en PostgreSQL on-prem. Queries lentos (+30s), backups fallando, y equipo de 2 DBAs saturados.'
+              },
+              {
+                label: 'Solución',
+                content: 'Migración a Snowflake con CDC incremental usando Fivetran. Pipelines de dbt para transformaciones. Airflow para orquestación. Zero downtime migration.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Queries 10x más rápidos (30s → 3s). Backups automatizados. DBAs liberados para proyectos estratégicos. Costos 30% menores vs. mantener on-prem.'
+              }
+            ]
+          },
+          {
+            label: 'E-commerce / Retail',
+            title: 'Real-time Inventory Pipeline',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'E-commerce con inventory sync cada 6 horas. Vendían productos out-of-stock, generando cancelaciones y NPS bajo.'
+              },
+              {
+                label: 'Solución',
+                content: 'Pipeline real-time con Kafka + Flink. CDC desde ERP (SAP). Stream processing para calcular available-to-promise inventory. Latencia <1 min.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Cancelaciones por stockout reducidas en 75%. NPS +12 puntos. Revenue recovery de $500K/año por mejor inventory accuracy.'
+              }
+            ]
+          },
+          {
+            label: 'SaaS / B2B',
+            title: 'Data Platform para Product Analytics',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'SaaS B2B sin visibilidad de user behavior. Eventos de producto dispersos en logs. PM team sin datos para priorizar roadmap.'
+              },
+              {
+                label: 'Solución',
+                content: 'Event streaming con Segment + BigQuery. dbt para modelar user journeys, funnels, retention cohorts. Dashboards en Looker para PM team.'
+              },
+              {
+                label: 'Resultado',
+                content: 'PM team identifica feature adoption en días, no meses. Experimentos A/B con significancia estadística. Roadmap data-driven resultó en +30% activation rate.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Tecnologías y Frameworks',
-        subtitle: 'Stack moderno de data engineering'
+        subtitle: 'Stack moderno de data engineering',
+        categories: [
+          {
+            title: 'Orchestration & Workflow',
+            items: [
+              'Apache Airflow',
+              'Dagster',
+              'Prefect',
+              'Kestra'
+            ]
+          },
+          {
+            title: 'Processing & Transformation',
+            items: [
+              'dbt',
+              'Apache Spark',
+              'Apache Flink',
+              'Kafka Streams'
+            ]
+          },
+          {
+            title: 'Ingestion & Integration',
+            items: [
+              'Fivetran',
+              'Airbyte',
+              'Debezium (CDC)',
+              'Kafka Connect'
+            ]
+          }
+        ]
       },
       cta: {
         title: '¿Listo para modernizar tu infraestructura de datos?',
@@ -1099,7 +1879,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Servicios Relacionados',
-        subtitle: 'Maximiza el valor de tu infraestructura de datos'
+        subtitle: 'Maximiza el valor de tu infraestructura de datos',
+        cards: [
+          {
+            title: 'Consultoría en Datos',
+            description: 'Define la arquitectura y roadmap antes de implementar pipelines.'
+          },
+          {
+            title: 'Business Intelligence',
+            description: 'Dashboards alimentados por tus pipelines de datos robustos.'
+          },
+          {
+            title: 'Gobierno de Datos',
+            description: 'Asegura calidad y compliance en tus pipelines con data governance.'
+          }
+        ],
+        linkText: 'Ver servicio'
       }
     },
     aiGenaiPage: {
@@ -1136,14 +1931,145 @@ const translations = {
       },
       capabilities: {
         title: 'Nuestro Enfoque',
-        subtitle: 'Expertise en IA aplicada a casos de uso de negocio reales'
+        subtitle: 'Expertise en IA aplicada a casos de uso de negocio reales',
+        items: [
+          {
+            title: 'Web Scrapers y Agentes de Datos',
+            description: 'Agentes inteligentes que extraen, estructuran y enriquecen datos de fuentes públicas y privadas. Monitoreo continuo de competidores, noticias y tendencias de mercado.',
+            features: [
+              'Web scraping con manejo de JavaScript, CAPTCHAs, rate limits',
+              'Extracción de datos de PDFs, imágenes (OCR), documentos',
+              'Enriquecimiento con APIs externas (LinkedIn, Clearbit, etc.)',
+              'Agentes que se adaptan a cambios en estructura de sitios',
+              'Pipelines de validación y limpieza automatizada'
+            ]
+          },
+          {
+            title: 'Activadores Automáticos de Ventas',
+            description: 'Sales enablement agents que identifican señales de compra (funding rounds, hiring, tech stack changes) y generan outreach personalizado automáticamente.',
+            features: [
+              'Monitoreo de intent signals (funding, job postings, tech changes)',
+              'Scoring de leads en tiempo real',
+              'Generación de emails personalizados con GenAI',
+              'Follow-ups automatizados basados en engagement',
+              'Integración con CRM (Salesforce, HubSpot)'
+            ]
+          },
+          {
+            title: 'Copilotos de Decisiones Empresariales',
+            description: 'Asistentes IA que analizan datos, generan insights y recomiendan acciones. Copilots entrenados en tus datos que responden preguntas complejas en lenguaje natural.',
+            features: [
+              'Q&A sobre tus datos en lenguaje natural',
+              'Generación automática de reportes ejecutivos',
+              'Recomendaciones basadas en patrones históricos',
+              'RAG (Retrieval-Augmented Generation) sobre docs internos',
+              'Fine-tuning de LLMs en tu dominio específico'
+            ]
+          },
+          {
+            title: 'Orquestadores Inteligentes de Reuniones',
+            description: 'Agentes que transcriben, resumen y generan action items de reuniones automáticamente. Sincronización con CRM, calendarios y herramientas de project management.',
+            features: [
+              'Transcripción automática de reuniones (Zoom, Meet, Teams)',
+              'Summarización con GenAI (key points, decisions, next steps)',
+              'Extracción de action items y asignación de responsables',
+              'Actualización automática de CRM con insights de llamadas',
+              'Análisis de sentiment y engagement en sales calls'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Casos de Éxito'
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'SaaS / Sales Enablement',
+            title: 'Sales Enablement Agent para Outbound',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'SDR team gastando 80% del tiempo en research de prospects y escribiendo cold emails. Solo 20% del tiempo en conversaciones reales. Low conversion rate.'
+              },
+              {
+                label: 'Solución',
+                content: 'Agente que monitorea funding rounds, job postings, tech stack changes. Genera emails personalizados con GenAI (GPT-4) basados en señales específicas. Auto-enqueue en Outreach.'
+              },
+              {
+                label: 'Resultado',
+                content: 'SDRs liberan 60% de su tiempo para conversaciones. Reply rate +35%. Pipeline generado +50% con mismo headcount. ROI del agente: 12x en 6 meses.'
+              }
+            ]
+          },
+          {
+            label: 'Private Equity / Research',
+            title: 'Competitive Intelligence Agent',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'PE firm necesitaba monitorear 200+ empresas de portfolio para identificar riesgos y oportunidades. Analistas pasaban 20h/semana en research manual.'
+              },
+              {
+                label: 'Solución',
+                content: 'Web scraping agent que monitorea news, financial filings, social media, job postings. NLP para sentiment analysis y alertas sobre eventos críticos. Dashboard con insights.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Analistas ahorran 80% del tiempo de research. Identificación temprana de riesgos permitió intervenir en 3 portfolio companies. Oportunidades de M&A detectadas 6 meses antes.'
+              }
+            ]
+          },
+          {
+            label: 'Consulting / Knowledge Management',
+            title: 'Internal Knowledge Copilot',
+            flow: [
+              {
+                label: 'Problema',
+                content: 'Consultora con 10 años de deliverables, case studies y methodologies dispersos en Sharepoint. Consultants no encontraban assets relevantes, recreando trabajo ya hecho.'
+              },
+              {
+                label: 'Solución',
+                content: 'RAG-based copilot sobre 10K documentos internos. Semantic search y Q&A en lenguaje natural. Integrado en Slack para acceso instantáneo. Citaciones a fuentes originales.'
+              },
+              {
+                label: 'Resultado',
+                content: 'Tiempo de búsqueda reducido de 2h a 5 min. Reutilización de assets +60%. Onboarding de nuevos consultants 3x más rápido. Knowledge retention ante turnover.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Tecnologías y Frameworks',
-        subtitle: 'Stack de IA y automatización que dominamos'
+        subtitle: 'Stack de IA y automatización que dominamos',
+        categories: [
+          {
+            title: 'LLMs & GenAI Platforms',
+            items: [
+              'OpenAI (GPT-4, o1)',
+              'Anthropic (Claude)',
+              'Google (Gemini)',
+              'Open-source (Llama, Mistral)'
+            ]
+          },
+          {
+            title: 'Agent Frameworks & Orchestration',
+            items: [
+              'LangChain / LangGraph',
+              'LlamaIndex',
+              'AutoGen',
+              'CrewAI'
+            ]
+          },
+          {
+            title: 'Infrastructure & Tooling',
+            items: [
+              'Vector DBs (Pinecone, Weaviate)',
+              'Web Scraping (Playwright, Selenium)',
+              'MLOps (Weights & Biases, MLflow)',
+              'Monitoring (LangSmith, Helicone)'
+            ]
+          }
+        ]
       },
       cta: {
         title: '¿Listo para automatizar con IA?',
@@ -1152,7 +2078,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Servicios Relacionados',
-        subtitle: 'Potencia tus agentes con datos y analytics'
+        subtitle: 'Potencia tus agentes con datos y analytics',
+        cards: [
+          {
+            title: 'Data Science',
+            description: 'Modelos predictivos que alimentan tus agentes con insights accionables.'
+          },
+          {
+            title: 'Ingeniería de Datos',
+            description: 'Pipelines robustos que proveen datos limpios para tus agentes IA.'
+          },
+          {
+            title: 'Consultoría en Datos',
+            description: 'Estrategia de datos que maximiza el impacto de tus iniciativas de IA.'
+          }
+        ],
+        linkText: 'Ver servicio'
       }
     }
   },
@@ -1250,7 +2191,49 @@ const translations = {
     },
     solutions: {
       title: 'Solutions by Area',
-      subtitle: 'Specific use cases tailored to your business needs'
+      subtitle: 'Specific use cases tailored to your business needs',
+      cards: [
+        {
+          title: 'Sales & Growth',
+          description: 'Conversion and ROI optimization through predictive analytics.',
+          items: [
+            'Predictive lead scoring for intelligent commercial prioritization',
+            'Dynamic audience segmentation and market micro-segmentation',
+            'Multi-touch attribution models for advertising investment optimization',
+            'Churn prediction and proactive retention strategy design'
+          ]
+        },
+        {
+          title: 'Operational Efficiency',
+          description: 'Cost reduction and resource optimization with real-time data.',
+          items: [
+            'Inventory optimization and full supply chain visibility',
+            'Demand forecasting models and operational resource planning',
+            'Intelligent real-time operational anomaly detection systems',
+            'Complex process automation through RPA + AI integration'
+          ]
+        },
+        {
+          title: 'Customer Experience (CX)',
+          description: 'Customer lifetime value maximization and intelligent loyalty.',
+          items: [
+            'Sentiment analysis and voice of the customer through natural language processing (NLP)',
+            'Customer Lifetime Value (CLV) models for customer value segmentation',
+            'AI-powered recommendation engines and content personalization',
+            'Post-sale funnel optimization and proactive technical support systems'
+          ]
+        },
+        {
+          title: 'Strategy & Finance',
+          description: 'Centralized intelligence for C-Suite high-level decision making.',
+          items: [
+            'Executive dashboards with critical KPI visualization and business health',
+            'Advanced financial forecasting models and cash flow projections',
+            'Detailed profitability analysis by product, channel, and business unit',
+            'Support in adopting data culture and analytical literacy'
+          ]
+        }
+      ]
     },
     infrastructure: {
       title: 'Our Infrastructure: The Engine Behind Data',
@@ -1313,6 +2296,18 @@ const translations = {
         submit: 'Send message'
       }
     },
+    alliances: {
+      toggle: 'Strategic Alliances',
+      description: 'To ensure our clients have comprehensive solutions, we work with specialized partners in complementary areas.',
+      partners: [
+        {
+          description: 'Financial and strategic advisory. Your Corporate Finance team.'
+        }
+      ]
+    },
+    footer: {
+      copyright: 'All rights reserved.'
+    },
     languageButton: 'Español',
     consultoriaPage: {
       hero: {
@@ -1348,14 +2343,145 @@ const translations = {
       },
       capabilities: {
         title: 'Our Approach',
-        subtitle: 'Proven methodologies in startups, scale-ups and Fortune 500'
+        subtitle: 'Proven methodologies in startups, scale-ups and Fortune 500',
+        items: [
+          {
+            title: 'High-Impact Use Case Discovery',
+            description: 'We facilitate workshops with key stakeholders to identify data opportunities that truly move the business needle. We prioritize using impact vs. effort frameworks.',
+            features: [
+              'Interviews with C-level and area leaders',
+              'Analysis of pain points and opportunities',
+              'Prioritization matrix (impact vs. effort)',
+              'Definition of KPIs and success metrics',
+              'Business case with ROI projection'
+            ]
+          },
+          {
+            title: 'Scalable and Efficient Data Architecture',
+            description: 'We design modern architectures (cloud-native, lakehouse, mesh) tailored to your scale and budget. We avoid over-engineering and optimize for low operational costs.',
+            features: [
+              'Cloud-native architecture (AWS, GCP, Azure)',
+              'Modern patterns: Data Lakehouse, Data Mesh',
+              'TCO (Total Cost of Ownership) estimation',
+              'Migration plan from legacy systems',
+              'Documented reference architecture'
+            ]
+          },
+          {
+            title: 'Cost Evaluation and Optimization',
+            description: 'We audit existing infrastructure to identify inefficiencies and waste. We optimize queries, storage, and compute to reduce cloud bills by up to 50%.',
+            features: [
+              'Current cost analysis (compute, storage, egress)',
+              'Identification of underutilized resources',
+              'Query and pipeline optimization',
+              'Reserved instances and savings plans',
+              'Continuous cost monitoring (FinOps)'
+            ]
+          },
+          {
+            title: 'Pilots and Proof of Concepts (PoCs)',
+            description: 'We validate technologies and approaches with rapid pilots (2-4 weeks) before committing large budgets. We demonstrate tangible value with real data.',
+            features: [
+              'PoC design with clear success criteria',
+              'Rapid implementation with real data',
+              'Business hypothesis validation',
+              'Functional demo for stakeholders',
+              'Informed go/no-go recommendation'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Success Stories'
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'Retail / E-commerce',
+            title: 'Data-Driven Personalization Strategy',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'E-commerce startup with 500K users couldn\'t personalize experience. Data scattered across 6 systems without integration.'
+              },
+              {
+                label: 'Solution',
+                content: 'We designed Customer Data Platform (CDP) architecture with Segment + Snowflake. We defined use cases: recommendations, email campaigns, cart abandonment.'
+              },
+              {
+                label: 'Result',
+                content: '+35% in email campaign conversion, +22% in AOV (Average Order Value). Positive ROI in 4 months. Stack implemented in 8 weeks.'
+              }
+            ]
+          },
+          {
+            label: 'Fintech / SaaS',
+            title: '60% Cloud Cost Reduction',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Scale-up with $150K/month on AWS. Inefficient pipelines processing duplicate data. Warehouses always on.'
+              },
+              {
+                label: 'Solution',
+                content: 'Complete resource audit. Migration to Snowflake with auto-suspend. Query optimization and partitioning. Reserved instances for stable workloads.'
+              },
+              {
+                label: 'Result',
+                content: 'Costs reduced to $60K/month (60% savings = $1M/year). Queries 3x faster. FinOps playbook documented for the team.'
+              }
+            ]
+          },
+          {
+            label: 'Healthcare / Enterprise',
+            title: 'Data Lake Modernization Roadmap',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Fortune 500 company with legacy data lake (Hadoop on-prem). Expensive maintenance and low adoption by business users.'
+              },
+              {
+                label: 'Solution',
+                content: 'Phased migration strategy to Databricks Lakehouse. PoC with critical use case (regulatory reports). 18-month roadmap with 5 phases.'
+              },
+              {
+                label: 'Result',
+                content: 'Successful PoC in 6 weeks. C-level buy-in achieved. Budget approved for Phase 1 (migration of 3 critical workloads). $2M in projected infrastructure savings.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Technologies and Frameworks',
-        subtitle: 'Technology stack we recommend and master'
+        subtitle: 'Technology stack we recommend and master',
+        categories: [
+          {
+            title: 'Cloud Platforms',
+            items: [
+              'AWS',
+              'Google Cloud',
+              'Azure',
+              'Snowflake'
+            ]
+          },
+          {
+            title: 'Architecture Patterns',
+            items: [
+              'Data Lakehouse',
+              'Data Mesh',
+              'Lambda Architecture',
+              'Event-Driven'
+            ]
+          },
+          {
+            title: 'Frameworks & Methodologies',
+            items: [
+              'TOGAF',
+              'DAMA-DMBOK',
+              'DataOps',
+              'FinOps'
+            ]
+          }
+        ]
       },
       cta: {
         title: 'Ready to design your data strategy?',
@@ -1364,7 +2490,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Related Services',
-        subtitle: 'Complement your strategy with these services'
+        subtitle: 'Complement your strategy with these services',
+        cards: [
+          {
+            title: 'Data Governance',
+            description: 'Ensure quality, security, and compliance with clear policies and processes.'
+          },
+          {
+            title: 'Data Engineering',
+            description: 'Implement pipelines and architectures designed in the consulting phase.'
+          },
+          {
+            title: 'Business Intelligence',
+            description: 'Dashboards and reports that materialize identified use cases.'
+          }
+        ],
+        linkText: 'View service'
       }
     },
     biPage: {
@@ -1401,14 +2542,156 @@ const translations = {
       },
       capabilities: {
         title: 'Our Approach',
-        subtitle: 'Expertise in leading BI platforms on the market'
+        subtitle: 'Expertise in leading BI platforms on the market',
+        items: [
+          {
+            title: 'Semantic Data Modeling',
+            description: 'We design semantic layers (star schema, OLAP cubes) that ensure consistent metrics across the entire organization. A single place where "revenue," "CAC," or "churn" is defined.',
+            features: [
+              'Star schema and dimensional modeling',
+              'Centralized business logic (metric definitions)',
+              'Row-level security for granular access',
+              'Optimized relationships and hierarchies',
+              'Documentation of metrics and KPIs'
+            ]
+          },
+          {
+            title: 'Dashboards in Power BI, Looker, and Tableau',
+            description: 'We implement interactive dashboards on the platform of your choice. User-centered design with drill-downs, filters, and exports for different audiences.',
+            features: [
+              'Executive dashboards for C-level',
+              'Operational dashboards for teams',
+              'Drilldowns and ad-hoc explorations',
+              'Mobile-responsive for on-the-go decisions',
+              'Export to PDF and Excel'
+            ]
+          },
+          {
+            title: 'Self-Hosted BI Platforms',
+            description: 'We implement open-source or self-hosted BI solutions for maximum control and customization. Ideal for companies with strict data sovereignty or compliance requirements.',
+            features: [
+              'Metabase and Apache Superset deployment',
+              'Redash for collaborative ad-hoc queries',
+              'Grafana for metrics and monitoring',
+              'Full control over infrastructure and data',
+              'Unlimited customization without license limits'
+            ]
+          },
+          {
+            title: 'Automated Alerts and Notifications',
+            description: 'Configure threshold-based alerts to be notified when key metrics deviate. Proactivity instead of reactivity.',
+            features: [
+              'Email/Slack alerts when KPI < threshold',
+              'Automated anomaly detection (ML-based)',
+              'Scheduled reports (daily, weekly, monthly)',
+              'Multi-step conditional notifications',
+              'Integration with ticketing systems'
+            ]
+          },
+          {
+            title: 'Embedded Analytics in Your Applications',
+            description: 'Integrate dashboards directly into your SaaS product so your customers access analytics without leaving your app. White-label and multi-tenant.',
+            features: [
+              'Embedded iframes with SSO/SAML',
+              'White-label (custom branding)',
+              'Multi-tenancy with row-level security',
+              'APIs for programmatic embedding',
+              'Usage analytics and monetization'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Success Stories'
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'SaaS / B2B',
+            title: 'Executive Dashboard for SaaS Scale-up',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'CEO of B2B SaaS with $10M ARR had no real-time visibility of key metrics. Manual Excel reports with last week\'s data.'
+              },
+              {
+                label: 'Solution',
+                content: 'Executive dashboard in Looker with MRR, CAC, LTV, churn, and sales pipeline. Updates every 15 min from Salesforce, Stripe, and data warehouse.'
+              },
+              {
+                label: 'Result',
+                content: 'CEO makes strategic decisions 3x faster. Early churn identification reduced it by 18%. Board meetings with real-time updated data.'
+              }
+            ]
+          },
+          {
+            label: 'E-commerce / Retail',
+            title: 'Operational Dashboards for E-commerce',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Operations team reviewing 10+ tools to monitor inventory, fulfillment, and customer support. Inconsistent data across systems.'
+              },
+              {
+                label: 'Solution',
+                content: 'Operational dashboards in Power BI: inventory levels, order fulfillment SLAs, support tickets. Semantic layer unifies metrics from Shopify, Zendesk, NetSuite.'
+              },
+              {
+                label: 'Result',
+                content: '40% reduction in stockouts through inventory visibility. Fulfillment SLA improved from 72h to 48h. Ops team saves 15h/week on manual reporting.'
+              }
+            ]
+          },
+          {
+            label: 'Fintech / Embedded',
+            title: 'Embedded Analytics for B2B Clients',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'B2B fintech without analytics for its enterprise clients. Constantly requested custom reports, creating operational burden on the team.'
+              },
+              {
+                label: 'Solution',
+                content: 'Embedded analytics in Tableau with white-label. Each client accesses personalized dashboards (transactions, fees, reconciliation) within the portal.'
+              },
+              {
+                label: 'Result',
+                content: 'Client NPS +25 points. 90% reduction in custom report requests. Embedded analytics became a sales differentiator.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Technologies and Platforms',
-        subtitle: 'BI stack we master and recommend'
+        subtitle: 'BI stack we master and recommend',
+        categories: [
+          {
+            title: 'BI Platforms',
+            items: [
+              'Power BI',
+              'Looker',
+              'Tableau',
+              'Metabase'
+            ]
+          },
+          {
+            title: 'Semantic Layer & Modeling',
+            items: [
+              'dbt Metrics',
+              'LookML (Looker)',
+              'Power BI Dataflows',
+              'Cube.js'
+            ]
+          },
+          {
+            title: 'Data Sources & Warehouses',
+            items: [
+              'Snowflake',
+              'BigQuery',
+              'Redshift',
+              'Databricks'
+            ]
+          }
+        ]
       },
       cta: {
         title: 'Ready to visualize your data?',
@@ -1417,7 +2700,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Related Services',
-        subtitle: 'Complement your dashboards with these services'
+        subtitle: 'Complement your dashboards with these services',
+        cards: [
+          {
+            title: 'Data Engineering',
+            description: 'Robust pipelines that feed your dashboards with clean, updated data.'
+          },
+          {
+            title: 'Data Science',
+            description: 'Add predictive analytics to your dashboards with forecasting and churn models.'
+          },
+          {
+            title: 'Data Governance',
+            description: 'Ensure your dashboards display reliable and governed data.'
+          }
+        ],
+        linkText: 'View service'
       }
     },
     dataSciencePage: {
@@ -1454,14 +2752,145 @@ const translations = {
       },
       capabilities: {
         title: 'Our Approach',
-        subtitle: 'Expertise in ML applied to business use cases'
+        subtitle: 'Expertise in ML applied to business use cases',
+        items: [
+          {
+            title: 'Demand and Churn Prediction',
+            description: 'Forecasting models (ARIMA, Prophet, LSTM) to anticipate product demand and churn models to identify at-risk customers before they leave.',
+            features: [
+              'Forecasting with Prophet, ARIMA, LSTM',
+              'Churn prediction with XGBoost, LightGBM',
+              'Behavior-based feature engineering',
+              'Probability calibration for scoring',
+              'Rigorous backtesting with historical data'
+            ]
+          },
+          {
+            title: 'Customer Segmentation and LTV',
+            description: 'Clustering (K-means, DBSCAN) to segment customers by behavior. LTV (Lifetime Value) models to prioritize acquisition and retention efforts.',
+            features: [
+              'RFM analysis and behavioral clustering',
+              'LTV prediction with survival models',
+              'Cohort analysis and retention curves',
+              'Propensity models for upsell/cross-sell',
+              'Campaign personalization by segment'
+            ]
+          },
+          {
+            title: 'Heuristic Pattern Detection',
+            description: 'Exploratory analysis to discover non-obvious patterns in data. Anomaly detection for fraud, outliers, and unusual events requiring attention.',
+            features: [
+              'Deep Exploratory Data Analysis (EDA)',
+              'Anomaly detection (Isolation Forest, autoencoders)',
+              'Association rules mining (Market Basket Analysis)',
+              'Time series decomposition (trend, seasonality)',
+              'Causal inference to identify real drivers'
+            ]
+          },
+          {
+            title: 'Rigorous Statistical Validation',
+            description: 'A/B testing with power analysis, multiple testing correction. Confidence intervals, hypothesis testing, and causal inference for informed decisions.',
+            features: [
+              'A/B test design with power analysis',
+              'Bayesian A/B testing for early stopping',
+              'Multiple testing correction (Bonferroni, FDR)',
+              'Causal inference (propensity score matching, DiD)',
+              'Model interpretability (SHAP, LIME)'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Success Stories'
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'SaaS / B2B',
+            title: 'Churn Prediction for B2B SaaS',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'B2B SaaS with 25% annual churn. Reactive CS team: contacted customers after they canceled. $2M ARR lost annually.'
+              },
+              {
+                label: 'Solution',
+                content: 'Churn model with XGBoost using product usage features (logins, features used, support tickets). Weekly scoring to identify at-risk accounts.'
+              },
+              {
+                label: 'Result',
+                content: 'Churn reduced from 25% to 17% in 6 months. Proactive CS team saves 40% of at-risk accounts. Revenue recovery of $800K/year. Project ROI: 8x.'
+              }
+            ]
+          },
+          {
+            label: 'Retail / E-commerce',
+            title: 'Demand Forecasting for Retail',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Retailer with frequent stockouts and simultaneous overstock. Manual Excel forecasting. 30% error rate in demand predictions.'
+              },
+              {
+                label: 'Solution',
+                content: 'Forecasting models with Prophet + features for promotions, seasonality, special events. SKU-store level forecast with 4-week horizon.'
+              },
+              {
+                label: 'Result',
+                content: 'Forecasting error reduced to 12% (MAPE). Stockouts -40%, overstock -35%. Working capital freed: $3M. Customer satisfaction +15% due to availability.'
+              }
+            ]
+          },
+          {
+            label: 'Fintech / Banking',
+            title: 'Customer LTV Segmentation',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Fintech spending equally on all acquired customers. High CAC ($200) with unknown LTV. Some customers didn\'t generate enough value.'
+              },
+              {
+                label: 'Solution',
+                content: 'LTV prediction model using transactions, contracted products, demographics. Segmentation into High/Medium/Low value. Differentiated strategies by segment.'
+              },
+              {
+                label: 'Result',
+                content: 'Marketing budget reallocated to High LTV segments. CAC optimized by segment. Marketing ROI +60%. LTV/CAC ratio improved from 2.5x to 4.2x.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Technologies and Frameworks',
-        subtitle: 'ML and data science stack we master'
+        subtitle: 'ML and data science stack we master',
+        categories: [
+          {
+            title: 'ML Frameworks & Libraries',
+            items: [
+              'Scikit-learn',
+              'XGBoost / LightGBM',
+              'TensorFlow / PyTorch',
+              'Prophet / statsmodels'
+            ]
+          },
+          {
+            title: 'MLOps & Deployment',
+            items: [
+              'MLflow',
+              'Weights & Biases',
+              'SageMaker',
+              'Databricks MLR'
+            ]
+          },
+          {
+            title: 'Analysis & Experimentation',
+            items: [
+              'Python (Pandas, NumPy)',
+              'R (tidyverse)',
+              'Jupyter / Databricks',
+              'Optimizely / GrowthBook'
+            ]
+          }
+        ]
       },
       cta: {
         title: 'Ready to predict your business future?',
@@ -1470,7 +2899,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Related Services',
-        subtitle: 'Complement your models with robust infrastructure'
+        subtitle: 'Complement your models with robust infrastructure',
+        cards: [
+          {
+            title: 'Data Engineering',
+            description: 'Pipelines that feed your models with clean, updated features.'
+          },
+          {
+            title: 'Business Intelligence',
+            description: 'Dashboards that visualize predictions and scores from your models.'
+          },
+          {
+            title: 'AI / GenAI',
+            description: 'Intelligent agents that act on your predictive insights.'
+          }
+        ],
+        linkText: 'View service'
       }
     },
     gobiernoPage: {
@@ -1560,14 +3004,145 @@ const translations = {
       },
       capabilities: {
         title: 'Our Approach',
-        subtitle: 'Expertise in modern data architectures (batch, streaming, real-time)'
+        subtitle: 'Expertise in modern data architectures (batch, streaming, real-time)',
+        items: [
+          {
+            title: 'Incremental and Batch Data Ingestion',
+            description: 'We implement ingestion pipelines from multiple sources (databases, APIs, files) with incremental strategies (CDC) to minimize load and latency.',
+            features: [
+              'Change Data Capture (CDC) with Debezium/Fivetran',
+              'Ingestion from REST/GraphQL APIs',
+              'Batch processing of files (S3, SFTP)',
+              'Connectors for SaaS apps (Salesforce, HubSpot, etc.)',
+              'Schema evolution and versioning'
+            ]
+          },
+          {
+            title: 'Orchestration with Airflow and Dagster',
+            description: 'We orchestrate complex pipelines with dependencies, retries, and alerts. Git-versioned DAGs with CI/CD for automated deployment.',
+            features: [
+              'Modular and reusable DAGs',
+              'Dependency management and backfills',
+              'Retry logic and circuit breakers',
+              'Slack/PagerDuty alerts on failures',
+              'CI/CD with automated testing'
+            ]
+          },
+          {
+            title: 'Transformations with dbt and Spark',
+            description: 'We transform raw data into analytical models using dbt (SQL) for batch and Spark for big data. Automated tests and generated documentation.',
+            features: [
+              'dbt models with testing and documentation',
+              'Incremental models for efficiency',
+              'Spark jobs for PB-scale processing',
+              'Automated data quality tests',
+              'End-to-end lineage tracking'
+            ]
+          },
+          {
+            title: 'Cloud Cost Optimization',
+            description: 'We audit and optimize existing infrastructure: partitioning, clustering, auto-suspend, reserved capacity. FinOps for data teams.',
+            features: [
+              'Cost analysis (compute, storage, egress)',
+              'Partitioning and clustering strategies',
+              'Auto-suspend/resume for warehouses',
+              'Reserved instances and savings plans',
+              'Query optimization and caching'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Success Stories'
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'Fintech / Scale-up',
+            title: 'PostgreSQL to Snowflake Migration',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Fintech with 50M transactions/month on on-prem PostgreSQL. Slow queries (+30s), failing backups, and team of 2 saturated DBAs.'
+              },
+              {
+                label: 'Solution',
+                content: 'Migration to Snowflake with incremental CDC using Fivetran. dbt pipelines for transformations. Airflow for orchestration. Zero downtime migration.'
+              },
+              {
+                label: 'Result',
+                content: 'Queries 10x faster (30s → 3s). Automated backups. DBAs freed for strategic projects. Costs 30% lower vs. maintaining on-prem.'
+              }
+            ]
+          },
+          {
+            label: 'E-commerce / Retail',
+            title: 'Real-time Inventory Pipeline',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'E-commerce with inventory sync every 6 hours. Sold out-of-stock products, generating cancellations and low NPS.'
+              },
+              {
+                label: 'Solution',
+                content: 'Real-time pipeline with Kafka + Flink. CDC from ERP (SAP). Stream processing to calculate available-to-promise inventory. Latency <1 min.'
+              },
+              {
+                label: 'Result',
+                content: 'Stockout cancellations reduced by 75%. NPS +12 points. Revenue recovery of $500K/year from better inventory accuracy.'
+              }
+            ]
+          },
+          {
+            label: 'SaaS / B2B',
+            title: 'Data Platform for Product Analytics',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'B2B SaaS with no user behavior visibility. Product events scattered in logs. PM team without data to prioritize roadmap.'
+              },
+              {
+                label: 'Solution',
+                content: 'Event streaming with Segment + BigQuery. dbt to model user journeys, funnels, retention cohorts. Dashboards in Looker for PM team.'
+              },
+              {
+                label: 'Result',
+                content: 'PM team identifies feature adoption in days, not months. A/B experiments with statistical significance. Data-driven roadmap resulted in +30% activation rate.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Technologies and Frameworks',
-        subtitle: 'Modern data engineering stack'
+        subtitle: 'Modern data engineering stack',
+        categories: [
+          {
+            title: 'Orchestration & Workflow',
+            items: [
+              'Apache Airflow',
+              'Dagster',
+              'Prefect',
+              'Kestra'
+            ]
+          },
+          {
+            title: 'Processing & Transformation',
+            items: [
+              'dbt',
+              'Apache Spark',
+              'Apache Flink',
+              'Kafka Streams'
+            ]
+          },
+          {
+            title: 'Ingestion & Integration',
+            items: [
+              'Fivetran',
+              'Airbyte',
+              'Debezium (CDC)',
+              'Kafka Connect'
+            ]
+          }
+        ]
       },
       cta: {
         title: 'Ready to modernize your data infrastructure?',
@@ -1576,7 +3151,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Related Services',
-        subtitle: 'Maximize the value of your data infrastructure'
+        subtitle: 'Maximize the value of your data infrastructure',
+        cards: [
+          {
+            title: 'Data Consulting',
+            description: 'Define architecture and roadmap before implementing pipelines.'
+          },
+          {
+            title: 'Business Intelligence',
+            description: 'Dashboards powered by your robust data pipelines.'
+          },
+          {
+            title: 'Data Governance',
+            description: 'Ensure quality and compliance in your pipelines with data governance.'
+          }
+        ],
+        linkText: 'View service'
       }
     },
     aiGenaiPage: {
@@ -1613,14 +3203,145 @@ const translations = {
       },
       capabilities: {
         title: 'Our Approach',
-        subtitle: 'Expertise in AI applied to real business use cases'
+        subtitle: 'Expertise in AI applied to real business use cases',
+        items: [
+          {
+            title: 'Web Scrapers and Data Agents',
+            description: 'Intelligent agents that extract, structure, and enrich data from public and private sources. Continuous monitoring of competitors, news, and market trends.',
+            features: [
+              'Web scraping with JavaScript, CAPTCHA, rate limit handling',
+              'Data extraction from PDFs, images (OCR), documents',
+              'Enrichment with external APIs (LinkedIn, Clearbit, etc.)',
+              'Agents that adapt to changes in site structure',
+              'Automated validation and cleaning pipelines'
+            ]
+          },
+          {
+            title: 'Automatic Sales Triggers',
+            description: 'Sales enablement agents that identify buying signals (funding rounds, hiring, tech stack changes) and generate personalized outreach automatically.',
+            features: [
+              'Monitoring of intent signals (funding, job postings, tech changes)',
+              'Real-time lead scoring',
+              'Personalized email generation with GenAI',
+              'Automated follow-ups based on engagement',
+              'CRM integration (Salesforce, HubSpot)'
+            ]
+          },
+          {
+            title: 'Business Decision Copilots',
+            description: 'AI assistants that analyze data, generate insights, and recommend actions. Copilots trained on your data that answer complex questions in natural language.',
+            features: [
+              'Q&A on your data in natural language',
+              'Automatic generation of executive reports',
+              'Recommendations based on historical patterns',
+              'RAG (Retrieval-Augmented Generation) on internal docs',
+              'Fine-tuning of LLMs in your specific domain'
+            ]
+          },
+          {
+            title: 'Intelligent Meeting Orchestrators',
+            description: 'Agents that transcribe, summarize, and generate action items from meetings automatically. Synchronization with CRM, calendars, and project management tools.',
+            features: [
+              'Automatic meeting transcription (Zoom, Meet, Teams)',
+              'GenAI summarization (key points, decisions, next steps)',
+              'Action item extraction and assignee allocation',
+              'Automatic CRM update with call insights',
+              'Sentiment and engagement analysis in sales calls'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Success Stories'
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'SaaS / Sales Enablement',
+            title: 'Sales Enablement Agent for Outbound',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'SDR team spending 80% of time on prospect research and writing cold emails. Only 20% of time in real conversations. Low conversion rate.'
+              },
+              {
+                label: 'Solution',
+                content: 'Agent that monitors funding rounds, job postings, tech stack changes. Generates personalized emails with GenAI (GPT-4) based on specific signals. Auto-enqueue in Outreach.'
+              },
+              {
+                label: 'Result',
+                content: 'SDRs free 60% of their time for conversations. Reply rate +35%. Pipeline generated +50% with same headcount. Agent ROI: 12x in 6 months.'
+              }
+            ]
+          },
+          {
+            label: 'Private Equity / Research',
+            title: 'Competitive Intelligence Agent',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'PE firm needed to monitor 200+ portfolio companies to identify risks and opportunities. Analysts spent 20h/week on manual research.'
+              },
+              {
+                label: 'Solution',
+                content: 'Web scraping agent that monitors news, financial filings, social media, job postings. NLP for sentiment analysis and alerts on critical events. Dashboard with insights.'
+              },
+              {
+                label: 'Result',
+                content: 'Analysts save 80% of research time. Early risk identification allowed intervention in 3 portfolio companies. M&A opportunities detected 6 months earlier.'
+              }
+            ]
+          },
+          {
+            label: 'Consulting / Knowledge Management',
+            title: 'Internal Knowledge Copilot',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Consultancy with 10 years of deliverables, case studies, and methodologies scattered in Sharepoint. Consultants couldn\'t find relevant assets, recreating already completed work.'
+              },
+              {
+                label: 'Solution',
+                content: 'RAG-based copilot on 10K internal documents. Semantic search and Q&A in natural language. Integrated in Slack for instant access. Citations to original sources.'
+              },
+              {
+                label: 'Result',
+                content: 'Search time reduced from 2h to 5 min. Asset reuse +60%. New consultant onboarding 3x faster. Knowledge retention despite turnover.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Technologies and Frameworks',
-        subtitle: 'AI and automation stack we master'
+        subtitle: 'AI and automation stack we master',
+        categories: [
+          {
+            title: 'LLMs & GenAI Platforms',
+            items: [
+              'OpenAI (GPT-4, o1)',
+              'Anthropic (Claude)',
+              'Google (Gemini)',
+              'Open-source (Llama, Mistral)'
+            ]
+          },
+          {
+            title: 'Agent Frameworks & Orchestration',
+            items: [
+              'LangChain / LangGraph',
+              'LlamaIndex',
+              'AutoGen',
+              'CrewAI'
+            ]
+          },
+          {
+            title: 'Infrastructure & Tooling',
+            items: [
+              'Vector DBs (Pinecone, Weaviate)',
+              'Web Scraping (Playwright, Selenium)',
+              'MLOps (Weights & Biases, MLflow)',
+              'Monitoring (LangSmith, Helicone)'
+            ]
+          }
+        ]
       },
       cta: {
         title: 'Ready to automate with AI?',
@@ -1629,7 +3350,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Related Services',
-        subtitle: 'Power your agents with data and analytics'
+        subtitle: 'Power your agents with data and analytics',
+        cards: [
+          {
+            title: 'Data Science',
+            description: 'Predictive models that feed your agents with actionable insights.'
+          },
+          {
+            title: 'Data Engineering',
+            description: 'Robust pipelines that provide clean data for your AI agents.'
+          },
+          {
+            title: 'Data Consulting',
+            description: 'Data strategy that maximizes the impact of your AI initiatives.'
+          }
+        ],
+        linkText: 'View service'
       }
     }
   }
