@@ -484,6 +484,11 @@ section {
   font-size: 16px;
 }
 
+.flag-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
 .language-text {
   font-size: 14px;
   letter-spacing: 0.01em;
@@ -1717,6 +1722,10 @@ section {
 
   .language-toggle i {
     font-size: 14px;
+  }
+
+  .flag-icon {
+    font-size: 16px;
   }
 
   .language-text {

@@ -924,7 +924,10 @@ function getNestedValue(obj, path) {
  * Update all elements with data-i18n attribute
  */
 function updatePageLanguage() {
+  console.log('Updating page language to:', currentLanguage);
+
   const elements = document.querySelectorAll('[data-i18n]');
+  console.log('Found', elements.length, 'elements to translate');
 
   elements.forEach(element => {
     const key = element.getAttribute('data-i18n');
@@ -940,12 +943,19 @@ function updatePageLanguage() {
     }
   });
 
-  // Update language button text
+  // Update language button text and flag
   const languageButton = document.getElementById('languageToggle');
   if (languageButton) {
     const buttonText = languageButton.querySelector('.language-text');
+    const flagIcon = languageButton.querySelector('.flag-icon');
+
     if (buttonText) {
       buttonText.textContent = translations[currentLanguage].languageButton;
+    }
+
+    if (flagIcon) {
+      // Change flag based on language
+      flagIcon.textContent = currentLanguage === 'es' ? '🇬🇧' : '🇪🇸';
     }
   }
 
@@ -954,13 +964,17 @@ function updatePageLanguage() {
 
   // Save preference
   localStorage.setItem('language', currentLanguage);
+
+  console.log('Language update complete');
 }
 
 /**
  * Toggle between languages
  */
 function toggleLanguage() {
+  console.log('Toggle language clicked! Current:', currentLanguage);
   currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+  console.log('New language:', currentLanguage);
   updatePageLanguage();
 }
 
@@ -968,16 +982,23 @@ function toggleLanguage() {
  * Initialize language system
  */
 function initLanguageSystem() {
+  console.log('Initializing language system...');
+
   // Set initial language
   updatePageLanguage();
 
   // Add click handler to language toggle button
   const languageToggle = document.getElementById('languageToggle');
+  console.log('Language toggle button found:', languageToggle);
+
   if (languageToggle) {
     languageToggle.addEventListener('click', toggleLanguage);
+    console.log('Click event listener added to language toggle');
+  } else {
+    console.error('Language toggle button NOT found!');
   }
 
-  console.log('Language system initialized:', currentLanguage);
+  console.log('Language system initialized with language:', currentLanguage);
 }
 
 // ========================================
