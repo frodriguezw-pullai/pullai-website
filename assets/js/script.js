@@ -3559,16 +3559,16 @@ function updatePageLanguage() {
     }
   });
 
-  // Update language button flag
-  const languageButton = document.getElementById('languageToggle');
-  if (languageButton) {
-    const flagIcon = languageButton.querySelector('.flag-icon');
-
-    if (flagIcon) {
-      // Change flag based on language (show opposite language)
-      flagIcon.textContent = currentLanguage === 'es' ? 'EN' : 'ES';
+  // Update active state of language buttons
+  const languageButtons = document.querySelectorAll('.language-btn');
+  languageButtons.forEach(btn => {
+    const btnLang = btn.getAttribute('data-lang');
+    if (btnLang === currentLanguage) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
     }
-  }
+  });
 
   // Update HTML lang attribute
   document.documentElement.lang = currentLanguage;
@@ -3580,12 +3580,11 @@ function updatePageLanguage() {
 }
 
 /**
- * Toggle between languages
+ * Switch to specific language
  */
-function toggleLanguage() {
-  console.log('Toggle language clicked! Current:', currentLanguage);
-  currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
-  console.log('New language:', currentLanguage);
+function switchLanguage(lang) {
+  console.log('Switching language to:', lang);
+  currentLanguage = lang;
   updatePageLanguage();
 }
 
@@ -3598,16 +3597,16 @@ function initLanguageSystem() {
   // Set initial language
   updatePageLanguage();
 
-  // Add click handler to language toggle button
-  const languageToggle = document.getElementById('languageToggle');
-  console.log('Language toggle button found:', languageToggle);
+  // Add click handlers to language buttons
+  const languageButtons = document.querySelectorAll('.language-btn');
+  console.log('Language buttons found:', languageButtons.length);
 
-  if (languageToggle) {
-    languageToggle.addEventListener('click', toggleLanguage);
-    console.log('Click event listener added to language toggle');
-  } else {
-    console.error('Language toggle button NOT found!');
-  }
+  languageButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      switchLanguage(lang);
+    });
+  });
 
   console.log('Language system initialized with language:', currentLanguage);
 }
