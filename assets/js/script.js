@@ -642,6 +642,7 @@ async function init() {
   initActiveLinkHighlight();
   initLazyLoading();
   updateCopyrightYear();
+  initLanguageSystem();
 
   console.log('Website initialized successfully');
 }
@@ -674,6 +675,312 @@ function toggleAlliances() {
 window.toggleAlliances = toggleAlliances;
 
 // ========================================
+// Language Translation System
+// ========================================
+
+const translations = {
+  es: {
+    nav: {
+      services: 'Servicios',
+      solutions: 'Soluciones',
+      clients: 'Clientes',
+      contact: 'Contacto'
+    },
+    hero: {
+      title: 'Transformamos Datos en Decisiones Inteligentes',
+      description: 'Transformamos datos en tu ventaja competitiva. Escala, innova y crece con nosotros.',
+      cta: {
+        primary: 'Agendar reunión',
+        secondary: 'Ver servicios'
+      }
+    },
+    services: {
+      dataConsulting: {
+        title: 'Consultoría en Datos',
+        description: 'Diseñamos estrategias y rutas personalizadas para maximizar el valor de tu información al menor costo, con enfoque en resultados medibles.',
+        bullets: [
+          'Descubrimiento de casos de uso de alto impacto',
+          'Arquitectura de datos escalable y eficiente',
+          'Evaluación y optimización de costos',
+          'Pilotos y pruebas de concepto (PoCs)'
+        ]
+      },
+      dataGovernance: {
+        title: 'Gobierno de Datos',
+        description: 'Establecemos personas, procesos y políticas para garantizar calidad, seguridad y cumplimiento normativo de tus datos.',
+        bullets: [
+          'Modelo RACI y roles de datos',
+          'Catálogo de datos centralizado',
+          'SLAs de calidad de datos (Data Quality)',
+          'Políticas de acceso, privacidad y seguridad'
+        ]
+      },
+      businessIntelligence: {
+        title: 'Business Intelligence',
+        description: 'Dashboards interactivos en tiempo real que transforman datos complejos en insights accionables para tu equipo ejecutivo.',
+        bullets: [
+          'Modelado semántico de datos',
+          'Plataformas de BI self-hosted a medida',
+          'Dashboards en Power BI, Looker y Tableau',
+          'Alertas y notificaciones automatizadas',
+          'Embedded analytics en tus aplicaciones'
+        ]
+      },
+      dataEngineering: {
+        title: 'Ingeniería de Datos',
+        description: 'Migraciones, pipelines ETL y arquitecturas modernas para procesar grandes volúmenes de datos de manera eficiente.',
+        bullets: [
+          'Ingesta incremental y batch de datos',
+          'Orquestación de datos',
+          'Transformaciones',
+          'Optimización de costos en cloud'
+        ]
+      },
+      dataScience: {
+        title: 'Data Science',
+        description: 'Modelos predictivos y analítica avanzada que anticipan tendencias, optimizan operaciones y maximizan ingresos.',
+        bullets: [
+          'Predicción de demanda y churn',
+          'Segmentación de clientes y LTV',
+          'Detección de patrones heurísticos',
+          'Validación estadística rigurosa'
+        ]
+      },
+      aiGenAI: {
+        title: 'AI / GenAI',
+        description: 'De datos a acciones: agentes inteligentes que automatizan procesos, aceleran ventas y potencian decisiones estratégicas.',
+        bullets: [
+          'Agentes de datos',
+          'Activadores automáticos de ventas',
+          'Copilotos de decisiones',
+          'Orquestadores inteligentes'
+        ]
+      }
+    },
+    solutions: {
+      title: 'Soluciones por Área',
+      subtitle: 'Casos de uso específicos adaptados a tus necesidades empresariales'
+    },
+    infrastructure: {
+      title: 'Nuestra Infraestructura: El Motor Detrás de la Data',
+      subtitle: 'Para activar soluciones de alto impacto, desplegamos agentes de datos y arquitecturas robustas que garantizan la integridad y el flujo de la información de extremo a extremo:'
+    },
+    boutique: {
+      title: '¿Su desafío no encaja en estas categorías?',
+      description: 'Somos una consultoría boutique. No creemos en soluciones enlatadas. Construimos arquitecturas de analítica <strong>100% ad-hoc</strong> para resolver problemas específicos que requieren un enfoque creativo y técnico desde cero.',
+      cta: 'Agendar Consultoría de Diagnóstico'
+    },
+    clients: {
+      title: 'Clientes que Confían en Nosotros',
+      subtitle: 'Trabajamos con empresas líderes en diversas industrias',
+      testimonialsTitle: 'Lo que Dicen Nuestros Clientes'
+    },
+    contact: {
+      title: 'Hablemos de tu Proyecto',
+      subtitle: 'Estamos listos para ayudarte a transformar tus datos en resultados',
+      info: {
+        title: 'Conecta con Nosotros',
+        description: '¿Tienes un proyecto en mente? ¿Necesitas consultoría estratégica en datos? Contáctanos y descubre cómo podemos ayudarte.'
+      },
+      form: {
+        name: 'Nombre completo *',
+        email: 'Email *',
+        company: 'Empresa',
+        message: 'Mensaje *',
+        submit: 'Enviar mensaje'
+      }
+    },
+    languageButton: 'English'
+  },
+  en: {
+    nav: {
+      services: 'Services',
+      solutions: 'Solutions',
+      clients: 'Clients',
+      contact: 'Contact'
+    },
+    hero: {
+      title: 'We Transform Data into Intelligent Decisions',
+      description: 'We transform data into your competitive advantage. Scale, innovate, and grow with us.',
+      cta: {
+        primary: 'Schedule a meeting',
+        secondary: 'View services'
+      }
+    },
+    services: {
+      dataConsulting: {
+        title: 'Data Consulting',
+        description: 'We design customized strategies and roadmaps to maximize the value of your information at the lowest cost, focusing on measurable results.',
+        bullets: [
+          'Discovery of high-impact use cases',
+          'Scalable and efficient data architecture',
+          'Cost evaluation and optimization',
+          'Pilots and proof of concepts (PoCs)'
+        ]
+      },
+      dataGovernance: {
+        title: 'Data Governance',
+        description: 'We establish people, processes, and policies to ensure quality, security, and regulatory compliance of your data.',
+        bullets: [
+          'RACI model and data roles',
+          'Centralized data catalog',
+          'Data Quality SLAs',
+          'Access, privacy, and security policies'
+        ]
+      },
+      businessIntelligence: {
+        title: 'Business Intelligence',
+        description: 'Real-time interactive dashboards that transform complex data into actionable insights for your executive team.',
+        bullets: [
+          'Semantic data modeling',
+          'Custom self-hosted BI platforms',
+          'Dashboards in Power BI, Looker, and Tableau',
+          'Automated alerts and notifications',
+          'Embedded analytics in your applications'
+        ]
+      },
+      dataEngineering: {
+        title: 'Data Engineering',
+        description: 'Migrations, ETL pipelines, and modern architectures to efficiently process large data volumes.',
+        bullets: [
+          'Incremental and batch data ingestion',
+          'Data orchestration',
+          'Transformations',
+          'Cloud cost optimization'
+        ]
+      },
+      dataScience: {
+        title: 'Data Science',
+        description: 'Predictive models and advanced analytics that anticipate trends, optimize operations, and maximize revenue.',
+        bullets: [
+          'Demand and churn prediction',
+          'Customer segmentation and LTV',
+          'Heuristic pattern detection',
+          'Rigorous statistical validation'
+        ]
+      },
+      aiGenAI: {
+        title: 'AI / GenAI',
+        description: 'From data to action: intelligent agents that automate processes, accelerate sales, and enhance strategic decisions.',
+        bullets: [
+          'Data agents',
+          'Automatic sales triggers',
+          'Decision copilots',
+          'Intelligent orchestrators'
+        ]
+      }
+    },
+    solutions: {
+      title: 'Solutions by Area',
+      subtitle: 'Specific use cases tailored to your business needs'
+    },
+    infrastructure: {
+      title: 'Our Infrastructure: The Engine Behind Data',
+      subtitle: 'To activate high-impact solutions, we deploy data agents and robust architectures that ensure the integrity and flow of information end-to-end:'
+    },
+    boutique: {
+      title: "Doesn't your challenge fit into these categories?",
+      description: 'We are a boutique consultancy. We don\'t believe in canned solutions. We build <strong>100% ad-hoc</strong> analytics architectures to solve specific problems that require a creative and technical approach from scratch.',
+      cta: 'Schedule Diagnostic Consultation'
+    },
+    clients: {
+      title: 'Clients Who Trust Us',
+      subtitle: 'We work with leading companies across various industries',
+      testimonialsTitle: 'What Our Clients Say'
+    },
+    contact: {
+      title: "Let's Talk About Your Project",
+      subtitle: 'We are ready to help you transform your data into results',
+      info: {
+        title: 'Connect With Us',
+        description: 'Do you have a project in mind? Need strategic data consulting? Contact us and discover how we can help you.'
+      },
+      form: {
+        name: 'Full name *',
+        email: 'Email *',
+        company: 'Company',
+        message: 'Message *',
+        submit: 'Send message'
+      }
+    },
+    languageButton: 'Español'
+  }
+};
+
+// Current language state
+let currentLanguage = localStorage.getItem('language') || 'es';
+
+/**
+ * Get nested object value from path string
+ * @param {Object} obj - The object to search
+ * @param {string} path - Dot-notation path (e.g., 'hero.cta.primary')
+ * @returns {*} The value at the path
+ */
+function getNestedValue(obj, path) {
+  return path.split('.').reduce((current, key) => current?.[key], obj);
+}
+
+/**
+ * Update all elements with data-i18n attribute
+ */
+function updatePageLanguage() {
+  const elements = document.querySelectorAll('[data-i18n]');
+
+  elements.forEach(element => {
+    const key = element.getAttribute('data-i18n');
+    const translation = getNestedValue(translations[currentLanguage], key);
+
+    if (translation) {
+      // Check if translation contains HTML tags
+      if (/<[a-z][\s\S]*>/i.test(translation)) {
+        element.innerHTML = translation;
+      } else {
+        element.textContent = translation;
+      }
+    }
+  });
+
+  // Update language button text
+  const languageButton = document.getElementById('languageToggle');
+  if (languageButton) {
+    const buttonText = languageButton.querySelector('.language-text');
+    if (buttonText) {
+      buttonText.textContent = translations[currentLanguage].languageButton;
+    }
+  }
+
+  // Update HTML lang attribute
+  document.documentElement.lang = currentLanguage;
+
+  // Save preference
+  localStorage.setItem('language', currentLanguage);
+}
+
+/**
+ * Toggle between languages
+ */
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'es' ? 'en' : 'es';
+  updatePageLanguage();
+}
+
+/**
+ * Initialize language system
+ */
+function initLanguageSystem() {
+  // Set initial language
+  updatePageLanguage();
+
+  // Add click handler to language toggle button
+  const languageToggle = document.getElementById('languageToggle');
+  if (languageToggle) {
+    languageToggle.addEventListener('click', toggleLanguage);
+  }
+
+  console.log('Language system initialized:', currentLanguage);
+}
+
+// ========================================
 // Export for external use (if needed)
 // ========================================
 window.DataPulse = {
@@ -681,5 +988,7 @@ window.DataPulse = {
   loadClients,
   loadTestimonials,
   init,
-  toggleAlliances
+  toggleAlliances,
+  toggleLanguage,
+  currentLanguage: () => currentLanguage
 };

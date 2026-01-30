@@ -91,11 +91,16 @@
       </div>
 
       <ul class="nav-menu">
-        <li><a href="#servicios" class="nav-link">Servicios</a></li>
-        <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
-        <li><a href="#clientes" class="nav-link">Clientes</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#soluciones" class="nav-link" data-i18n="nav.solutions">Soluciones</a></li>
+        <li><a href="#clientes" class="nav-link" data-i18n="nav.clients">Clientes</a></li>
+        <li><a href="#contacto" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
       </ul>
+
+      <button class="language-toggle" id="languageToggle" aria-label="Change language">
+        <i class="fas fa-globe"></i>
+        <span class="language-text">English</span>
+      </button>
 
       <button class="mobile-menu-toggle" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
@@ -108,14 +113,14 @@
        ======================================== -->
   <section id="home" class="hero">
     <div class="container hero-content">
-      <h1>Transformamos Datos en Decisiones Inteligentes</h1>
+      <h1 data-i18n="hero.title">Transformamos Datos en Decisiones Inteligentes</h1>
       <p class="hero-tagline">Pullai Data Partners</p>
-      <p class="hero-description">
+      <p class="hero-description" data-i18n="hero.description">
         Transformamos datos en tu ventaja competitiva. Escala, innova y crece con nosotros.
       </p>
       <div class="hero-cta">
-        <a href="#contacto" class="btn btn-primary">Agendar reunión</a>
-        <a href="#servicios" class="btn btn-tertiary">Ver servicios</a>
+        <a href="#contacto" class="btn btn-primary" data-i18n="hero.cta.primary">Agendar reunión</a>
+        <a href="#servicios" class="btn btn-tertiary" data-i18n="hero.cta.secondary">Ver servicios</a>
       </div>
     </div>
     <div class="scroll-indicator">
@@ -130,12 +135,12 @@
 
     <!-- 1. Consultoría en Datos -->
     <div class="service-wrapper">
-      <h2 class="service-title-inditex scroll-reveal">Consultoría en Datos</h2>
+      <h2 class="service-title-inditex scroll-reveal" data-i18n="services.dataConsulting.title">Consultoría en Datos</h2>
 
       <!-- Text Block -->
       <div class="service-text-section">
         <div class="service-text-content">
-          <p class="service-description-inditex scroll-reveal">
+          <p class="service-description-inditex scroll-reveal" data-i18n="services.dataConsulting.description">
             Diseñamos estrategias y rutas personalizadas para maximizar el valor de tu información al menor costo, con enfoque en resultados medibles.
           </p>
         </div>
@@ -146,10 +151,10 @@
         <div class="service-image-section" style="background-image: url('assets/bg-img/consultoria.jpg');">
           <div class="service-image-overlay"></div>
           <div class="service-bullets-container scroll-reveal">
-            <div class="service-bullet-box">Descubrimiento de casos de uso de alto impacto</div>
-            <div class="service-bullet-box">Arquitectura de datos escalable y eficiente</div>
-            <div class="service-bullet-box">Evaluación y optimización de costos</div>
-            <div class="service-bullet-box">Pilotos y pruebas de concepto (PoCs)</div>
+            <div class="service-bullet-box" data-i18n="services.dataConsulting.bullets.0">Descubrimiento de casos de uso de alto impacto</div>
+            <div class="service-bullet-box" data-i18n="services.dataConsulting.bullets.1">Arquitectura de datos escalable y eficiente</div>
+            <div class="service-bullet-box" data-i18n="services.dataConsulting.bullets.2">Evaluación y optimización de costos</div>
+            <div class="service-bullet-box" data-i18n="services.dataConsulting.bullets.3">Pilotos y pruebas de concepto (PoCs)</div>
           </div>
         </div>
       </a>
@@ -157,12 +162,12 @@
 
     <!-- 2. Gobierno de Datos -->
     <div class="service-wrapper">
-      <h2 class="service-title-inditex scroll-reveal">Gobierno de Datos</h2>
+      <h2 class="service-title-inditex scroll-reveal" data-i18n="services.dataGovernance.title">Gobierno de Datos</h2>
 
       <!-- Text Block -->
       <div class="service-text-section">
         <div class="service-text-content">
-          <p class="service-description-inditex scroll-reveal">
+          <p class="service-description-inditex scroll-reveal" data-i18n="services.dataGovernance.description">
             Establecemos personas, procesos y políticas para garantizar calidad, seguridad y cumplimiento normativo de tus datos.
           </p>
         </div>
@@ -173,10 +178,10 @@
         <div class="service-image-section" style="background-image: url('assets/bg-img/gobierno.jpeg');">
           <div class="service-image-overlay"></div>
           <div class="service-bullets-container scroll-reveal">
-            <div class="service-bullet-box">Modelo RACI y roles de datos</div>
-            <div class="service-bullet-box">Catálogo de datos centralizado</div>
-            <div class="service-bullet-box">SLAs de calidad de datos (Data Quality)</div>
-            <div class="service-bullet-box">Políticas de acceso, privacidad y seguridad</div>
+            <div class="service-bullet-box" data-i18n="services.dataGovernance.bullets.0">Modelo RACI y roles de datos</div>
+            <div class="service-bullet-box" data-i18n="services.dataGovernance.bullets.1">Catálogo de datos centralizado</div>
+            <div class="service-bullet-box" data-i18n="services.dataGovernance.bullets.2">SLAs de calidad de datos (Data Quality)</div>
+            <div class="service-bullet-box" data-i18n="services.dataGovernance.bullets.3">Políticas de acceso, privacidad y seguridad</div>
           </div>
         </div>
       </a>
@@ -184,12 +189,12 @@
 
     <!-- 3. Business Intelligence -->
     <div class="service-wrapper">
-      <h2 class="service-title-inditex scroll-reveal">Business Intelligence</h2>
+      <h2 class="service-title-inditex scroll-reveal" data-i18n="services.businessIntelligence.title">Business Intelligence</h2>
 
       <!-- Text Block -->
       <div class="service-text-section">
         <div class="service-text-content">
-          <p class="service-description-inditex scroll-reveal">
+          <p class="service-description-inditex scroll-reveal" data-i18n="services.businessIntelligence.description">
             Dashboards interactivos en tiempo real que transforman datos complejos en insights accionables para tu equipo ejecutivo.
           </p>
         </div>
@@ -200,11 +205,11 @@
         <div class="service-image-section" style="background-image: url('assets/bg-img/business_intelligence.jpeg');">
           <div class="service-image-overlay"></div>
           <div class="service-bullets-container scroll-reveal">
-            <div class="service-bullet-box">Modelado semántico de datos</div>
-            <div class="service-bullet-box">Plataformas de BI self-hosted a medida</div>
-            <div class="service-bullet-box">Dashboards en Power BI, Looker y Tableau</div>
-            <div class="service-bullet-box">Alertas y notificaciones automatizadas</div>
-            <div class="service-bullet-box">Embedded analytics en tus aplicaciones</div>
+            <div class="service-bullet-box" data-i18n="services.businessIntelligence.bullets.0">Modelado semántico de datos</div>
+            <div class="service-bullet-box" data-i18n="services.businessIntelligence.bullets.1">Plataformas de BI self-hosted a medida</div>
+            <div class="service-bullet-box" data-i18n="services.businessIntelligence.bullets.2">Dashboards en Power BI, Looker y Tableau</div>
+            <div class="service-bullet-box" data-i18n="services.businessIntelligence.bullets.3">Alertas y notificaciones automatizadas</div>
+            <div class="service-bullet-box" data-i18n="services.businessIntelligence.bullets.4">Embedded analytics en tus aplicaciones</div>
           </div>
         </div>
       </a>
@@ -212,12 +217,12 @@
 
     <!-- 4. Ingeniería de Datos -->
     <div class="service-wrapper">
-      <h2 class="service-title-inditex scroll-reveal">Ingeniería de Datos</h2>
+      <h2 class="service-title-inditex scroll-reveal" data-i18n="services.dataEngineering.title">Ingeniería de Datos</h2>
 
       <!-- Text Block -->
       <div class="service-text-section">
         <div class="service-text-content">
-          <p class="service-description-inditex scroll-reveal">
+          <p class="service-description-inditex scroll-reveal" data-i18n="services.dataEngineering.description">
             Migraciones, pipelines ETL y arquitecturas modernas para procesar grandes volúmenes de datos de manera eficiente.
           </p>
         </div>
@@ -228,10 +233,10 @@
         <div class="service-image-section" style="background-image: url('assets/bg-img/ingenieria.jpeg');">
           <div class="service-image-overlay"></div>
           <div class="service-bullets-container scroll-reveal">
-            <div class="service-bullet-box">Ingesta incremental y batch de datos</div>
-            <div class="service-bullet-box">Orquestación de datos</div>
-            <div class="service-bullet-box">Transformaciones</div>
-            <div class="service-bullet-box">Optimización de costos en cloud</div>
+            <div class="service-bullet-box" data-i18n="services.dataEngineering.bullets.0">Ingesta incremental y batch de datos</div>
+            <div class="service-bullet-box" data-i18n="services.dataEngineering.bullets.1">Orquestación de datos</div>
+            <div class="service-bullet-box" data-i18n="services.dataEngineering.bullets.2">Transformaciones</div>
+            <div class="service-bullet-box" data-i18n="services.dataEngineering.bullets.3">Optimización de costos en cloud</div>
           </div>
         </div>
       </a>
@@ -239,12 +244,12 @@
 
     <!-- 5. Data Science -->
     <div class="service-wrapper">
-      <h2 class="service-title-inditex scroll-reveal">Data Science</h2>
+      <h2 class="service-title-inditex scroll-reveal" data-i18n="services.dataScience.title">Data Science</h2>
 
       <!-- Text Block -->
       <div class="service-text-section">
         <div class="service-text-content">
-          <p class="service-description-inditex scroll-reveal">
+          <p class="service-description-inditex scroll-reveal" data-i18n="services.dataScience.description">
             Modelos predictivos y analítica avanzada que anticipan tendencias, optimizan operaciones y maximizan ingresos.
           </p>
         </div>
@@ -255,10 +260,10 @@
         <div class="service-image-section" style="background-image: url('assets/bg-img/data_science.jpeg');">
           <div class="service-image-overlay"></div>
           <div class="service-bullets-container scroll-reveal">
-            <div class="service-bullet-box">Predicción de demanda y churn</div>
-            <div class="service-bullet-box">Segmentación de clientes y LTV</div>
-            <div class="service-bullet-box">Detección de patrones heurísticos</div>
-            <div class="service-bullet-box">Validación estadística rigurosa</div>
+            <div class="service-bullet-box" data-i18n="services.dataScience.bullets.0">Predicción de demanda y churn</div>
+            <div class="service-bullet-box" data-i18n="services.dataScience.bullets.1">Segmentación de clientes y LTV</div>
+            <div class="service-bullet-box" data-i18n="services.dataScience.bullets.2">Detección de patrones heurísticos</div>
+            <div class="service-bullet-box" data-i18n="services.dataScience.bullets.3">Validación estadística rigurosa</div>
           </div>
         </div>
       </a>
@@ -266,12 +271,12 @@
 
     <!-- 6. AI / GenAI -->
     <div class="service-wrapper">
-      <h2 class="service-title-inditex scroll-reveal">AI / GenAI</h2>
+      <h2 class="service-title-inditex scroll-reveal" data-i18n="services.aiGenAI.title">AI / GenAI</h2>
 
       <!-- Text Block -->
       <div class="service-text-section">
         <div class="service-text-content">
-          <p class="service-description-inditex scroll-reveal">
+          <p class="service-description-inditex scroll-reveal" data-i18n="services.aiGenAI.description">
             De datos a acciones: agentes inteligentes que automatizan procesos, aceleran ventas y potencian decisiones estratégicas.
           </p>
         </div>
@@ -282,10 +287,10 @@
         <div class="service-image-section" style="background-image: url('assets/bg-img/ai_genai.jpg');">
           <div class="service-image-overlay"></div>
           <div class="service-bullets-container scroll-reveal">
-            <div class="service-bullet-box">Agentes de datos</div>
-            <div class="service-bullet-box">Activadores automáticos de ventas</div>
-            <div class="service-bullet-box">Copilotos de decisiones</div>
-            <div class="service-bullet-box">Orquestadores inteligentes</div>
+            <div class="service-bullet-box" data-i18n="services.aiGenAI.bullets.0">Agentes de datos</div>
+            <div class="service-bullet-box" data-i18n="services.aiGenAI.bullets.1">Activadores automáticos de ventas</div>
+            <div class="service-bullet-box" data-i18n="services.aiGenAI.bullets.2">Copilotos de decisiones</div>
+            <div class="service-bullet-box" data-i18n="services.aiGenAI.bullets.3">Orquestadores inteligentes</div>
           </div>
         </div>
       </a>
@@ -298,9 +303,9 @@
        ======================================== -->
   <section id="soluciones">
     <div class="container-wide">
-      <h2 class="section-title">Soluciones por Área</h2>
+      <h2 class="section-title" data-i18n="solutions.title">Soluciones por Área</h2>
       <div class="section-header">
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="solutions.subtitle">
           Casos de uso específicos adaptados a tus necesidades empresariales
         </p>
       </div>
@@ -372,9 +377,9 @@
     <!-- Infrastructure Subsection -->
     <div class="infrastructure">
       <div class="container">
-        <h2 class="section-title">Nuestra Infraestructura: El Motor Detrás de la Data</h2>
+        <h2 class="section-title" data-i18n="infrastructure.title">Nuestra Infraestructura: El Motor Detrás de la Data</h2>
         <div class="section-header">
-          <p class="section-subtitle">
+          <p class="section-subtitle" data-i18n="infrastructure.subtitle">
             Para activar soluciones de alto impacto, desplegamos agentes de datos y arquitecturas robustas que garantizan la integridad y el flujo de la información de extremo a extremo:
           </p>
         </div>
@@ -403,11 +408,11 @@
     <!-- Boutique Banner Subsection -->
     <div class="boutique-banner">
       <div class="container">
-        <h2 class="boutique-title">¿Su desafío no encaja en estas categorías?</h2>
-        <p class="boutique-description">
+        <h2 class="boutique-title" data-i18n="boutique.title">¿Su desafío no encaja en estas categorías?</h2>
+        <p class="boutique-description" data-i18n="boutique.description">
           Somos una consultoría boutique. No creemos en soluciones enlatadas. Construimos arquitecturas de analítica <strong>100% ad-hoc</strong> para resolver problemas específicos que requieren un enfoque creativo y técnico desde cero.
         </p>
-        <a href="#contacto" class="btn btn-primary">Agendar Consultoría de Diagnóstico</a>
+        <a href="#contacto" class="btn btn-primary" data-i18n="boutique.cta">Agendar Consultoría de Diagnóstico</a>
       </div>
     </div>
   </section>
@@ -417,9 +422,9 @@
        ======================================== -->
   <section id="clientes">
     <div class="container">
-      <h2 class="section-title">Clientes que Confían en Nosotros</h2>
+      <h2 class="section-title" data-i18n="clients.title">Clientes que Confían en Nosotros</h2>
       <div class="section-header">
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="clients.subtitle">
           Trabajamos con empresas líderes en diversas industrias
         </p>
       </div>
@@ -442,7 +447,7 @@
 
       <!-- Testimonials -->
       <div class="section-header" style="margin-top: 80px;">
-        <p class="section-subtitle" style="font-size: clamp(22px, 3vw, 32px); font-weight: 400;">Lo que Dicen Nuestros Clientes</p>
+        <p class="section-subtitle" style="font-size: clamp(22px, 3vw, 32px); font-weight: 400;" data-i18n="clients.testimonialsTitle">Lo que Dicen Nuestros Clientes</p>
       </div>
 
       <!-- Testimonials Grid - Loaded dynamically via JavaScript -->
@@ -504,9 +509,9 @@
        ======================================== -->
   <section id="contacto">
     <div class="container">
-      <h2 class="section-title">Hablemos de tu Proyecto</h2>
+      <h2 class="section-title" data-i18n="contact.title">Hablemos de tu Proyecto</h2>
       <div class="section-header">
-        <p class="section-subtitle">
+        <p class="section-subtitle" data-i18n="contact.subtitle">
           Estamos listos para ayudarte a transformar tus datos en resultados
         </p>
       </div>
@@ -514,8 +519,8 @@
       <div class="contact-container">
         <!-- Contact Information -->
         <div class="contact-info">
-          <h3>Conecta con Nosotros</h3>
-          <p>
+          <h3 data-i18n="contact.info.title">Conecta con Nosotros</h3>
+          <p data-i18n="contact.info.description">
             ¿Tienes un proyecto en mente? ¿Necesitas consultoría estratégica en datos?
             Contáctanos y descubre cómo podemos ayudarte.
           </p>
@@ -547,22 +552,22 @@
         <div class="form-wrapper">
           <form class="contact-form" action="https://formspree.io/f/meorzbaj" method="POST">
             <div class="form-group">
-              <label for="name">Nombre completo *</label>
+              <label for="name" data-i18n="contact.form.name">Nombre completo *</label>
               <input type="text" id="name" name="name" required>
             </div>
 
             <div class="form-group">
-              <label for="email">Email *</label>
+              <label for="email" data-i18n="contact.form.email">Email *</label>
               <input type="email" id="email" name="_replyto" required>
             </div>
 
             <div class="form-group">
-              <label for="company">Empresa</label>
+              <label for="company" data-i18n="contact.form.company">Empresa</label>
               <input type="text" id="company" name="company">
             </div>
 
             <div class="form-group">
-              <label for="message">Mensaje *</label>
+              <label for="message" data-i18n="contact.form.message">Mensaje *</label>
               <textarea id="message" name="message" required></textarea>
             </div>
 
@@ -570,7 +575,7 @@
             <input type="hidden" name="_subject" value="Nuevo contacto desde Pullai Partners">
             <input type="hidden" name="_next" value="#contacto">
 
-            <button type="submit" class="form-submit">Enviar mensaje</button>
+            <button type="submit" class="form-submit" data-i18n="contact.form.submit">Enviar mensaje</button>
             <p class="form-status" style="display:none; margin-top: 1rem; padding: 1rem; border-radius: 8px;"></p>
           </form>
         </div>
