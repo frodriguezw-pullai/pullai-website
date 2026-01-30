@@ -3372,7 +3372,13 @@ const translations = {
 };
 
 // Current language state
+// Default to Spanish for all users
 let currentLanguage = localStorage.getItem('language') || 'es';
+
+// Ensure valid language (fallback to Spanish if invalid)
+if (currentLanguage !== 'es' && currentLanguage !== 'en') {
+  currentLanguage = 'es';
+}
 
 /**
  * Get nested object value from path string
