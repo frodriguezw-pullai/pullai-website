@@ -2951,14 +2951,145 @@ const translations = {
       },
       capabilities: {
         title: 'Our Approach',
-        subtitle: 'Complete Data Governance framework based on DAMA-DMBOK'
+        subtitle: 'Complete Data Governance framework based on DAMA-DMBOK',
+        items: [
+          {
+            title: 'RACI Model and Data Roles',
+            description: 'We define organizational structure with key roles: Chief Data Officer, Data Owners, Data Stewards, Data Custodians. RACI matrix to clarify responsibilities.',
+            features: [
+              'Definition of roles and responsibilities',
+              'RACI matrix by data domain',
+              'Job descriptions for new roles',
+              'Operational governance model',
+              'Data committee and meeting cadence'
+            ]
+          },
+          {
+            title: 'Centralized Data Catalog',
+            description: 'We implement data catalog (Alation, Collibra, Atlan) with enriched metadata, automated lineage, and intelligent search. Single source of truth for data assets.',
+            features: [
+              'Data catalog tool setup',
+              'Automated metadata harvesting',
+              'End-to-end data lineage',
+              'Business glossary and business terms',
+              'Search and discovery for self-service'
+            ]
+          },
+          {
+            title: 'Data Quality SLAs',
+            description: 'We establish quality dimensions (accuracy, completeness, timeliness) with metrics and thresholds. Automated monitoring with alerts in case of degradation.',
+            features: [
+              'Definition of quality dimensions',
+              'SLAs per critical dataset (accuracy, completeness, etc.)',
+              'Implementation of data quality checks',
+              'Real-time monitoring dashboards',
+              'Remediation and escalation processes'
+            ]
+          },
+          {
+            title: 'Access, Privacy, and Security Policies',
+            description: 'We design access policies (RBAC), data classification (PII, confidential), and compliance processes (GDPR, CCPA). Access auditing and data retention.',
+            features: [
+              'Data classification (public, internal, confidential, PII)',
+              'RBAC policies (role-based access control)',
+              'Data privacy processes (GDPR, CCPA)',
+              'Data retention and archiving policies',
+              'Access auditing and compliance reporting'
+            ]
+          }
+        ]
       },
       useCases: {
-        title: 'Success Stories'
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'Fintech / Banking',
+            title: 'GDPR Compliance in 90 Days',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Fintech processing EU customer data without GDPR compliance. Risk of fines up to €20M. No personal data inventory existed.'
+              },
+              {
+                label: 'Solution',
+                content: 'Complete PII inventory in 2 weeks. Implementation of access, retention, and right-to-be-forgotten policies. Data catalog with automated classification.'
+              },
+              {
+                label: 'Result',
+                content: '100% GDPR compliance in 90 days. SOC 2 Type II certification achieved. Documented and auditable processes. Legal risk eliminated.'
+              }
+            ]
+          },
+          {
+            label: 'Healthcare / Enterprise',
+            title: 'Data Quality Program at Hospital',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Hospital with 15% errors in patient data. Regulatory reports rejected. Clinical decisions based on incorrect data.'
+              },
+              {
+                label: 'Solution',
+                content: 'Implementation of Great Expectations for automated validation. Definition of SLAs per critical dataset. Data quality dashboard for C-level.'
+              },
+              {
+                label: 'Result',
+                content: 'Errors reduced to 3% in 6 months. Regulatory reports approved on first attempt. Greater confidence in clinical decisions. Measurable ROI in reduced rework.'
+              }
+            ]
+          },
+          {
+            label: 'E-commerce / Scale-up',
+            title: 'Data Catalog for Self-Service Analytics',
+            flow: [
+              {
+                label: 'Problem',
+                content: 'Business analysts spent 60% of time searching for correct data. 150+ undocumented tables in warehouse. Duplication of efforts.'
+              },
+              {
+                label: 'Solution',
+                content: 'Implementation of Atlan as data catalog. Automatic metadata harvesting. Business glossary with 200+ terms. Training for analysts.'
+              },
+              {
+                label: 'Result',
+                content: 'Search time reduced by 80%. Self-service analytics enabled. Data discovery in 2 minutes vs. 2 hours. Analyst NPS: 9/10.'
+              }
+            ]
+          }
+        ]
       },
       techStack: {
         title: 'Technologies and Frameworks',
-        subtitle: 'Data Governance tools stack'
+        subtitle: 'Data Governance tools stack',
+        categories: [
+          {
+            title: 'Data Catalog & Lineage',
+            items: [
+              'Alation',
+              'Collibra',
+              'Atlan',
+              'OpenMetadata'
+            ]
+          },
+          {
+            title: 'Data Quality',
+            items: [
+              'Great Expectations',
+              'Monte Carlo',
+              'Soda',
+              'dbt Tests'
+            ]
+          },
+          {
+            title: 'Frameworks & Standards',
+            items: [
+              'DAMA-DMBOK',
+              'DCAM',
+              'GDPR',
+              'SOC 2'
+            ]
+          }
+        ]
       },
       cta: {
         title: 'Ready to govern your data?',
@@ -2967,7 +3098,22 @@ const translations = {
       },
       relatedServices: {
         title: 'Related Services',
-        subtitle: 'Complement your governance program'
+        subtitle: 'Complement your governance program',
+        cards: [
+          {
+            title: 'Data Consulting',
+            description: 'Define data strategy before implementing governance.'
+          },
+          {
+            title: 'Data Engineering',
+            description: 'Implement pipelines with integrated data quality checks.'
+          },
+          {
+            title: 'Data Science',
+            description: 'Reliable models require governed and quality data.'
+          }
+        ],
+        linkText: 'View service'
       }
     },
     ingenieriaPage: {
