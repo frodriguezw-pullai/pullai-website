@@ -851,15 +851,27 @@ const translations = {
       testimonials: [
         {
           quote: '"Pullai transformó nuestra estrategia de datos. En 6 meses reducimos costos en 40% y aumentamos la velocidad de insights en 10x."',
-          role: 'Partner - Seminarium'
+          author: 'Guadalupe Ureta',
+          role: 'Partner',
+          client: 'Seminarium',
+          avatar: 'assets/img/testimonials/guadalupe-ureta.jpg',
+          rating: 5
         },
         {
           quote: '"Los modelos predictivos de churn nos permitieron retener 10% más clientes. ROI increíble en el primer trimestre."',
-          role: 'Co-Founder y Gerente de Operaciones - MyHotel'
+          author: 'Sebastián Manhood',
+          role: 'Co-Founder y Gerente de Operaciones',
+          client: 'MyHotel',
+          avatar: 'assets/img/testimonials/sebastian-manhood.jpg',
+          rating: 5
         },
         {
           quote: '"Los dashboards en tiempo real han revolucionado cómo tomamos decisiones. Ahora tenemos visibilidad completa de todas nuestras operaciones."',
-          role: 'Director - ClouHR'
+          author: 'Claudia Castañón',
+          role: 'Director',
+          client: 'ClouHR',
+          avatar: 'assets/img/testimonials/claudia-castanon.jpg',
+          rating: 5
         }
       ]
     },
@@ -2269,15 +2281,27 @@ const translations = {
       testimonials: [
         {
           quote: '"Pullai transformed our data strategy. In 6 months we reduced costs by 40% and increased insights speed by 10x."',
-          role: 'Partner - Seminarium'
+          author: 'Guadalupe Ureta',
+          role: 'Partner',
+          client: 'Seminarium',
+          avatar: 'assets/img/testimonials/guadalupe-ureta.jpg',
+          rating: 5
         },
         {
           quote: '"The predictive churn models allowed us to retain 10% more customers. Incredible ROI in the first quarter."',
-          role: 'Co-Founder and Operations Manager - MyHotel'
+          author: 'Sebastián Manhood',
+          role: 'Co-Founder and Operations Manager',
+          client: 'MyHotel',
+          avatar: 'assets/img/testimonials/sebastian-manhood.jpg',
+          rating: 5
         },
         {
           quote: '"Real-time dashboards have revolutionized how we make decisions. Now we have complete visibility of all our operations."',
-          role: 'Director - ClouHR'
+          author: 'Claudia Castañón',
+          role: 'Director',
+          client: 'ClouHR',
+          avatar: 'assets/img/testimonials/claudia-castanon.jpg',
+          rating: 5
         }
       ]
     },
@@ -3687,15 +3711,27 @@ const translations = {
       testimonials: [
         {
           quote: '「Pullaiは私たちのデータ戦略を変革しました。6ヶ月でコストを40％削減し、インサイト速度を10倍に向上させました。」',
-          role: 'パートナー - Seminarium'
+          author: 'Guadalupe Ureta',
+          role: 'パートナー',
+          client: 'Seminarium',
+          avatar: 'assets/img/testimonials/guadalupe-ureta.jpg',
+          rating: 5
         },
         {
           quote: '「予測チャーンモデルにより10％多くの顧客を維持できました。第1四半期で驚異的なROI。」',
-          role: '共同創業者兼オペレーションマネージャー - MyHotel'
+          author: 'Sebastián Manhood',
+          role: '共同創業者兼オペレーションマネージャー',
+          client: 'MyHotel',
+          avatar: 'assets/img/testimonials/sebastian-manhood.jpg',
+          rating: 5
         },
         {
           quote: '「リアルタイムダッシュボードは意思決定方法を革命的に変えました。今では全業務の完全な可視性があります。」',
-          role: 'ディレクター - ClouHR'
+          author: 'Claudia Castañón',
+          role: 'ディレクター',
+          client: 'ClouHR',
+          avatar: 'assets/img/testimonials/claudia-castanon.jpg',
+          rating: 5
         }
       ]
     },
