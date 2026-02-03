@@ -84,24 +84,24 @@ img {
 }
 
 section {
-  padding: 120px 0;
+  padding: 40px 0;  /* REDUCIDO de 120px a 40px - elimina espacio blanco excesivo */
 }
 
 @media (max-width: 1024px) {
   section {
-    padding: 80px 0;
+    padding: 30px 0;  /* REDUCIDO de 80px a 30px */
   }
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 60px 0;
+    padding: 25px 0;  /* REDUCIDO de 60px a 25px */
   }
 }
 
 @media (max-width: 480px) {
   section {
-    padding: 40px 0;
+    padding: 20px 0;  /* REDUCIDO de 40px a 20px */
   }
 }
 
@@ -710,14 +710,14 @@ section {
    ======================================== */
 .section-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;  /* REDUCIDO de 80px a 40px para eliminar espacio excesivo */
   /* Ahora solo contiene subtitle, sin padding superior */
   padding-bottom: 20px;
 }
 
 @media (max-width: 1024px) {
   .section-header {
-    margin-bottom: 60px;
+    margin-bottom: 30px;  /* REDUCIDO de 60px a 30px */
   }
 
   .section-title {
@@ -737,7 +737,7 @@ section {
 
   .section-title {
     top: 80px; /* Ajustar para navbar mobile */
-    padding: 60px 20px 20px 20px;  /* Padding ajustado para mobile */
+    padding: 20px 20px 20px 20px;  /* REDUCIDO de 60px a 20px */
   }
 
   .service-title-inditex {
@@ -765,7 +765,7 @@ section {
   position: sticky;
   top: 100px;
   z-index: var(--z-sticky-titles);
-  padding: 80px 40px 40px 40px;
+  padding: 20px 40px 20px 40px;  /* REDUCIDO de 80px a 20px para eliminar espacio blanco excesivo */
   transition: top 0.2s ease, box-shadow 0.2s ease;
 
   /* Anti-blur para texto sticky */
@@ -864,7 +864,7 @@ section {
   position: sticky;
   top: 100px; /* Altura del navbar */
   z-index: var(--z-sticky-titles);
-  padding: 80px 40px 40px 40px; /* Top padding igual al de service-text-section para alineación */
+  padding: 20px 40px 20px 40px; /* REDUCIDO de 80px a 20px - eliminar espacio blanco excesivo */
   transition: top 0.2s ease, box-shadow 0.2s ease;
 
   /* Anti-blur para texto sticky */
@@ -1316,6 +1316,11 @@ section {
 
 #clientes .section-title {
   color: var(--color-text);
+  padding: 20px 40px 20px 40px;  /* Override sticky padding - reducir espacio blanco excesivo */
+}
+
+#clientes .section-header {
+  margin-bottom: 40px;  /* Reducir de 80px a 40px - menos espacio antes de los logos */
 }
 
 #clientes .section-subtitle {
@@ -1326,7 +1331,7 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1px;
-  margin-top: 60px;
+  margin-top: 30px;  /* Reducir de 60px a 30px - logos más cerca del subtitle */
   margin-bottom: 80px;
   background: var(--color-border);
 }

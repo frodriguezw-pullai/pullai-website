@@ -818,7 +818,7 @@ const translations = {
       ]
     },
     infrastructure: {
-      title: 'Nuestra Infraestructura: El Motor Detrás de la Data',
+      title: 'El Motor Detrás de la Data',
       subtitle: 'Para activar soluciones de alto impacto, desplegamos agentes de datos y arquitecturas robustas que garantizan la integridad y el flujo de la información de extremo a extremo:',
       components: [
         {
@@ -2248,7 +2248,7 @@ const translations = {
       ]
     },
     infrastructure: {
-      title: 'Our Infrastructure: The Engine Behind Data',
+      title: 'The Engine Behind Data',
       subtitle: 'To activate high-impact solutions, we deploy data agents and robust architectures that ensure the integrity and flow of information end-to-end:',
       components: [
         {
