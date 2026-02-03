@@ -2119,7 +2119,7 @@ const translations = {
       aiGenai: 'AI / GenAI'
     },
     hero: {
-      title: 'We Transform Data into Intelligent Decisions',
+      title: 'Transforming Data into Insights',
       description: 'We transform data into your competitive advantage. Scale, innovate, and grow with us.',
       cta: {
         primary: 'Schedule a meeting',
@@ -2258,7 +2258,7 @@ const translations = {
       ]
     },
     boutique: {
-      title: "Doesn't your challenge fit into these categories?",
+      title: "Your challenge doesn't fit into these categories?",
       description: 'We are a boutique consultancy. We don\'t believe in canned solutions. We build <strong>100% ad-hoc</strong> analytics architectures to solve specific problems that require a creative and technical approach from scratch.',
       cta: 'Schedule Diagnostic Consultation'
     },
