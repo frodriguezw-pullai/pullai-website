@@ -97,7 +97,7 @@ function initNavigation() {
  */
 function initStickyTitles() {
   const navbar = document.querySelector('.navbar');
-  const stickyElements = document.querySelectorAll('.section-title, .service-title-inditex');
+  const stickyElements = document.querySelectorAll('.section-title');
 
   if (!navbar || stickyElements.length === 0) return;
 
@@ -682,7 +682,7 @@ const translations = {
   es: {
     nav: {
       services: 'Servicios',
-      solutions: 'Soluciones',
+      platforms: 'Plataformas',
       team: 'Equipo',
       clients: 'Clientes',
       contact: 'Contacto'
@@ -693,155 +693,134 @@ const translations = {
       team: 'Equipo',
       clients: 'Clientes',
       contact: 'Contacto',
-      consultoria: 'Consultoría en Datos',
+      asesoria: 'Asesorías Estratégicas',
+      plataformas: 'Plataformas a Medida',
       bi: 'Business Intelligence',
-      dataScience: 'Data Science',
+      dataScience: 'Data Science & Predicción',
       gobierno: 'Gobierno de Datos',
       ingenieria: 'Ingeniería de Datos',
-      aiGenai: 'AI / GenAI'
+      aiGenai: 'Automatización con IA',
+      consultoria: 'Asesorías Estratégicas'
     },
     hero: {
-      title: 'Transformamos Datos en Decisiones Inteligentes',
-      description: 'Transformamos datos en tu ventaja competitiva. Escala, innova y crece con nosotros.',
+      title: 'Convierte tus Datos en Ventaja Competitiva',
+      description: 'Asesoramos, construimos plataformas y automatizamos con IA para que tu empresa tome mejores decisiones, más rápido. Resultados medibles, no proyectos eternos.',
       cta: {
         primary: 'Agendar reunión',
         secondary: 'Ver servicios'
       }
     },
     services: {
-      dataConsulting: {
-        title: 'Consultoría en Datos',
-        description: 'Diseñamos estrategias y rutas personalizadas para maximizar el valor de tu información al menor costo, con enfoque en resultados medibles.',
+      strategicAdvisory: {
+        title: 'Asesorías en Optimización de Procesos',
+        description: 'Identificamos y eliminamos ineficiencias en tu flujo de trabajo mediante el uso estratégico de datos e IA. No solo analizamos lo que tienes; diseñamos la captura de datos necesaria para que tu operación se vuelva predecible, automatizada y altamente rentable.',
         bullets: [
-          'Descubrimiento de casos de uso de alto impacto',
-          'Arquitectura de datos escalable y eficiente',
-          'Evaluación y optimización de costos',
-          'Pilotos y pruebas de concepto (PoCs)'
+          'Mapeo de procesos y detección de oportunidades de mejora',
+          'Diseño de soluciones de automatización a medida',
+          'Roadmap priorizado por impacto en tu operación',
+          'Pilotos rápidos con IA para validar antes de escalar'
         ]
       },
-      dataGovernance: {
-        title: 'Gobierno de Datos',
-        description: 'Establecemos personas, procesos y políticas para garantizar calidad, seguridad y cumplimiento normativo de tus datos.',
+      customPlatforms: {
+        title: 'Plataformas a Medida',
+        description: 'Construimos la solución que tu empresa necesita: tus datos conectados, tus procesos automatizados, tus equipos con la información correcta.',
         bullets: [
-          'Modelo RACI y roles de datos',
-          'Catálogo de datos centralizado',
-          'SLAs de calidad de datos (Data Quality)',
-          'Políticas de acceso, privacidad y seguridad'
+          'Toda la información de tus clientes en un solo lugar',
+          'Tus sistemas conectados sin perder datos',
+          'Reportes y métricas para cada área del negocio',
+          'Procesos automáticos que hoy se hacen a mano'
         ]
       },
       businessIntelligence: {
         title: 'Business Intelligence',
-        description: 'Dashboards interactivos en tiempo real que transforman datos complejos en insights accionables para tu equipo ejecutivo.',
+        description: 'Dashboards que tu equipo realmente usa. Las métricas que importan, visibles para todos, actualizadas siempre.',
         bullets: [
-          'Modelado semántico de datos',
-          'Plataformas de BI self-hosted a medida',
-          'Dashboards en Power BI, Looker y Tableau',
-          'Alertas y notificaciones automatizadas',
-          'Embedded analytics en tus aplicaciones'
+          'Dashboards con las métricas que tu equipo necesita ver',
+          'Reportes automáticos que llegan a tu mail cada semana',
+          'Alertas cuando algo se desvía del plan',
+          'Una sola versión de los números para toda la empresa'
+        ]
+      },
+      aiAutomation: {
+        title: 'Automatización con IA',
+        description: 'Tareas que hoy toman horas, resueltas en segundos. Reportes que se arman solos, alertas inteligentes y procesos que corren sin que nadie los toque.',
+        bullets: [
+          'Reportes que se generan y envían solos',
+          'Alertas cuando hay oportunidades o riesgos en tus datos',
+          'Procesos repetitivos que corren sin intervención',
+          'Búsqueda y enriquecimiento automático de información'
+        ]
+      },
+      dataScience: {
+        title: 'Data Science & Predicción',
+        description: 'Anticipa lo que va a pasar: qué clientes se van a ir, cuánto vas a vender, dónde optimizar precios. Decisiones con datos, no con intuición.',
+        bullets: [
+          'Predecir demanda para planificar sin sorpresas',
+          'Anticipar qué clientes están por irse',
+          'Encontrar el precio óptimo para cada producto',
+          'Segmentar clientes para invertir donde más rinde'
         ]
       },
       dataEngineering: {
         title: 'Ingeniería de Datos',
-        description: 'Migraciones, pipelines ETL y arquitecturas modernas para procesar grandes volúmenes de datos de manera eficiente.',
+        description: 'La base que hace que todo funcione. Sin datos ordenados y conectados, no hay dashboards, predicciones ni automatización posible.',
         bullets: [
-          'Ingesta incremental y batch de datos',
-          'Orquestación de datos',
-          'Transformaciones',
-          'Optimización de costos en cloud'
-        ]
-      },
-      dataScience: {
-        title: 'Data Science',
-        description: 'Modelos predictivos y analítica avanzada que anticipan tendencias, optimizan operaciones y maximizan ingresos.',
-        bullets: [
-          'Predicción de demanda y churn',
-          'Segmentación de clientes y LTV',
-          'Detección de patrones heurísticos',
-          'Validación estadística rigurosa'
-        ]
-      },
-      aiGenAI: {
-        title: 'AI / GenAI',
-        description: 'De datos a acciones: agentes inteligentes que automatizan procesos, aceleran ventas y potencian decisiones estratégicas.',
-        bullets: [
-          'Agentes de datos',
-          'Activadores automáticos de ventas',
-          'Copilotos de decisiones',
-          'Orquestadores inteligentes'
+          'Conectamos todas tus fuentes de información',
+          'Tus datos siempre actualizados y disponibles',
+          'Migración a la nube sin interrupciones',
+          'Reducción de costos de infraestructura'
         ]
       }
     },
-    solutions: {
-      title: 'Soluciones por Área',
-      subtitle: 'Casos de uso específicos adaptados a tus necesidades empresariales',
+    platforms: {
+      title: 'Plataformas por Área',
+      subtitle: 'Soluciones listas para cada equipo de tu empresa',
       cards: [
         {
-          title: 'Ventas & Growth',
-          description: 'Optimización de conversión y ROI mediante analítica predictiva.',
+          title: 'Comercial',
+          description: 'Tu equipo comercial con toda la información para vender más.',
           items: [
-            'Scoring predictivo de leads para priorización comercial inteligente',
-            'Segmentación dinámica de audiencias y micro-segmentación de mercado',
-            'Modelos de atribución multi-touch para optimización de inversión publicitaria',
-            'Predicción de churn (fuga) y diseño de estrategias de retención proactiva'
+            'Saber qué prospectos priorizar y cuáles van a comprar',
+            'Ver qué campañas y canales generan más ventas',
+            'Anticipar qué clientes se van a ir — y retenerlos',
+            'Pipeline comercial visible y actualizado para todo el equipo'
           ]
         },
         {
-          title: 'Eficiencia Operativa',
-          description: 'Reducción de costos y optimización de recursos con datos en tiempo real.',
+          title: 'Operaciones',
+          description: 'Control total de tu operación sin sorpresas.',
           items: [
-            'Optimización de inventario y visibilidad total de la supply chain',
-            'Modelos de predicción de demanda y planificación de recursos operativos',
-            'Sistemas inteligentes de detección de anomalías operativas en tiempo real',
-            'Automatización de procesos complejos mediante la integración de RPA + IA'
+            'Anticipar demanda para planificar compras e inventario',
+            'Visibilidad completa de la cadena de abastecimiento',
+            'Detectar problemas antes de que escalen',
+            'Automatizar procesos manuales y repetitivos'
           ]
         },
         {
-          title: 'Customer Experience (CX)',
-          description: 'Maximización del valor de vida del cliente y fidelización inteligente.',
+          title: 'Marketing',
+          description: 'Entiende a tus clientes y haz campañas que realmente funcionan.',
           items: [
-            'Análisis de sentimiento y voz del cliente mediante procesamiento de lenguaje natural (NLP)',
-            'Modelos de Customer Lifetime Value (CLV) para segmentación por valor de cliente',
-            'Motores de recomendación y personalización de contenido impulsados por IA',
-            'Optimización de embudos de post-venta y sistemas de soporte técnico proactivo'
+            'Saber qué quieren y sienten tus clientes',
+            'Segmentar para invertir donde más retorno hay',
+            'Medir satisfacción (NPS) en tiempo real',
+            'Campañas personalizadas que aumentan la conversión'
           ]
         },
         {
-          title: 'Estrategia & Finanzas',
-          description: 'Inteligencia centralizada para la toma de decisiones de alto nivel (C-Suite).',
+          title: 'Finanzas',
+          description: 'Los números correctos, siempre disponibles.',
           items: [
-            'Dashboards ejecutivos con visualización de KPIs críticos y salud del negocio',
-            'Modelos de forecasting financiero avanzado y proyecciones de flujo de caja',
-            'Análisis de rentabilidad detallado por producto, canal y unidad de negocio',
-            'Acompañamiento en la adopción de cultura de datos y alfabetización analítica'
+            'Los números reales del negocio actualizados al día',
+            'Proyecciones de venta y flujo de caja confiables',
+            'Reportes al directorio que se arman solos',
+            'Rentabilidad clara por producto, canal y unidad de negocio'
           ]
-        }
-      ]
-    },
-    infrastructure: {
-      title: 'El Motor Detrás de la Data',
-      subtitle: 'Para activar soluciones de alto impacto, desplegamos agentes de datos y arquitecturas robustas que garantizan la integridad y el flujo de la información de extremo a extremo:',
-      components: [
-        {
-          title: 'Scrapers Web',
-          description: 'Monitoreo automatizado de competencia y mercado'
-        },
-        {
-          title: 'Agentes de Enriquecimiento',
-          description: 'Validación y limpieza de datos con IA avanzada'
-        },
-        {
-          title: 'Sincronización Multi-plataforma',
-          description: 'Integración total de ERPs, CRMs y fuentes externas'
-        },
-        {
-          title: 'Data Governance',
-          description: 'Garantía de calidad, limpieza y seguridad de la información'
         }
       ]
     },
     boutique: {
-      title: '¿Su desafío no encaja en estas categorías?',
-      description: 'Somos una consultoría boutique. No creemos en soluciones enlatadas. Construimos arquitecturas de analítica <strong>100% ad-hoc</strong> para resolver problemas específicos que requieren un enfoque creativo y técnico desde cero.',
+      title: '¿Tu desafío no encaja en una solución estándar?',
+      description: 'Somos una consultoría boutique. Diseñamos soluciones <strong>100% a la medida</strong> — desde la estrategia hasta la implementación. Sin plantillas, sin enlatados.',
       cta: 'Agendar Consultoría de Diagnóstico'
     },
     clients: {
@@ -1087,12 +1066,12 @@ const translations = {
         subtitle: 'Complementa tu estrategia con estos servicios',
         cards: [
           {
-            title: 'Gobierno de Datos',
-            description: 'Asegura calidad, seguridad y cumplimiento con políticas y procesos claros.'
+            title: 'Plataformas a Medida',
+            description: 'Construimos la solución personalizada que tu negocio necesita.'
           },
           {
             title: 'Ingeniería de Datos',
-            description: 'Implementa pipelines y arquitecturas diseñadas en la fase de consultoría.'
+            description: 'Implementa pipelines y arquitecturas diseñadas en la fase de asesoría.'
           },
           {
             title: 'Business Intelligence',
@@ -1129,8 +1108,8 @@ const translations = {
           metric: '3-4 semanas go-live'
         },
         card4: {
-          title: 'Self-Service Analytics',
-          description: 'Empodera a equipos de negocio para explorar datos sin depender de IT. Modelos semánticos que garantizan consistencia.',
+          title: 'Cada Área con sus Métricas',
+          description: 'Cada equipo consulta lo que necesita sin pedir ayuda a IT. Modelos semánticos que garantizan consistencia.',
           metric: '80% menos tickets IT'
         }
       },
@@ -1161,14 +1140,14 @@ const translations = {
             ]
           },
           {
-            title: 'Plataformas de BI Self-Hosted',
-            description: 'Implementamos soluciones de BI open-source o self-hosted para máximo control y personalización. Ideal para empresas con requerimientos de data sovereignty o compliance estricto.',
+            title: 'Tableros para Cada Equipo',
+            description: 'Implementamos soluciones de BI adaptadas a cada equipo para máximo control y personalización. Ideal para empresas que necesitan independencia de cada área.',
             features: [
-              'Metabase y Apache Superset deployment',
-              'Redash para queries ad-hoc colaborativas',
-              'Grafana para métricas y monitoring',
-              'Control total sobre infraestructura y datos',
-              'Customización sin límites de licencias'
+              'Metabase y Apache Superset para equipos técnicos',
+              'Redash para consultas colaborativas',
+              'Grafana para métricas operacionales',
+              'Control total sobre los datos de cada área',
+              'Personalización sin límites de licencias'
             ]
           },
           {
@@ -1183,14 +1162,14 @@ const translations = {
             ]
           },
           {
-            title: 'Embedded Analytics en tus Aplicaciones',
-            description: 'Integra dashboards directamente en tu producto SaaS para que tus clientes accedan a analytics sin salir de tu app. White-label y multi-tenant.',
+            title: 'Métricas Integradas en tus Herramientas',
+            description: 'Integra dashboards directamente en las herramientas que ya usa tu equipo para que accedan a métricas sin cambiar de aplicación.',
             features: [
-              'Embedded iframes con SSO/SAML',
-              'White-label (branding personalizado)',
-              'Multi-tenancy con row-level security',
-              'APIs para embedding programático',
-              'Usage analytics y monetización'
+              'Dashboards integrados en tu CRM o portal',
+              'Branding personalizado de tu empresa',
+              'Acceso seguro por rol y equipo',
+              'APIs para integración con cualquier herramienta',
+              'Métricas de uso y adopción'
             ]
           }
         ]
@@ -1301,12 +1280,12 @@ const translations = {
             description: 'Pipelines robustos que alimentan tus dashboards con datos limpios y actualizados.'
           },
           {
-            title: 'Data Science',
-            description: 'Añade predictive analytics a tus dashboards con modelos de forecasting y churn.'
+            title: 'Data Science & Predicción',
+            description: 'Añade modelos predictivos a tus dashboards para anticipar tendencias.'
           },
           {
-            title: 'Gobierno de Datos',
-            description: 'Asegura que tus dashboards muestran datos confiables y gobernados.'
+            title: 'Plataformas a Medida',
+            description: 'Soluciones integradas que centralizan métricas de toda tu operación.'
           }
         ],
         linkText: 'Ver servicio'
@@ -1339,9 +1318,9 @@ const translations = {
           metric: '95% confidence'
         },
         card4: {
-          title: 'Modelos en Producción',
-          description: 'MLOps para deployar modelos a producción con monitoring, retraining y drift detection. Modelos que generan valor 24/7.',
-          metric: '24/7 inference'
+          title: 'Predicciones Siempre Activas',
+          description: 'Modelos que generan predicciones y recomendaciones 24/7 con monitoreo, reentrenamiento y detección de desviaciones automática.',
+          metric: 'Funcionan 24/7'
         }
       },
       capabilities: {
@@ -1360,36 +1339,36 @@ const translations = {
             ]
           },
           {
-            title: 'Segmentación de Clientes y LTV',
-            description: 'Clustering (K-means, DBSCAN) para segmentar clientes por comportamiento. Modelos de LTV (Lifetime Value) para priorizar acquisition y retention efforts.',
+            title: 'Segmentación de Clientes y Valor',
+            description: 'Agrupación de clientes por comportamiento y valor. Modelos de valor de vida del cliente para priorizar esfuerzos de adquisición y retención.',
             features: [
-              'RFM analysis y behavioral clustering',
-              'LTV prediction con survival models',
-              'Cohort analysis y retention curves',
-              'Propensity models para upsell/cross-sell',
+              'Análisis RFM y clustering por comportamiento',
+              'Predicción de valor de vida del cliente',
+              'Análisis de cohortes y curvas de retención',
+              'Modelos de propensión para upsell/cross-sell',
               'Personalización de campañas por segmento'
             ]
           },
           {
-            title: 'Detección de Patrones Heurísticos',
-            description: 'Análisis exploratorio para descubrir patrones no obvios en datos. Anomaly detection para fraude, outliers y eventos inusuales que requieren atención.',
+            title: 'Detección de Patrones y Anomalías',
+            description: 'Análisis exploratorio para descubrir patrones no obvios en datos. Detección de anomalías para fraude, valores atípicos y eventos inusuales que requieren atención.',
             features: [
-              'Exploratory Data Analysis (EDA) profunda',
-              'Anomaly detection (Isolation Forest, autoencoders)',
-              'Association rules mining (Market Basket Analysis)',
-              'Time series decomposition (trend, seasonality)',
-              'Causal inference para identificar drivers reales'
+              'Análisis exploratorio profundo de datos',
+              'Detección de anomalías y valores atípicos',
+              'Descubrimiento de patrones de compra y uso',
+              'Análisis de estacionalidad y tendencias',
+              'Identificación de causas reales detrás de los números'
             ]
           },
           {
-            title: 'Validación Estadística Rigurosa',
-            description: 'A/B testing con power analysis, multiple testing correction. Confidence intervals, hypothesis testing y causal inference para decisiones fundamentadas.',
+            title: 'Pruebas A/B y Validación',
+            description: 'Tests A/B rigurosos para tomar decisiones con certeza estadística. No más decisiones basadas en correlaciones que no significan nada.',
             features: [
-              'A/B test design con power analysis',
-              'Bayesian A/B testing para early stopping',
-              'Multiple testing correction (Bonferroni, FDR)',
-              'Causal inference (propensity score matching, DiD)',
-              'Interpretabilidad de modelos (SHAP, LIME)'
+              'Diseño de tests A/B con tamaño de muestra correcto',
+              'Tests bayesianos para decisiones más rápidas',
+              'Corrección por múltiples comparaciones',
+              'Identificación de causas reales (no solo correlaciones)',
+              'Interpretabilidad de modelos para entender el por qué'
             ]
           }
         ]
@@ -1504,7 +1483,7 @@ const translations = {
             description: 'Dashboards que visualizan predicciones y scores de tus modelos.'
           },
           {
-            title: 'AI / GenAI',
+            title: 'Automatización con IA',
             description: 'Agentes inteligentes que actúan sobre tus insights predictivos.'
           }
         ],
@@ -1713,8 +1692,8 @@ const translations = {
     ingenieriaPage: {
       hero: {
         title: 'Ingeniería de Datos',
-        tagline: 'Pipelines escalables y eficientes',
-        description: 'Migraciones, pipelines ETL y arquitecturas modernas para procesar grandes volúmenes de datos de manera eficiente. Construimos infraestructura de datos robusta que escala con tu negocio sin aumentar costos linealmente.',
+        tagline: 'Tus datos conectados y siempre disponibles',
+        description: 'Conectamos todas tus fuentes de información, las mantenemos actualizadas y disponibles para que cada área pueda usarlas. Migramos a la nube sin interrupciones y reducimos costos de infraestructura.',
         ctaPrimary: 'Agendar consultoría',
         ctaSecondary: 'Nuestros servicios'
       },
@@ -1747,47 +1726,47 @@ const translations = {
         subtitle: 'Expertise en arquitecturas modernas de datos (batch, streaming, real-time)',
         items: [
           {
-            title: 'Ingesta Incremental y Batch de Datos',
-            description: 'Implementamos pipelines de ingesta desde múltiples fuentes (databases, APIs, archivos) con estrategias incrementales (CDC) para minimizar carga y latencia.',
+            title: 'Conexión de Fuentes de Datos',
+            description: 'Conectamos todas tus fuentes de información (bases de datos, aplicaciones, archivos) con actualizaciones automáticas para que siempre tengas datos frescos.',
             features: [
-              'Change Data Capture (CDC) con Debezium/Fivetran',
-              'Ingesta desde APIs REST/GraphQL',
-              'Batch processing de archivos (S3, SFTP)',
-              'Connectors para SaaS apps (Salesforce, HubSpot, etc.)',
-              'Schema evolution y versionado'
+              'Conexión automática con tus bases de datos',
+              'Integración con aplicaciones y APIs',
+              'Procesamiento de archivos desde cualquier origen',
+              'Conectores para apps de negocio (Salesforce, HubSpot, etc.)',
+              'Actualización incremental sin sobrecargar sistemas'
             ]
           },
           {
-            title: 'Orquestación con Airflow y Dagster',
-            description: 'Orquestamos pipelines complejos con dependencias, retries y alertas. DAGs versionados en Git con CI/CD para deployment automatizado.',
+            title: 'Automatización de Flujos de Datos',
+            description: 'Automatizamos los flujos de datos para que se ejecuten solos, con reintentos automáticos y alertas si algo falla. Todo versionado y con despliegue automatizado.',
             features: [
-              'DAGs modulares y reutilizables',
-              'Manejo de dependencias y backfills',
-              'Retry logic y circuit breakers',
-              'Alertas por Slack/PagerDuty en fallos',
-              'CI/CD con testing automatizado'
+              'Flujos modulares y reutilizables',
+              'Manejo automático de dependencias',
+              'Reintentos automáticos ante fallos',
+              'Alertas por Slack o email cuando algo falla',
+              'Despliegue automatizado con testing'
             ]
           },
           {
-            title: 'Transformaciones con dbt y Spark',
-            description: 'Transformamos raw data en modelos analíticos usando dbt (SQL) para batch y Spark para big data. Tests automatizados y documentación generada.',
+            title: 'Transformación y Preparación de Datos',
+            description: 'Transformamos datos en bruto en información lista para usar: modelos analíticos, métricas de negocio y reportes. Con tests automáticos y documentación.',
             features: [
-              'dbt models con testing y documentación',
-              'Incremental models para eficiencia',
-              'Spark jobs para PB-scale processing',
-              'Data quality tests automatizados',
-              'Lineage tracking end-to-end'
+              'Modelos de datos con testing y documentación',
+              'Actualización incremental para eficiencia',
+              'Procesamiento de grandes volúmenes de datos',
+              'Tests de calidad automatizados',
+              'Trazabilidad completa de los datos'
             ]
           },
           {
-            title: 'Optimización de Costos en Cloud',
-            description: 'Auditamos y optimizamos infraestructura existente: particionamiento, clustering, auto-suspend, reserved capacity. FinOps para data teams.',
+            title: 'Optimización de Costos en la Nube',
+            description: 'Auditamos y optimizamos tu infraestructura para que pagues solo lo que necesitas. Reducimos costos sin sacrificar rendimiento.',
             features: [
-              'Análisis de costos (compute, storage, egress)',
-              'Particionamiento y clustering strategies',
-              'Auto-suspend/resume para warehouses',
-              'Reserved instances y savings plans',
-              'Query optimization y caching'
+              'Análisis de costos (procesamiento, almacenamiento, transferencia)',
+              'Estrategias de particionamiento y organización',
+              'Apagado y encendido automático de recursos',
+              'Planes de ahorro y reservas',
+              'Optimización de consultas y caché'
             ]
           }
         ]
@@ -1894,7 +1873,7 @@ const translations = {
         subtitle: 'Maximiza el valor de tu infraestructura de datos',
         cards: [
           {
-            title: 'Consultoría en Datos',
+            title: 'Asesorías Estratégicas',
             description: 'Define la arquitectura y roadmap antes de implementar pipelines.'
           },
           {
@@ -1902,8 +1881,8 @@ const translations = {
             description: 'Dashboards alimentados por tus pipelines de datos robustos.'
           },
           {
-            title: 'Gobierno de Datos',
-            description: 'Asegura calidad y compliance en tus pipelines con data governance.'
+            title: 'Plataformas a Medida',
+            description: 'Soluciones integradas que aprovechan al máximo tu infraestructura de datos.'
           }
         ],
         linkText: 'Ver servicio'
@@ -1946,14 +1925,14 @@ const translations = {
         subtitle: 'Expertise en IA aplicada a casos de uso de negocio reales',
         items: [
           {
-            title: 'Web Scrapers y Agentes de Datos',
-            description: 'Agentes inteligentes que extraen, estructuran y enriquecen datos de fuentes públicas y privadas. Monitoreo continuo de competidores, noticias y tendencias de mercado.',
+            title: 'Búsqueda y Recopilación Automática de Información',
+            description: 'Agentes inteligentes que buscan, recopilan y organizan información de fuentes públicas y privadas. Monitoreo continuo de competidores, noticias y tendencias de mercado.',
             features: [
-              'Web scraping con manejo de JavaScript, CAPTCHAs, rate limits',
-              'Extracción de datos de PDFs, imágenes (OCR), documentos',
-              'Enriquecimiento con APIs externas (LinkedIn, Clearbit, etc.)',
-              'Agentes que se adaptan a cambios en estructura de sitios',
-              'Pipelines de validación y limpieza automatizada'
+              'Búsqueda automática en sitios web y fuentes públicas',
+              'Extracción de datos de PDFs, imágenes y documentos',
+              'Enriquecimiento con fuentes externas (LinkedIn, bases de datos, etc.)',
+              'Monitoreo continuo que se adapta a cambios',
+              'Validación y limpieza automática de la información'
             ]
           },
           {
@@ -1968,25 +1947,25 @@ const translations = {
             ]
           },
           {
-            title: 'Copilotos de Decisiones Empresariales',
-            description: 'Asistentes IA que analizan datos, generan insights y recomiendan acciones. Copilots entrenados en tus datos que responden preguntas complejas en lenguaje natural.',
+            title: 'Respuestas Instantáneas sobre tus Datos',
+            description: 'Asistentes IA que responden preguntas sobre tus datos en lenguaje natural. Preguntas como "¿cuánto vendimos el mes pasado?" o "¿qué clientes están en riesgo?" — respondidas al instante.',
             features: [
-              'Q&A sobre tus datos en lenguaje natural',
+              'Preguntas sobre tus datos en lenguaje natural',
               'Generación automática de reportes ejecutivos',
+              'Búsqueda inteligente en documentos internos',
               'Recomendaciones basadas en patrones históricos',
-              'RAG (Retrieval-Augmented Generation) sobre docs internos',
-              'Fine-tuning de LLMs en tu dominio específico'
+              'Respuestas con fuentes y datos verificables'
             ]
           },
           {
-            title: 'Orquestadores Inteligentes de Reuniones',
-            description: 'Agentes que transcriben, resumen y generan action items de reuniones automáticamente. Sincronización con CRM, calendarios y herramientas de project management.',
+            title: 'Resúmenes Automáticos de Reuniones',
+            description: 'Agentes que transcriben, resumen y generan listas de tareas de tus reuniones automáticamente. Se conectan con tu CRM y herramientas de gestión.',
             features: [
               'Transcripción automática de reuniones (Zoom, Meet, Teams)',
-              'Summarización con GenAI (key points, decisions, next steps)',
-              'Extracción de action items y asignación de responsables',
-              'Actualización automática de CRM con insights de llamadas',
-              'Análisis de sentiment y engagement en sales calls'
+              'Resumen con puntos clave, decisiones y próximos pasos',
+              'Lista de tareas con responsables asignados',
+              'Actualización automática del CRM con insights de llamadas',
+              'Análisis de participación y engagement en reuniones'
             ]
           }
         ]
@@ -2093,7 +2072,7 @@ const translations = {
         subtitle: 'Potencia tus agentes con datos y analytics',
         cards: [
           {
-            title: 'Data Science',
+            title: 'Data Science & Predicción',
             description: 'Modelos predictivos que alimentan tus agentes con insights accionables.'
           },
           {
@@ -2101,9 +2080,287 @@ const translations = {
             description: 'Pipelines robustos que proveen datos limpios para tus agentes IA.'
           },
           {
-            title: 'Consultoría en Datos',
-            description: 'Estrategia de datos que maximiza el impacto de tus iniciativas de IA.'
+            title: 'Asesorías Estratégicas',
+            description: 'Estrategia de datos e IA que maximiza el impacto de tus iniciativas.'
           }
+        ],
+        linkText: 'Ver servicio'
+      }
+    },
+    asesoriaPage: {
+      hero: {
+        title: 'Asesorías en Optimización de Procesos',
+        tagline: 'Elimina ineficiencias y convierte tu operación en datos accionables',
+        description: 'Identificamos y eliminamos ineficiencias en tu flujo de trabajo mediante el uso estratégico de datos e IA. No solo analizamos lo que tienes; diseñamos la captura de datos necesaria para que tu operación se vuelva predecible, automatizada y altamente rentable.',
+        ctaPrimary: 'Agendar asesoría',
+        ctaSecondary: 'Nuestro enfoque'
+      },
+      valueProps: {
+        title: '¿Por qué optimizar tus procesos con nosotros?',
+        subtitle: 'No adivinamos — diagnosticamos con datos y diseñamos soluciones que se miden',
+        card1: {
+          title: 'Mapeo de Ineficiencias',
+          description: 'Recorremos tus flujos de trabajo, identificamos cuellos de botella y cuantificamos el costo de cada ineficiencia en tiempo y dinero.',
+          metric: '2-3 semanas'
+        },
+        card2: {
+          title: 'Diseño de Captura de Datos',
+          description: 'Diseñamos qué datos necesitas capturar y cómo, para que tu operación genere la información que hoy no tienes y que necesitas para tomar decisiones.',
+          metric: 'Datos accionables'
+        },
+        card3: {
+          title: 'Automatización Inteligente',
+          description: 'Implementamos IA donde más impacta: eliminamos tareas manuales, reducimos errores y hacemos que tus procesos corran solos.',
+          metric: 'Resultados medibles'
+        },
+        card4: {
+          title: 'Operación Predecible y Rentable',
+          description: 'El resultado final: una operación que genera datos, se mide sola y mejora continuamente. Predecible, automatizada y altamente rentable.',
+          metric: 'ROI demostrable'
+        }
+      },
+      capabilities: {
+        title: 'Nuestro Enfoque',
+        subtitle: 'De procesos ineficientes a una operación automatizada y medible',
+        items: [
+          {
+            title: 'Diagnóstico de Ineficiencias Operativas',
+            description: 'Recorremos tus flujos de trabajo para identificar dónde se pierde tiempo, dinero e información. Cuantificamos el costo real de cada ineficiencia.',
+            features: [
+              'Mapeo de flujos de trabajo y puntos de fricción',
+              'Cuantificación del costo de cada ineficiencia',
+              'Identificación de tareas manuales eliminables',
+              'Análisis de datos que hoy no se capturan y deberían',
+              'Ranking de oportunidades por impacto económico'
+            ]
+          },
+          {
+            title: 'Diseño de Captura de Datos y Automatización',
+            description: 'Diseñamos qué datos necesitas capturar, cómo hacerlo y qué automatizar con IA para que tu operación genere la información que hoy te falta.',
+            features: [
+              'Diseño de puntos de captura de datos en cada proceso',
+              'Selección de herramientas de IA por caso de uso',
+              'Estimación de costos y retorno por automatización',
+              'Arquitectura de datos para alimentar decisiones',
+              'Integración con tus sistemas actuales'
+            ]
+          },
+          {
+            title: 'Roadmap de Implementación por Impacto',
+            description: 'Entregamos un plan concreto: qué automatizar primero, qué datos capturar y en qué orden. Priorizado por rentabilidad, no por complejidad técnica.',
+            features: [
+              'Quick wins de automatización (0-3 meses)',
+              'Captura de datos y modelos predictivos (3-12 meses)',
+              'Operación autónoma y mejora continua (12-24 meses)',
+              'Presupuesto y retorno estimado por fase',
+              'KPIs de eficiencia y ahorro por iniciativa'
+            ]
+          },
+          {
+            title: 'Pilotos con Datos Reales',
+            description: 'Antes de escalar, validamos con pilotos de 2-4 semanas usando tus datos reales. Medimos el ahorro concreto y decidimos juntos qué escalar.',
+            features: [
+              'Piloto funcional con tus datos reales',
+              'Medición de ahorro de tiempo y costos vs. proceso actual',
+              'Validación de captura de datos en producción',
+              'Demo funcional para el equipo directivo',
+              'Decisión go/no-go respaldada con números'
+            ]
+          }
+        ]
+      },
+      useCases: {
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'Retail / E-commerce',
+            title: 'Automatización del Proceso de Pedidos',
+            flow: [
+              { label: 'Problema', content: 'Proceso de pedidos con 70% de pasos manuales: validación de stock, asignación de bodega y generación de guías. 6 personas dedicadas a tareas repetitivas.' },
+              { label: 'Solución', content: 'Diagnóstico del flujo completo, diseño de captura de datos en cada etapa y automatización con IA de la asignación de bodega y generación de documentos.' },
+              { label: 'Resultado', content: '85% del proceso automatizado. Tiempo de procesamiento de 4 horas a 15 minutos. Equipo reasignado a tareas de mayor valor.' }
+            ]
+          },
+          {
+            label: 'Servicios / SaaS',
+            title: 'De Reportes Manuales a Operación Data-Driven',
+            flow: [
+              { label: 'Problema', content: 'Equipo de operaciones armando reportes manualmente cada semana. Sin datos estandarizados ni visibilidad en tiempo real del estado de los procesos.' },
+              { label: 'Solución', content: 'Diseñamos la captura de datos en cada punto del proceso, automatizamos la generación de reportes y creamos alertas inteligentes por excepción.' },
+              { label: 'Resultado', content: 'Reportes automáticos en tiempo real. 20 horas/semana liberadas. Detección de problemas 3x más rápida.' }
+            ]
+          },
+          {
+            label: 'Manufactura',
+            title: 'Eliminación de Ineficiencias en Producción',
+            flow: [
+              { label: 'Problema', content: 'Planta con tiempos muertos no medidos, planificación basada en intuición y cero trazabilidad del proceso productivo.' },
+              { label: 'Solución', content: 'Mapeo completo del flujo productivo, instalación de captura de datos en puntos críticos e IA predictiva para planificación de producción.' },
+              { label: 'Resultado', content: 'Reducción de 40% en tiempos muertos. Planificación predictiva con 92% de precisión. Operación completamente trazable.' }
+            ]
+          }
+        ]
+      },
+      techStack: {
+        title: 'Frameworks y Metodologías',
+        subtitle: 'Herramientas que usamos para diagnosticar, automatizar y medir',
+        categories: [
+          { title: 'Cloud Platforms', items: ['AWS', 'Google Cloud', 'Azure', 'Snowflake'] },
+          { title: 'Architecture Patterns', items: ['Data Lakehouse', 'Data Mesh', 'Event-Driven', 'Microservices'] },
+          { title: 'Frameworks', items: ['TOGAF', 'DAMA-DMBOK', 'DataOps', 'FinOps'] }
+        ]
+      },
+      cta: {
+        title: '¿Cuánto está costando la ineficiencia en tu operación?',
+        description: 'Agenda una sesión de diagnóstico gratuita (30 min). Identificaremos las ineficiencias de mayor impacto y te mostraremos cómo eliminarlas con datos e IA.',
+        button: 'Agendar diagnóstico gratuito'
+      },
+      relatedServices: {
+        title: 'Servicios Relacionados',
+        subtitle: 'Después de la asesoría, ejecutamos',
+        cards: [
+          { title: 'Plataformas a Medida', description: 'Construimos la solución personalizada definida en la asesoría.' },
+          { title: 'Ingeniería de Datos', description: 'Implementamos la infraestructura diseñada en el roadmap.' },
+          { title: 'Business Intelligence', description: 'Dashboards y reportes que materializan la estrategia.' }
+        ],
+        linkText: 'Ver servicio'
+      }
+    },
+    plataformasPage: {
+      hero: {
+        title: 'Plataformas a Medida',
+        tagline: 'Soluciones que resuelven tu problema, no el de todos',
+        description: 'Construimos plataformas personalizadas que centralizan, integran y automatizan los procesos clave de tu negocio. CX, finanzas, analytics, integraciones — todo diseñado para ti.',
+        ctaPrimary: 'Agendar reunión',
+        ctaSecondary: 'Ver plataformas'
+      },
+      valueProps: {
+        title: '¿Por qué una Plataforma a Medida?',
+        subtitle: 'Porque tu negocio no es genérico',
+        card1: {
+          title: 'Problema Específico, Solución Específica',
+          description: 'No forzamos herramientas genéricas. Diseñamos la plataforma exacta que tu operación necesita, integrando tus fuentes de datos existentes.',
+          metric: '100% a tu medida'
+        },
+        card2: {
+          title: 'Time-to-Value Rápido',
+          description: 'Primeros entregables funcionales en 4-6 semanas. Iteramos sobre feedback real, no sobre supuestos.',
+          metric: '4-6 semanas MVP'
+        },
+        card3: {
+          title: 'Integración Total',
+          description: 'Conectamos tu CRM, ERP, herramientas de marketing y cualquier fuente de datos en una sola plataforma unificada.',
+          metric: 'Todo conectado'
+        },
+        card4: {
+          title: 'Escalabilidad Incluida',
+          description: 'Arquitectura cloud-native que crece con tu negocio. Sin rehacer todo cuando crezcas.',
+          metric: 'Escala sin límites'
+        }
+      },
+      capabilities: {
+        title: 'Plataformas que Desplegamos',
+        subtitle: 'Soluciones probadas adaptadas a tu contexto',
+        items: [
+          {
+            title: 'Plataforma de Customer Experience (CX)',
+            description: 'Centraliza toda la experiencia del cliente en un solo lugar: NPS, tickets, journey mapping, churn alerts, y métricas de satisfacción.',
+            features: [
+              'Dashboard unificado de experiencia del cliente',
+              'Integración con NPS, CSAT, CES',
+              'Journey mapping automatizado',
+              'Alertas de churn y clientes en riesgo',
+              'Análisis de sentimiento en tiempo real'
+            ]
+          },
+          {
+            title: 'Plataforma Financiera',
+            description: 'P&L en tiempo real, forecasting financiero, control de costos y reportería automática al directorio — todo integrado.',
+            features: [
+              'P&L automatizado en tiempo real',
+              'Forecasting financiero y proyecciones',
+              'Control de costos por centro de costo',
+              'Reportería automática al directorio',
+              'Integración con ERP y sistemas contables'
+            ]
+          },
+          {
+            title: 'Todos tus Sistemas Conectados',
+            description: 'Conectamos tu CRM, ERP, herramientas de marketing y fuentes externas sin perder datos. Un solo flujo de información confiable para toda la empresa.',
+            features: [
+              'Conectores para Salesforce, HubSpot, SAP, etc.',
+              'Sincronización bidireccional en tiempo real',
+              'Transformación y normalización de datos',
+              'Monitoreo de calidad de datos',
+              'API unificada para consumo interno'
+            ]
+          },
+          {
+            title: 'Procesos que Corren Solos',
+            description: 'Flujos inteligentes que se ejecutan sin intervención humana: enriquecen información, monitorean métricas, generan reportes y envían alertas automáticas.',
+            features: [
+              'Enriquecimiento automático de información',
+              'Monitoreo de métricas y competencia',
+              'Generación automática de reportes',
+              'Alertas inteligentes y escalamiento',
+              'Integración con los procesos que ya tienes'
+            ]
+          }
+        ]
+      },
+      useCases: {
+        title: 'Casos de Éxito',
+        cases: [
+          {
+            label: 'Hospitality',
+            title: 'Plataforma CX para Cadena Hotelera',
+            flow: [
+              { label: 'Problema', content: 'Cadena con NPS disperso en 5 sistemas, sin visibilidad centralizada de la experiencia del huésped.' },
+              { label: 'Solución', content: 'Plataforma CX unificada: NPS, reviews online, tickets de soporte, y journey del huésped — todo en un dashboard.' },
+              { label: 'Resultado', content: 'NPS aumentó 12 puntos. Tiempo de respuesta a problemas -60%. Retención de huéspedes +15%.' }
+            ]
+          },
+          {
+            label: 'SaaS / B2B',
+            title: 'Hub de Integraciones para SaaS',
+            flow: [
+              { label: 'Problema', content: 'SaaS B2B con datos en Salesforce, Intercom, Stripe y Mixpanel sin conexión. Equipo de CS sin visión 360° del cliente.' },
+              { label: 'Solución', content: 'Hub de integraciones que conecta las 4 plataformas. Customer 360 dashboard con health score automatizado.' },
+              { label: 'Resultado', content: 'Churn reducido 20%. CS team ahorra 10h/semana. Upsell revenue +30% por mejor timing.' }
+            ]
+          },
+          {
+            label: 'Retail / Finance',
+            title: 'Plataforma Financiera para Retail',
+            flow: [
+              { label: 'Problema', content: 'CFO sin P&L actualizado. Reportes manuales tomaban 2 semanas. Decisiones de pricing sin datos en tiempo real.' },
+              { label: 'Solución', content: 'Plataforma financiera integrada con ERP y POS. P&L diario automático, forecasting mensual, y alertas de desviación.' },
+              { label: 'Resultado', content: 'Cierre contable de 15 días a 2 días. Forecasting accuracy +40%. Decisiones de pricing basadas en datos reales.' }
+            ]
+          }
+        ]
+      },
+      techStack: {
+        title: 'Tecnologías que Usamos',
+        subtitle: 'Stack moderno y escalable',
+        categories: [
+          { title: 'Cloud & Data', items: ['AWS', 'Google Cloud', 'Snowflake', 'BigQuery'] },
+          { title: 'Integration', items: ['Fivetran', 'Airbyte', 'APIs custom', 'Kafka'] },
+          { title: 'Frontend & BI', items: ['React', 'Power BI', 'Looker', 'Metabase'] }
+        ]
+      },
+      cta: {
+        title: '¿Necesitas una plataforma que resuelva tu problema?',
+        description: 'Agenda una sesión de discovery donde entenderemos tu desafío y te mostraremos cómo podemos resolverlo con una plataforma a medida.',
+        button: 'Agendar discovery'
+      },
+      relatedServices: {
+        title: 'Servicios Relacionados',
+        subtitle: 'Complementa tu plataforma con estos servicios',
+        cards: [
+          { title: 'Asesorías Estratégicas', description: 'Define la estrategia antes de construir la plataforma.' },
+          { title: 'Ingeniería de Datos', description: 'La infraestructura robusta que alimenta tu plataforma.' },
+          { title: 'Automatización con IA', description: 'Agentes inteligentes que potencian tu plataforma.' }
         ],
         linkText: 'Ver servicio'
       }
@@ -2112,7 +2369,7 @@ const translations = {
   en: {
     nav: {
       services: 'Services',
-      solutions: 'Solutions',
+      platforms: 'Platforms',
       team: 'Team',
       clients: 'Clients',
       contact: 'Contact'
@@ -2123,155 +2380,134 @@ const translations = {
       team: 'Team',
       clients: 'Clients',
       contact: 'Contact',
-      consultoria: 'Data Consulting',
+      asesoria: 'Strategic Advisory',
+      plataformas: 'Custom Platforms',
       bi: 'Business Intelligence',
-      dataScience: 'Data Science',
+      dataScience: 'Data Science & Prediction',
       gobierno: 'Data Governance',
       ingenieria: 'Data Engineering',
-      aiGenai: 'AI / GenAI'
+      aiGenai: 'AI Automation',
+      consultoria: 'Strategic Advisory'
     },
     hero: {
-      title: 'Transforming Data into Insights',
-      description: 'We transform data into your competitive advantage. Scale, innovate, and grow with us.',
+      title: 'Turn Your Data Into Real Competitive Advantage',
+      description: 'We advise, build platforms, and automate with AI so your company makes better decisions, faster. Measurable results, not endless projects.',
       cta: {
         primary: 'Schedule a meeting',
         secondary: 'View services'
       }
     },
     services: {
-      dataConsulting: {
-        title: 'Data Consulting',
-        description: 'We design customized strategies and roadmaps to maximize the value of your information at the lowest cost, focusing on measurable results.',
+      strategicAdvisory: {
+        title: 'Process Optimization Advisory',
+        description: 'We identify and eliminate inefficiencies in your workflow through the strategic use of data and AI. We don\'t just analyze what you have; we design the data capture needed to make your operation predictable, automated, and highly profitable.',
         bullets: [
-          'Discovery of high-impact use cases',
-          'Scalable and efficient data architecture',
-          'Cost evaluation and optimization',
-          'Pilots and proof of concepts (PoCs)'
+          'Process mapping and improvement opportunities',
+          'Custom automation solution design',
+          'Roadmap prioritized by operational impact',
+          'Quick AI pilots to validate before scaling'
         ]
       },
-      dataGovernance: {
-        title: 'Data Governance',
-        description: 'We establish people, processes, and policies to ensure quality, security, and regulatory compliance of your data.',
+      customPlatforms: {
+        title: 'Custom Platforms',
+        description: 'We build the solution your company needs: your data connected, your processes automated, your teams with the right information.',
         bullets: [
-          'RACI model and data roles',
-          'Centralized data catalog',
-          'Data Quality SLAs',
-          'Access, privacy, and security policies'
+          'All your customer information in one place',
+          'Your systems connected without losing data',
+          'Reports and metrics for every business area',
+          'Automated processes that are done manually today'
         ]
       },
       businessIntelligence: {
         title: 'Business Intelligence',
-        description: 'Real-time interactive dashboards that transform complex data into actionable insights for your executive team.',
+        description: 'Dashboards your team actually uses. The metrics that matter, visible to everyone, always up to date.',
         bullets: [
-          'Semantic data modeling',
-          'Custom self-hosted BI platforms',
-          'Dashboards in Power BI, Looker, and Tableau',
-          'Automated alerts and notifications',
-          'Embedded analytics in your applications'
+          'Dashboards with the metrics your team needs to see',
+          'Automated reports delivered to your inbox every week',
+          'Alerts when something deviates from the plan',
+          'One single version of the numbers for the entire company'
+        ]
+      },
+      aiAutomation: {
+        title: 'AI Automation',
+        description: 'Tasks that take hours today, solved in seconds. Reports that build themselves, smart alerts, and processes that run without anyone touching them.',
+        bullets: [
+          'Reports that generate and send themselves',
+          'Alerts when there are opportunities or risks in your data',
+          'Repetitive processes that run without intervention',
+          'Automatic search and enrichment of information'
+        ]
+      },
+      dataScience: {
+        title: 'Data Science & Prediction',
+        description: 'Anticipate what will happen: which customers will leave, how much you will sell, where to optimize pricing. Decisions with data, not intuition.',
+        bullets: [
+          'Forecast demand to plan without surprises',
+          'Anticipate which customers are about to leave',
+          'Find the optimal price for each product',
+          'Segment customers to invest where returns are highest'
         ]
       },
       dataEngineering: {
         title: 'Data Engineering',
-        description: 'Migrations, ETL pipelines, and modern architectures to efficiently process large data volumes.',
+        description: 'The foundation that makes everything work. Without organized and connected data, there are no dashboards, predictions, or automation possible.',
         bullets: [
-          'Incremental and batch data ingestion',
-          'Data orchestration',
-          'Transformations',
-          'Cloud cost optimization'
-        ]
-      },
-      dataScience: {
-        title: 'Data Science',
-        description: 'Predictive models and advanced analytics that anticipate trends, optimize operations, and maximize revenue.',
-        bullets: [
-          'Demand and churn prediction',
-          'Customer segmentation and LTV',
-          'Heuristic pattern detection',
-          'Rigorous statistical validation'
-        ]
-      },
-      aiGenAI: {
-        title: 'AI / GenAI',
-        description: 'From data to action: intelligent agents that automate processes, accelerate sales, and enhance strategic decisions.',
-        bullets: [
-          'Data agents',
-          'Automatic sales triggers',
-          'Decision copilots',
-          'Intelligent orchestrators'
+          'We connect all your information sources',
+          'Your data always updated and available',
+          'Cloud migration without interruptions',
+          'Infrastructure cost reduction'
         ]
       }
     },
-    solutions: {
-      title: 'Solutions by Area',
-      subtitle: 'Specific use cases tailored to your business needs',
+    platforms: {
+      title: 'Platforms by Area',
+      subtitle: 'Ready-made solutions for every team in your company',
       cards: [
         {
           title: 'Sales & Growth',
-          description: 'Conversion and ROI optimization through predictive analytics.',
+          description: 'Your sales team with all the information to sell more.',
           items: [
-            'Predictive lead scoring for intelligent commercial prioritization',
-            'Dynamic audience segmentation and market micro-segmentation',
-            'Multi-touch attribution models for advertising investment optimization',
-            'Churn prediction and proactive retention strategy design'
+            'Know which prospects to prioritize and which will buy',
+            'See which campaigns and channels drive the most sales',
+            'Anticipate which customers will leave — and retain them',
+            'Sales pipeline visible and updated for the entire team'
           ]
         },
         {
-          title: 'Operational Efficiency',
-          description: 'Cost reduction and resource optimization with real-time data.',
+          title: 'Operations',
+          description: 'Total control of your operation without surprises.',
           items: [
-            'Inventory optimization and full supply chain visibility',
-            'Demand forecasting models and operational resource planning',
-            'Intelligent real-time operational anomaly detection systems',
-            'Complex process automation through RPA + AI integration'
+            'Forecast demand to plan purchases and inventory',
+            'Complete supply chain visibility',
+            'Detect problems before they escalate',
+            'Automate manual and repetitive processes'
           ]
         },
         {
-          title: 'Customer Experience (CX)',
-          description: 'Customer lifetime value maximization and intelligent loyalty.',
+          title: 'Marketing & Customers',
+          description: 'Understand your customers and run campaigns that actually work.',
           items: [
-            'Sentiment analysis and voice of the customer through natural language processing (NLP)',
-            'Customer Lifetime Value (CLV) models for customer value segmentation',
-            'AI-powered recommendation engines and content personalization',
-            'Post-sale funnel optimization and proactive technical support systems'
+            'Know what your customers want and feel',
+            'Segment to invest where returns are highest',
+            'Measure satisfaction (NPS) in real time',
+            'Personalized campaigns that increase conversion'
           ]
         },
         {
-          title: 'Strategy & Finance',
-          description: 'Centralized intelligence for C-Suite high-level decision making.',
+          title: 'Finance',
+          description: 'The right numbers, always available.',
           items: [
-            'Executive dashboards with critical KPI visualization and business health',
-            'Advanced financial forecasting models and cash flow projections',
-            'Detailed profitability analysis by product, channel, and business unit',
-            'Support in adopting data culture and analytical literacy'
+            'Real business numbers updated daily',
+            'Reliable sales and cash flow projections',
+            'Board reports that build themselves',
+            'Clear profitability by product, channel, and business unit'
           ]
-        }
-      ]
-    },
-    infrastructure: {
-      title: 'The Engine Behind Data',
-      subtitle: 'To activate high-impact solutions, we deploy data agents and robust architectures that ensure the integrity and flow of information end-to-end:',
-      components: [
-        {
-          title: 'Web Scrapers',
-          description: 'Automated competitor and market monitoring'
-        },
-        {
-          title: 'Enrichment Agents',
-          description: 'Data validation and cleaning with advanced AI'
-        },
-        {
-          title: 'Multi-platform Synchronization',
-          description: 'Full integration of ERPs, CRMs and external sources'
-        },
-        {
-          title: 'Data Governance',
-          description: 'Quality assurance, data cleansing and information security'
         }
       ]
     },
     boutique: {
-      title: "Your challenge doesn't fit into these categories?",
-      description: 'We are a boutique consultancy. We don\'t believe in canned solutions. We build <strong>100% ad-hoc</strong> analytics architectures to solve specific problems that require a creative and technical approach from scratch.',
+      title: "Your challenge doesn't fit a standard solution?",
+      description: 'We are a boutique consultancy. We design <strong>100% custom solutions</strong> — from strategy to implementation. No templates, no off-the-shelf.',
       cta: 'Schedule Diagnostic Consultation'
     },
     clients: {
@@ -2517,12 +2753,12 @@ const translations = {
         subtitle: 'Complement your strategy with these services',
         cards: [
           {
-            title: 'Data Governance',
-            description: 'Ensure quality, security, and compliance with clear policies and processes.'
+            title: 'Custom Platforms',
+            description: 'We build the customized solution your business needs.'
           },
           {
             title: 'Data Engineering',
-            description: 'Implement pipelines and architectures designed in the consulting phase.'
+            description: 'Implement pipelines and architectures designed in the advisory phase.'
           },
           {
             title: 'Business Intelligence',
@@ -2559,8 +2795,8 @@ const translations = {
           metric: '3-4 weeks go-live'
         },
         card4: {
-          title: 'Self-Service Analytics',
-          description: 'Empower business teams to explore data without depending on IT. Semantic models that ensure consistency.',
+          title: 'Every Team with Their Metrics',
+          description: 'Each team queries what they need without asking IT for help. Semantic models that ensure consistency.',
           metric: '80% fewer IT tickets'
         }
       },
@@ -2591,13 +2827,13 @@ const translations = {
             ]
           },
           {
-            title: 'Self-Hosted BI Platforms',
-            description: 'We implement open-source or self-hosted BI solutions for maximum control and customization. Ideal for companies with strict data sovereignty or compliance requirements.',
+            title: 'Dashboards for Every Team',
+            description: 'We implement BI solutions adapted to each team for maximum control and customization. Ideal for companies needing independence for every area.',
             features: [
-              'Metabase and Apache Superset deployment',
-              'Redash for collaborative ad-hoc queries',
-              'Grafana for metrics and monitoring',
-              'Full control over infrastructure and data',
+              'Metabase and Apache Superset for technical teams',
+              'Redash for collaborative queries',
+              'Grafana for operational metrics',
+              'Full control over each team\'s data',
               'Unlimited customization without license limits'
             ]
           },
@@ -2613,14 +2849,14 @@ const translations = {
             ]
           },
           {
-            title: 'Embedded Analytics in Your Applications',
-            description: 'Integrate dashboards directly into your SaaS product so your customers access analytics without leaving your app. White-label and multi-tenant.',
+            title: 'Metrics Integrated in Your Tools',
+            description: 'Integrate dashboards directly into the tools your team already uses so they access metrics without switching applications.',
             features: [
-              'Embedded iframes with SSO/SAML',
-              'White-label (custom branding)',
-              'Multi-tenancy with row-level security',
-              'APIs for programmatic embedding',
-              'Usage analytics and monetization'
+              'Dashboards integrated in your CRM or portal',
+              'Custom company branding',
+              'Secure access by role and team',
+              'APIs for integration with any tool',
+              'Usage and adoption metrics'
             ]
           }
         ]
@@ -2731,12 +2967,12 @@ const translations = {
             description: 'Robust pipelines that feed your dashboards with clean, updated data.'
           },
           {
-            title: 'Data Science',
-            description: 'Add predictive analytics to your dashboards with forecasting and churn models.'
+            title: 'Data Science & Prediction',
+            description: 'Add predictive models to your dashboards to anticipate trends.'
           },
           {
-            title: 'Data Governance',
-            description: 'Ensure your dashboards display reliable and governed data.'
+            title: 'Custom Platforms',
+            description: 'Integrated solutions that centralize metrics from your entire operation.'
           }
         ],
         linkText: 'View service'
@@ -2769,9 +3005,9 @@ const translations = {
           metric: '95% confidence'
         },
         card4: {
-          title: 'Models in Production',
-          description: 'MLOps to deploy models to production with monitoring, retraining, and drift detection. Models that generate value 24/7.',
-          metric: '24/7 inference'
+          title: 'Always-On Predictions',
+          description: 'Models that generate predictions and recommendations 24/7 with monitoring, retraining, and automatic drift detection.',
+          metric: 'Running 24/7'
         }
       },
       capabilities: {
@@ -2790,36 +3026,36 @@ const translations = {
             ]
           },
           {
-            title: 'Customer Segmentation and LTV',
-            description: 'Clustering (K-means, DBSCAN) to segment customers by behavior. LTV (Lifetime Value) models to prioritize acquisition and retention efforts.',
+            title: 'Customer Segmentation and Value',
+            description: 'Customer clustering by behavior and value. Customer lifetime value models to prioritize acquisition and retention efforts.',
             features: [
               'RFM analysis and behavioral clustering',
-              'LTV prediction with survival models',
+              'Customer lifetime value prediction',
               'Cohort analysis and retention curves',
               'Propensity models for upsell/cross-sell',
               'Campaign personalization by segment'
             ]
           },
           {
-            title: 'Heuristic Pattern Detection',
+            title: 'Pattern and Anomaly Detection',
             description: 'Exploratory analysis to discover non-obvious patterns in data. Anomaly detection for fraud, outliers, and unusual events requiring attention.',
             features: [
-              'Deep Exploratory Data Analysis (EDA)',
-              'Anomaly detection (Isolation Forest, autoencoders)',
-              'Association rules mining (Market Basket Analysis)',
-              'Time series decomposition (trend, seasonality)',
-              'Causal inference to identify real drivers'
+              'Deep exploratory data analysis',
+              'Anomaly and outlier detection',
+              'Purchase and usage pattern discovery',
+              'Seasonality and trend analysis',
+              'Identification of real causes behind the numbers'
             ]
           },
           {
-            title: 'Rigorous Statistical Validation',
-            description: 'A/B testing with power analysis, multiple testing correction. Confidence intervals, hypothesis testing, and causal inference for informed decisions.',
+            title: 'A/B Testing and Validation',
+            description: 'Rigorous A/B tests to make decisions with statistical certainty. No more decisions based on correlations that mean nothing.',
             features: [
-              'A/B test design with power analysis',
-              'Bayesian A/B testing for early stopping',
-              'Multiple testing correction (Bonferroni, FDR)',
-              'Causal inference (propensity score matching, DiD)',
-              'Model interpretability (SHAP, LIME)'
+              'A/B test design with correct sample size',
+              'Bayesian tests for faster decisions',
+              'Multiple comparison correction',
+              'Real cause identification (not just correlations)',
+              'Model interpretability to understand the why'
             ]
           }
         ]
@@ -2934,7 +3170,7 @@ const translations = {
             description: 'Dashboards that visualize predictions and scores from your models.'
           },
           {
-            title: 'AI / GenAI',
+            title: 'AI Automation',
             description: 'Intelligent agents that act on your predictive insights.'
           }
         ],
@@ -3143,8 +3379,8 @@ const translations = {
     ingenieriaPage: {
       hero: {
         title: 'Data Engineering',
-        tagline: 'Scalable and efficient pipelines',
-        description: 'Migrations, ETL pipelines, and modern architectures to efficiently process large data volumes. We build robust data infrastructure that scales with your business without increasing costs linearly.',
+        tagline: 'Your data connected and always available',
+        description: 'We connect all your information sources, keep them updated and available so every team can use them. Cloud migration without interruptions and infrastructure cost reduction.',
         ctaPrimary: 'Schedule consultation',
         ctaSecondary: 'Our services'
       },
@@ -3177,46 +3413,46 @@ const translations = {
         subtitle: 'Expertise in modern data architectures (batch, streaming, real-time)',
         items: [
           {
-            title: 'Incremental and Batch Data Ingestion',
-            description: 'We implement ingestion pipelines from multiple sources (databases, APIs, files) with incremental strategies (CDC) to minimize load and latency.',
+            title: 'Data Source Connection',
+            description: 'We connect all your information sources (databases, applications, files) with automatic updates so you always have fresh data.',
             features: [
-              'Change Data Capture (CDC) with Debezium/Fivetran',
-              'Ingestion from REST/GraphQL APIs',
-              'Batch processing of files (S3, SFTP)',
-              'Connectors for SaaS apps (Salesforce, HubSpot, etc.)',
-              'Schema evolution and versioning'
+              'Automatic connection to your databases',
+              'Integration with applications and APIs',
+              'File processing from any source',
+              'Connectors for business apps (Salesforce, HubSpot, etc.)',
+              'Incremental updates without overloading systems'
             ]
           },
           {
-            title: 'Orchestration with Airflow and Dagster',
-            description: 'We orchestrate complex pipelines with dependencies, retries, and alerts. Git-versioned DAGs with CI/CD for automated deployment.',
+            title: 'Data Flow Automation',
+            description: 'We automate data flows to run on their own, with automatic retries and alerts if something fails. Everything versioned with automated deployment.',
             features: [
-              'Modular and reusable DAGs',
-              'Dependency management and backfills',
-              'Retry logic and circuit breakers',
-              'Slack/PagerDuty alerts on failures',
-              'CI/CD with automated testing'
+              'Modular and reusable flows',
+              'Automatic dependency management',
+              'Automatic retries on failures',
+              'Slack or email alerts when something fails',
+              'Automated deployment with testing'
             ]
           },
           {
-            title: 'Transformations with dbt and Spark',
-            description: 'We transform raw data into analytical models using dbt (SQL) for batch and Spark for big data. Automated tests and generated documentation.',
+            title: 'Data Transformation and Preparation',
+            description: 'We transform raw data into ready-to-use information: analytical models, business metrics, and reports. With automated tests and documentation.',
             features: [
-              'dbt models with testing and documentation',
-              'Incremental models for efficiency',
-              'Spark jobs for PB-scale processing',
-              'Automated data quality tests',
-              'End-to-end lineage tracking'
+              'Data models with testing and documentation',
+              'Incremental updates for efficiency',
+              'Large-scale data processing',
+              'Automated quality tests',
+              'Complete data traceability'
             ]
           },
           {
             title: 'Cloud Cost Optimization',
-            description: 'We audit and optimize existing infrastructure: partitioning, clustering, auto-suspend, reserved capacity. FinOps for data teams.',
+            description: 'We audit and optimize your infrastructure so you only pay for what you need. We reduce costs without sacrificing performance.',
             features: [
-              'Cost analysis (compute, storage, egress)',
-              'Partitioning and clustering strategies',
-              'Auto-suspend/resume for warehouses',
-              'Reserved instances and savings plans',
+              'Cost analysis (compute, storage, transfer)',
+              'Partitioning and organization strategies',
+              'Automatic resource start/stop',
+              'Savings plans and reservations',
               'Query optimization and caching'
             ]
           }
@@ -3324,7 +3560,7 @@ const translations = {
         subtitle: 'Maximize the value of your data infrastructure',
         cards: [
           {
-            title: 'Data Consulting',
+            title: 'Strategic Advisory',
             description: 'Define architecture and roadmap before implementing pipelines.'
           },
           {
@@ -3332,8 +3568,8 @@ const translations = {
             description: 'Dashboards powered by your robust data pipelines.'
           },
           {
-            title: 'Data Governance',
-            description: 'Ensure quality and compliance in your pipelines with data governance.'
+            title: 'Custom Platforms',
+            description: 'Integrated solutions that maximize your data infrastructure.'
           }
         ],
         linkText: 'View service'
@@ -3376,14 +3612,14 @@ const translations = {
         subtitle: 'Expertise in AI applied to real business use cases',
         items: [
           {
-            title: 'Web Scrapers and Data Agents',
-            description: 'Intelligent agents that extract, structure, and enrich data from public and private sources. Continuous monitoring of competitors, news, and market trends.',
+            title: 'Automatic Information Search and Collection',
+            description: 'Intelligent agents that search, collect, and organize information from public and private sources. Continuous monitoring of competitors, news, and market trends.',
             features: [
-              'Web scraping with JavaScript, CAPTCHA, rate limit handling',
-              'Data extraction from PDFs, images (OCR), documents',
-              'Enrichment with external APIs (LinkedIn, Clearbit, etc.)',
-              'Agents that adapt to changes in site structure',
-              'Automated validation and cleaning pipelines'
+              'Automatic search on websites and public sources',
+              'Data extraction from PDFs, images, and documents',
+              'Enrichment with external sources (LinkedIn, databases, etc.)',
+              'Continuous monitoring that adapts to changes',
+              'Automatic validation and cleaning of information'
             ]
           },
           {
@@ -3398,25 +3634,25 @@ const translations = {
             ]
           },
           {
-            title: 'Business Decision Copilots',
-            description: 'AI assistants that analyze data, generate insights, and recommend actions. Copilots trained on your data that answer complex questions in natural language.',
+            title: 'Instant Answers About Your Data',
+            description: 'AI assistants that answer questions about your data in natural language. Questions like "how much did we sell last month?" or "which customers are at risk?" — answered instantly.',
             features: [
-              'Q&A on your data in natural language',
+              'Questions about your data in natural language',
               'Automatic generation of executive reports',
+              'Smart search across internal documents',
               'Recommendations based on historical patterns',
-              'RAG (Retrieval-Augmented Generation) on internal docs',
-              'Fine-tuning of LLMs in your specific domain'
+              'Answers with verifiable sources and data'
             ]
           },
           {
-            title: 'Intelligent Meeting Orchestrators',
-            description: 'Agents that transcribe, summarize, and generate action items from meetings automatically. Synchronization with CRM, calendars, and project management tools.',
+            title: 'Automatic Meeting Summaries',
+            description: 'Agents that transcribe, summarize, and generate task lists from your meetings automatically. They connect with your CRM and management tools.',
             features: [
               'Automatic meeting transcription (Zoom, Meet, Teams)',
-              'GenAI summarization (key points, decisions, next steps)',
-              'Action item extraction and assignee allocation',
+              'Summary with key points, decisions, and next steps',
+              'Task list with assigned owners',
               'Automatic CRM update with call insights',
-              'Sentiment and engagement analysis in sales calls'
+              'Participation and engagement analysis in meetings'
             ]
           }
         ]
@@ -3523,7 +3759,7 @@ const translations = {
         subtitle: 'Power your agents with data and analytics',
         cards: [
           {
-            title: 'Data Science',
+            title: 'Data Science & Prediction',
             description: 'Predictive models that feed your agents with actionable insights.'
           },
           {
@@ -3531,9 +3767,201 @@ const translations = {
             description: 'Robust pipelines that provide clean data for your AI agents.'
           },
           {
-            title: 'Data Consulting',
-            description: 'Data strategy that maximizes the impact of your AI initiatives.'
+            title: 'Strategic Advisory',
+            description: 'Data & AI strategy that maximizes the impact of your initiatives.'
           }
+        ],
+        linkText: 'View service'
+      }
+    },
+    asesoriaPage: {
+      hero: {
+        title: 'Process Optimization Advisory',
+        tagline: 'Eliminate inefficiencies and turn your operation into actionable data',
+        description: 'We identify and eliminate inefficiencies in your workflow through the strategic use of data and AI. We don\'t just analyze what you have; we design the data capture needed to make your operation predictable, automated, and highly profitable.',
+        ctaPrimary: 'Schedule advisory',
+        ctaSecondary: 'Our approach'
+      },
+      valueProps: {
+        title: 'Why optimize your processes with us?',
+        subtitle: 'We don\'t guess — we diagnose with data and design solutions that are measured',
+        card1: { title: 'Inefficiency Mapping', description: 'We walk through your workflows, identify bottlenecks, and quantify the cost of each inefficiency in time and money.', metric: '2-3 weeks' },
+        card2: { title: 'Data Capture Design', description: 'We design what data you need to capture and how, so your operation generates the information you\'re missing to make decisions.', metric: 'Actionable data' },
+        card3: { title: 'Intelligent Automation', description: 'We implement AI where it matters most: we eliminate manual tasks, reduce errors, and make your processes run on their own.', metric: 'Measurable results' },
+        card4: { title: 'Predictable & Profitable Operation', description: 'The end result: an operation that generates data, measures itself, and improves continuously. Predictable, automated, and highly profitable.', metric: 'Demonstrable ROI' }
+      },
+      capabilities: {
+        title: 'Our Approach',
+        subtitle: 'From inefficient processes to an automated, measurable operation',
+        items: [
+          {
+            title: 'Operational Inefficiency Diagnosis',
+            description: 'We walk through your workflows to identify where time, money, and information are being lost. We quantify the real cost of each inefficiency.',
+            features: ['Workflow mapping and friction points', 'Cost quantification per inefficiency', 'Identification of eliminable manual tasks', 'Analysis of data not being captured today', 'Opportunity ranking by economic impact']
+          },
+          {
+            title: 'Data Capture & Automation Design',
+            description: 'We design what data you need to capture, how to do it, and what to automate with AI so your operation generates the information you\'re currently missing.',
+            features: ['Data capture point design per process', 'AI tool selection per use case', 'Cost and ROI estimation per automation', 'Data architecture to feed decisions', 'Integration with your current systems']
+          },
+          {
+            title: 'Impact-Based Implementation Roadmap',
+            description: 'We deliver a concrete plan: what to automate first, what data to capture, and in what order. Prioritized by profitability, not technical complexity.',
+            features: ['Automation quick wins (0-3 months)', 'Data capture and predictive models (3-12 months)', 'Autonomous operation and continuous improvement (12-24 months)', 'Budget and estimated ROI per phase', 'Efficiency and savings KPIs per initiative']
+          },
+          {
+            title: 'Pilots with Real Data',
+            description: 'Before scaling, we validate with 2-4 week pilots using your real data. We measure concrete savings and decide together what to scale.',
+            features: ['Functional pilot with your real data', 'Time and cost savings vs. current process', 'Data capture validation in production', 'Functional demo for the leadership team', 'Go/no-go decision backed by numbers']
+          }
+        ]
+      },
+      useCases: {
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'Retail / E-commerce', title: 'Order Process Automation',
+            flow: [
+              { label: 'Problem', content: 'Order process with 70% manual steps: stock validation, warehouse assignment, and shipping label generation. 6 people dedicated to repetitive tasks.' },
+              { label: 'Solution', content: 'Full flow diagnosis, data capture design at each stage, and AI automation of warehouse assignment and document generation.' },
+              { label: 'Result', content: '85% of the process automated. Processing time from 4 hours to 15 minutes. Team reassigned to higher-value tasks.' }
+            ]
+          },
+          {
+            label: 'Services / SaaS', title: 'From Manual Reports to Data-Driven Operations',
+            flow: [
+              { label: 'Problem', content: 'Operations team building reports manually every week. No standardized data or real-time visibility into process status.' },
+              { label: 'Solution', content: 'We designed data capture at each process point, automated report generation, and created intelligent exception-based alerts.' },
+              { label: 'Result', content: 'Real-time automatic reports. 20 hours/week freed up. Problem detection 3x faster.' }
+            ]
+          },
+          {
+            label: 'Manufacturing', title: 'Eliminating Production Inefficiencies',
+            flow: [
+              { label: 'Problem', content: 'Plant with unmeasured downtime, intuition-based planning, and zero traceability of the production process.' },
+              { label: 'Solution', content: 'Complete production flow mapping, data capture installation at critical points, and predictive AI for production planning.' },
+              { label: 'Result', content: '40% reduction in downtime. Predictive planning with 92% accuracy. Fully traceable operation.' }
+            ]
+          }
+        ]
+      },
+      techStack: {
+        title: 'Frameworks and Methodologies',
+        subtitle: 'Tools we use to diagnose, automate, and measure',
+        categories: [
+          { title: 'Cloud Platforms', items: ['AWS', 'Google Cloud', 'Azure', 'Snowflake'] },
+          { title: 'Architecture Patterns', items: ['Data Lakehouse', 'Data Mesh', 'Event-Driven', 'Microservices'] },
+          { title: 'Frameworks', items: ['TOGAF', 'DAMA-DMBOK', 'DataOps', 'FinOps'] }
+        ]
+      },
+      cta: {
+        title: 'How much is inefficiency costing your operation?',
+        description: 'Schedule a free diagnostic session (30 min). We\'ll identify the highest-impact inefficiencies and show you how to eliminate them with data and AI.',
+        button: 'Schedule free diagnostic'
+      },
+      relatedServices: {
+        title: 'Related Services',
+        subtitle: 'After advisory, we execute',
+        cards: [
+          { title: 'Custom Platforms', description: 'We build the customized solution defined in the advisory.' },
+          { title: 'Data Engineering', description: 'We implement the infrastructure designed in the roadmap.' },
+          { title: 'Business Intelligence', description: 'Dashboards and reports that materialize the strategy.' }
+        ],
+        linkText: 'View service'
+      }
+    },
+    plataformasPage: {
+      hero: {
+        title: 'Custom Platforms',
+        tagline: 'Solutions that solve your problem, not everyone\'s',
+        description: 'We build customized platforms that centralize, integrate, and automate your key business processes. CX, finance, analytics, integrations — all designed for you.',
+        ctaPrimary: 'Schedule meeting',
+        ctaSecondary: 'View platforms'
+      },
+      valueProps: {
+        title: 'Why a Custom Platform?',
+        subtitle: 'Because your business is not generic',
+        card1: { title: 'Specific Problem, Specific Solution', description: 'We don\'t force generic tools. We design the exact platform your operation needs, integrating your existing data sources.', metric: '100% custom' },
+        card2: { title: 'Fast Time-to-Value', description: 'First functional deliverables in 4-6 weeks. We iterate on real feedback, not assumptions.', metric: '4-6 weeks MVP' },
+        card3: { title: 'Total Integration', description: 'We connect your CRM, ERP, marketing tools, and any data source into a single unified platform.', metric: 'All connected' },
+        card4: { title: 'Built-in Scalability', description: 'Cloud-native architecture that grows with your business. No rebuilding when you scale.', metric: 'Unlimited scale' }
+      },
+      capabilities: {
+        title: 'Platforms We Deploy',
+        subtitle: 'Proven solutions adapted to your context',
+        items: [
+          {
+            title: 'Customer Experience (CX) Platform',
+            description: 'Centralize the entire customer experience in one place: NPS, tickets, journey mapping, churn alerts, and satisfaction metrics.',
+            features: ['Unified customer experience dashboard', 'Integration with NPS, CSAT, CES', 'Automated journey mapping', 'Churn and at-risk customer alerts', 'Real-time sentiment analysis']
+          },
+          {
+            title: 'Financial Platform',
+            description: 'Real-time P&L, financial forecasting, cost control, and automatic board reporting — all integrated.',
+            features: ['Automated real-time P&L', 'Financial forecasting and projections', 'Cost control by cost center', 'Automatic board reporting', 'Integration with ERP and accounting systems']
+          },
+          {
+            title: 'All Your Systems Connected',
+            description: 'We connect your CRM, ERP, marketing tools, and external sources without losing data. A single reliable information flow for the entire company.',
+            features: ['Connectors for Salesforce, HubSpot, SAP, etc.', 'Bidirectional real-time sync', 'Data transformation and normalization', 'Data quality monitoring', 'Unified API for internal consumption']
+          },
+          {
+            title: 'Processes That Run Themselves',
+            description: 'Smart workflows that run without human intervention: they enrich information, monitor metrics, generate reports, and send automatic alerts.',
+            features: ['Automatic information enrichment', 'Metrics and competition monitoring', 'Automatic report generation', 'Smart alerts and escalation', 'Integration with your existing processes']
+          }
+        ]
+      },
+      useCases: {
+        title: 'Success Stories',
+        cases: [
+          {
+            label: 'Hospitality', title: 'CX Platform for Hotel Chain',
+            flow: [
+              { label: 'Problem', content: 'Chain with NPS scattered across 5 systems, no centralized visibility of guest experience.' },
+              { label: 'Solution', content: 'Unified CX platform: NPS, online reviews, support tickets, and guest journey — all in one dashboard.' },
+              { label: 'Result', content: 'NPS increased 12 points. Problem response time -60%. Guest retention +15%.' }
+            ]
+          },
+          {
+            label: 'SaaS / B2B', title: 'Integration Hub for SaaS',
+            flow: [
+              { label: 'Problem', content: 'B2B SaaS with data in Salesforce, Intercom, Stripe, and Mixpanel without connection. CS team without 360° customer view.' },
+              { label: 'Solution', content: 'Integration hub connecting all 4 platforms. Customer 360 dashboard with automated health score.' },
+              { label: 'Result', content: 'Churn reduced 20%. CS team saves 10h/week. Upsell revenue +30% from better timing.' }
+            ]
+          },
+          {
+            label: 'Retail / Finance', title: 'Financial Platform for Retail',
+            flow: [
+              { label: 'Problem', content: 'CFO without updated P&L. Manual reports took 2 weeks. Pricing decisions without real-time data.' },
+              { label: 'Solution', content: 'Financial platform integrated with ERP and POS. Automatic daily P&L, monthly forecasting, and deviation alerts.' },
+              { label: 'Result', content: 'Accounting close from 15 days to 2 days. Forecasting accuracy +40%. Pricing decisions based on real data.' }
+            ]
+          }
+        ]
+      },
+      techStack: {
+        title: 'Technologies We Use',
+        subtitle: 'Modern and scalable stack',
+        categories: [
+          { title: 'Cloud & Data', items: ['AWS', 'Google Cloud', 'Snowflake', 'BigQuery'] },
+          { title: 'Integration', items: ['Fivetran', 'Airbyte', 'Custom APIs', 'Kafka'] },
+          { title: 'Frontend & BI', items: ['React', 'Power BI', 'Looker', 'Metabase'] }
+        ]
+      },
+      cta: {
+        title: 'Need a platform that solves your problem?',
+        description: 'Schedule a discovery session where we\'ll understand your challenge and show you how we can solve it with a custom platform.',
+        button: 'Schedule discovery'
+      },
+      relatedServices: {
+        title: 'Related Services',
+        subtitle: 'Complement your platform with these services',
+        cards: [
+          { title: 'Strategic Advisory', description: 'Define strategy before building the platform.' },
+          { title: 'Data Engineering', description: 'The robust infrastructure that feeds your platform.' },
+          { title: 'AI Automation', description: 'Intelligent agents that power your platform.' }
         ],
         linkText: 'View service'
       }
@@ -3542,7 +3970,7 @@ const translations = {
   jp: {
     nav: {
       services: 'サービス',
-      solutions: 'ソリューション',
+      platforms: 'プラットフォーム',
       team: 'チーム',
       clients: 'クライアント',
       contact: 'お問い合わせ'
@@ -3553,155 +3981,134 @@ const translations = {
       team: 'チーム',
       clients: 'クライアント',
       contact: 'お問い合わせ',
-      consultoria: 'データコンサルティング',
+      asesoria: '戦略的アドバイザリー',
+      plataformas: 'カスタムプラットフォーム',
+      consultoria: '戦略的アドバイザリー',
       bi: 'ビジネスインテリジェンス',
-      dataScience: 'データサイエンス',
+      dataScience: 'データサイエンス＆予測',
       gobierno: 'データガバナンス',
       ingenieria: 'データエンジニアリング',
-      aiGenai: 'AI / 生成AI'
+      aiGenai: 'AIによる自動化'
     },
     hero: {
-      title: 'データをインテリジェントな意思決定に変換',
-      description: 'データを競争優位に変えます。私たちと一緒に拡大、革新、成長しましょう。',
+      title: 'データを本当の競争優位に変える',
+      description: 'アドバイザリー、プラットフォーム構築、AIによる自動化で、より良い意思決定をより速く。測定可能な成果、終わりのないプロジェクトではありません。',
       cta: {
         primary: '面談を予約',
         secondary: 'サービスを見る'
       }
     },
     services: {
-      dataConsulting: {
-        title: 'データコンサルティング',
-        description: '測定可能な結果に焦点を当て、最小のコストで情報の価値を最大化するカスタマイズされた戦略とロードマップを設計します。',
+      strategicAdvisory: {
+        title: 'プロセス最適化アドバイザリー',
+        description: 'データとAIの戦略的活用により、ワークフローの非効率を特定・排除します。現状の分析だけでなく、業務を予測可能で自動化された高収益な体制にするためのデータ取得を設計します。',
         bullets: [
-          '高インパクトユースケースの発見',
-          'スケーラブルで効率的なデータアーキテクチャ',
-          'コスト評価と最適化',
-          'パイロットと概念実証（PoC）'
+          'プロセスマッピングとAI活用機会の検出',
+          'カスタム自動化ソリューションの設計',
+          '業務インパクト優先のロードマップ',
+          'スケール前のAIパイロット検証'
         ]
       },
-      dataGovernance: {
-        title: 'データガバナンス',
-        description: 'データの品質、セキュリティ、規制コンプライアンスを確保するための人、プロセス、ポリシーを確立します。',
+      customPlatforms: {
+        title: 'カスタムプラットフォーム',
+        description: '御社に必要なソリューションを構築：データを接続し、プロセスを自動化し、チームに正しい情報を届けます。',
         bullets: [
-          'RACIモデルとデータロール',
-          '集中型データカタログ',
-          'データ品質SLA',
-          'アクセス、プライバシー、セキュリティポリシー'
+          'すべての顧客情報を一箇所に',
+          'データを失わずにシステムを接続',
+          '各事業部門向けのレポートと指標',
+          '手作業で行っているプロセスの自動化'
         ]
       },
       businessIntelligence: {
         title: 'ビジネスインテリジェンス',
-        description: '複雑なデータを経営陣の実行可能な洞察に変換するリアルタイムのインタラクティブダッシュボード。',
+        description: 'チームが実際に使うダッシュボード。重要な指標が全員に見え、常に最新です。',
         bullets: [
-          'セマンティックデータモデリング',
-          'カスタムセルフホストBIプラットフォーム',
-          'Power BI、Looker、TableauのダッシュボードPower BI、Looker、Tableauのダッシュボード',
-          '自動アラートと通知',
-          'アプリケーションへの組み込み分析'
+          'チームが見るべき指標のダッシュボード',
+          '毎週メールに届く自動レポート',
+          '計画から逸脱した時のアラート',
+          '会社全体で統一された数字'
+        ]
+      },
+      aiAutomation: {
+        title: 'AIによる自動化',
+        description: '今日何時間もかかるタスクを数秒で解決。自動で作成されるレポート、スマートアラート、誰も触れずに動くプロセス。',
+        bullets: [
+          '自動で生成・送信されるレポート',
+          'データにチャンスやリスクがある時のアラート',
+          '介入なしで実行される反復プロセス',
+          '情報の自動検索とエンリッチメント'
+        ]
+      },
+      dataScience: {
+        title: 'データサイエンス＆予測',
+        description: '何が起こるかを予測：どの顧客が離れるか、いくら売れるか、どこで価格を最適化するか。直感ではなくデータで意思決定。',
+        bullets: [
+          'サプライズなしに計画するための需要予測',
+          '離脱しそうな顧客の予測',
+          '各商品の最適価格の発見',
+          'リターンが最も高い場所に投資するための顧客セグメンテーション'
         ]
       },
       dataEngineering: {
         title: 'データエンジニアリング',
-        description: '大量のデータを効率的に処理するための移行、ETLパイプライン、モダンアーキテクチャ。',
+        description: 'すべてを機能させる基盤。整理・接続されたデータなしに、ダッシュボードも予測も自動化もありません。',
         bullets: [
-          '増分およびバッチデータ取り込み',
-          'データオーケストレーション',
-          '変換',
-          'クラウドコスト最適化'
-        ]
-      },
-      dataScience: {
-        title: 'データサイエンス',
-        description: 'トレンドを予測し、業務を最適化し、収益を最大化する予測モデルと高度な分析。',
-        bullets: [
-          '需要とチャーン予測',
-          '顧客セグメンテーションとLTV',
-          'ヒューリスティックパターン検出',
-          '厳密な統計的検証'
-        ]
-      },
-      aiGenAI: {
-        title: 'AI / 生成AI',
-        description: 'データからアクションへ：プロセスを自動化し、販売を加速し、戦略的決定を強化するインテリジェントエージェント。',
-        bullets: [
-          'データエージェント',
-          '自動販売トリガー',
-          '意思決定コパイロット',
-          'インテリジェントオーケストレーター'
+          'すべての情報源を接続',
+          'データは常に最新で利用可能',
+          '中断のないクラウド移行',
+          'インフラコストの削減'
         ]
       }
     },
-    solutions: {
-      title: 'エリア別ソリューション',
-      subtitle: 'ビジネスニーズに合わせた特定のユースケース',
+    platforms: {
+      title: 'エリア別プラットフォーム',
+      subtitle: '御社の各チーム向けのソリューション',
       cards: [
         {
-          title: '営業と成長',
-          description: '予測分析によるコンバージョンとROI最適化。',
+          title: '営業＆成長',
+          description: 'より多く売るためのすべての情報を持つ営業チーム。',
           items: [
-            'インテリジェントな商業優先順位付けのための予測リードスコアリング',
-            'オーディエンスの動的セグメンテーションと市場のマイクロセグメンテーション',
-            '広告投資最適化のためのマルチタッチアトリビューションモデル',
-            'チャーン予測とプロアクティブリテンション戦略設計'
+            'どのプロスペクトを優先し、どれが購入するかを把握',
+            'どのキャンペーンとチャネルが最も売上を生むかを確認',
+            'どの顧客が離れるかを予測し、維持する',
+            'チーム全体に見える最新の商談パイプライン'
           ]
         },
         {
-          title: '業務効率',
-          description: 'リアルタイムデータによるコスト削減とリソース最適化。',
+          title: 'オペレーション',
+          description: 'サプライズなしの完全なオペレーション管理。',
           items: [
-            '在庫最適化とサプライチェーンの完全な可視性',
-            '需要予測モデルと運用リソース計画',
-            'リアルタイムでのインテリジェント運用異常検出システム',
-            'RPA + AI統合による複雑なプロセスの自動化'
+            '購入・在庫計画のための需要予測',
+            'サプライチェーンの完全な可視性',
+            '問題がエスカレートする前に検出',
+            '手作業で反復的なプロセスの自動化'
           ]
         },
         {
-          title: 'カスタマーエクスペリエンス（CX）',
-          description: '顧客生涯価値の最大化とインテリジェントなロイヤリティ。',
+          title: 'マーケティング＆顧客',
+          description: '顧客を理解し、本当に効果のあるキャンペーンを実施。',
           items: [
-            '自然言語処理（NLP）による感情分析と顧客の声',
-            '顧客価値セグメンテーションのための顧客生涯価値（CLV）モデル',
-            'AIを活用したレコメンデーションエンジンとコンテンツパーソナライゼーション',
-            'アフターセールスファネル最適化とプロアクティブテクニカルサポートシステム'
+            '顧客が何を望み、どう感じているかを把握',
+            'リターンが最も高い場所にセグメントして投資',
+            'リアルタイムで満足度（NPS）を測定',
+            'コンバージョンを高めるパーソナライズドキャンペーン'
           ]
         },
         {
-          title: '戦略と財務',
-          description: 'Cスイートレベルの高度な意思決定のための集中型インテリジェンス。',
+          title: '財務＆取締役会',
+          description: '正確な数字、常に利用可能。',
           items: [
-            '重要なKPIとビジネスヘルスの可視化を備えた経営ダッシュボード',
-            '高度な財務予測モデルとキャッシュフロー予測',
-            '製品、チャネル、事業単位別の詳細な収益性分析',
-            'データ文化の採用と分析リテラシーへの支援'
+            '毎日更新されるビジネスの実数',
+            '信頼性の高い売上・キャッシュフロー予測',
+            '自動で作成される取締役会レポート',
+            '商品、チャネル、事業単位別の明確な収益性'
           ]
-        }
-      ]
-    },
-    infrastructure: {
-      title: '私たちのインフラストラクチャ：データの背後にあるエンジン',
-      subtitle: '高インパクトソリューションを活性化するために、エンドツーエンドで情報の整合性とフローを保証する堅牢なアーキテクチャとデータエージェントを展開します：',
-      components: [
-        {
-          title: 'Webスクレイパー',
-          description: '競合と市場の自動監視'
-        },
-        {
-          title: 'エンリッチメントエージェント',
-          description: '高度なAIによるデータ検証とクリーニング'
-        },
-        {
-          title: 'マルチプラットフォーム同期',
-          description: 'ERP、CRM、外部ソースの完全統合'
-        },
-        {
-          title: 'データガバナンス',
-          description: '情報の品質、クリーニング、セキュリティの保証'
         }
       ]
     },
     boutique: {
-      title: 'あなたの課題はこれらのカテゴリーに当てはまりませんか？',
-      description: '私たちはブティックコンサルタンシーです。既製のソリューションを信じていません。ゼロから創造的で技術的なアプローチを必要とする特定の問題を解決するために<strong>100％アドホック</strong>な分析アーキテクチャを構築します。',
+      title: 'あなたの課題は標準的なソリューションに当てはまりませんか？',
+      description: '私たちはブティックコンサルタンシーです。戦略から実装まで<strong>100％カスタム</strong>ソリューションを設計します。テンプレートなし、既製品なし。',
       cta: '診断コンサルテーションを予約'
     },
     clients: {

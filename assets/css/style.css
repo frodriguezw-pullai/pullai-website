@@ -13,7 +13,8 @@
   --color-accent-secondary: #999999;
   --color-background: #FFFFFF;
   --color-background-dark: #000000;
-  --color-background-light: #F5F5F5;
+  --color-background-light: #F5F2EF;
+  --color-background-light-2: #F5F5F5;
   --color-text: #000000;
   --color-text-light: #666666;
   --color-text-on-dark: #FFFFFF;
@@ -110,7 +111,7 @@ section {
   background: var(--color-background);
 }
 
-#soluciones {
+#plataformas {
   background: var(--color-background-light);
 }
 
@@ -804,7 +805,7 @@ section {
 }
 
 /* ========================================
-   Services Section - Inditex Style
+   Services Section - Grid Checkerboard
    ======================================== */
 .services-inditex-section {
   padding: 0;
@@ -812,122 +813,80 @@ section {
   background: var(--color-background);
 }
 
-/* Service Wrapper - Contains title + text + image for each service */
-.service-wrapper {
-  /* This wrapper is the sticky boundary for titles */
-  position: relative;
+/* Wrapper with padding to contain the grid */
+.services-grid-wrapper {
+  padding: 0 40px 40px 40px;
 }
 
-/* Text Section (Description only - title is now outside) */
-.service-text-section {
-  min-height: 50vh;
+/* Grid Container - 2 columns, no gap */
+.services-grid-checkerboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+/* Individual Service Card */
+.service-card-grid {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 40px 80px 40px; /* Reduced top padding since title is now above */
-  background: var(--color-background);
+  flex-direction: column;
+  padding: 40px 44px;
 }
 
-/* Alternate backgrounds for service sections */
-.service-wrapper:nth-of-type(even) .service-text-section {
+/* Checkerboard pattern: row+col even → F5F2EF, odd → F5F5F5 */
+.service-card-grid:nth-child(odd) {
   background: var(--color-background-light);
 }
 
-.service-text-content {
-  max-width: 900px;
-  text-align: center;
+.service-card-grid:nth-child(even) {
+  background: var(--color-background-light-2);
+}
+
+/* Invert row 2 for checkerboard (items 3 and 4) */
+.service-card-grid:nth-child(3) {
+  background: var(--color-background-light-2);
+}
+
+.service-card-grid:nth-child(4) {
+  background: var(--color-background-light);
 }
 
 /* Ensure correct backgrounds for sticky titles */
-#servicios .section-title,
+#servicios .section-title {
+  background: var(--color-background);
+}
+
 #clientes .section-title {
   background: var(--color-background);
 }
 
-#soluciones .section-title,
+#plataformas .section-title,
 #contacto .section-title {
   background: var(--color-background-light);
 }
 
-/* Service sections alternate (inherited from parent) */
-
 .service-title-inditex {
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(18px, 2vw, 26px);
   font-weight: 400;
   color: var(--color-text);
-  margin-bottom: 0;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  text-align: center;
-
-  /* STICKY POSITIONING */
-  position: sticky;
-  top: 100px; /* Altura del navbar */
-  z-index: var(--z-sticky-titles);
-  padding: 20px 40px 20px 40px; /* REDUCIDO de 80px a 20px - eliminar espacio blanco excesivo */
-  transition: top 0.2s ease, box-shadow 0.2s ease;
-
-  /* Anti-blur para texto sticky */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+  text-align: left;
+  position: static;
 }
-
-/* Background extension full-width */
-.service-title-inditex::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -50vw; /* Usar margin en vez de transform para evitar blur */
-  width: 100vw;
-  height: 100%;
-  background: inherit;
-  z-index: -1;
-}
-
-/* Sombra cuando está sticky */
-.service-title-inditex.is-stuck {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* Ensure correct backgrounds for service titles based on wrapper */
-.service-wrapper:nth-of-type(odd) .service-title-inditex {
-  background: var(--color-background);        /* White */
-}
-
-.service-wrapper:nth-of-type(even) .service-title-inditex {
-  background: var(--color-background-light);  /* Light gray */
-}
-
-/* ========================================
-   Sticky Title Animation Over Images
-   ======================================== */
-
-/* Sin efectos cuando el título está sobre imagen */
-.service-title-inditex.over-image {
-  /* Ningún efecto - el título se ve igual en todas partes */
-}
-
-/* Sin cambios en el ::before cuando está sobre imagen */
-
-/* Animaciones eliminadas - sin efectos */
-
-/* Reducir intensidad en tablets */
-/* Sin efectos .over-image en ningún dispositivo */
 
 .service-description-inditex {
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: clamp(13px, 1.2vw, 16px);
   color: var(--color-text-light);
-  line-height: 1.7;
+  line-height: 1.6;
   font-weight: 300;
+  margin-bottom: 16px;
 }
 
 /* Image Section with Bullets */
 .service-image-section {
   position: relative;
-  min-height: 50vh;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -935,7 +894,8 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
-  padding: 60px 40px;
+  padding: 24px 20px;
+  border-radius: 6px 6px 0 0;
 }
 
 .service-image-overlay {
@@ -948,32 +908,39 @@ section {
   z-index: 1;
 }
 
-/* Bullets Container - Horizontal on One Line */
+/* Backdrop wrapper for bullets - positioning only */
+.service-bullets-backdrop {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+}
+
+/* Bullets Container - 2x2 grid inside image */
 .service-bullets-container {
   position: relative;
   z-index: 2;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
   max-width: 100%;
   margin: 0 auto;
 }
 
 /* Individual Bullet Box */
 .service-bullet-box {
-  flex: 1 1 0;
+  flex: 1 1 45%;
   min-width: 0;
-  padding: 18px 20px;
-  background: transparent;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.50);
+  border-radius: 6px;
   border: none;
   color: var(--color-text-on-dark);
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(10px, 1vw, 13px);
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.4;
   font-weight: 700;
   transition: var(--transition-smooth);
-  /* Protección visual adicional para legibilidad */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
@@ -988,6 +955,7 @@ section {
   color: inherit;
   display: block;
   transition: var(--transition-smooth);
+  margin-top: auto;
 }
 
 .service-inditex-link:hover .service-image-overlay {
@@ -997,7 +965,7 @@ section {
 /* ========================================
    Solutions Section
    ======================================== */
-#soluciones {
+#plataformas {
   background: var(--color-background-light);
   border-top: none;
 }
@@ -1033,9 +1001,6 @@ section {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background-size: 100% auto;
-  background-position: top center;
-  background-repeat: no-repeat;
   min-height: 650px;
   position: relative;
 }
@@ -1063,10 +1028,23 @@ section {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
+.solution-image {
+  height: 250px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.solution-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .solution-content {
   background: white;
   padding: 32px 28px;
-  margin-top: auto;
+  flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -1206,16 +1184,16 @@ section {
    ======================================== */
 .boutique-banner {
   padding: 80px 0;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+  background: url('../bg-img/Pullai wave background.jpg') center/cover no-repeat;
   text-align: center;
-  color: white;
+  color: var(--color-text);
 }
 
 .boutique-title {
   font-size: clamp(28px, 4vw, 42px);
   margin-bottom: 24px;
   font-weight: 600;
-  color: white;
+  color: var(--color-text);
 }
 
 .boutique-description {
@@ -1226,9 +1204,17 @@ section {
   opacity: 0.95;
 }
 
+.boutique-content-box {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  padding: 48px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .boutique-description strong {
   font-weight: 700;
-  color: white;
+  color: var(--color-text);
 }
 
 /* ========================================
@@ -1700,6 +1686,36 @@ section {
 /* ========================================
    Responsive Design
    ======================================== */
+
+/* Tablet adjustments for services grid */
+@media (max-width: 1024px) {
+  .service-card-grid {
+    padding: 32px 28px;
+  }
+
+  .service-title-inditex {
+    font-size: clamp(16px, 2vw, 22px);
+  }
+
+  .service-description-inditex {
+    font-size: clamp(12px, 1.2vw, 14px);
+  }
+
+  .service-image-section {
+    height: 220px;
+    padding: 20px 16px;
+  }
+
+  .service-bullets-backdrop {
+    padding: 12px;
+  }
+
+  .service-bullet-box {
+    font-size: clamp(9px, 1vw, 12px);
+    padding: 8px 8px;
+  }
+}
+
 @media (max-width: 768px) {
   /* Navigation */
   .nav-menu {
@@ -1721,11 +1737,15 @@ section {
 
   .mobile-menu-toggle {
     display: block;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .language-switcher {
     position: absolute;
-    left: 20px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     gap: 6px;
@@ -1786,37 +1806,56 @@ section {
     grid-template-columns: 1fr;
   }
 
-  /* Service Sections - Responsive */
-  .service-text-section {
-    min-height: 40vh;
-    padding: 60px 20px;
+  /* Service Grid - Stack to 1 column on mobile */
+  .services-grid-wrapper {
+    padding: 0 16px 24px 16px;
+  }
+
+  .services-grid-checkerboard {
+    grid-template-columns: 1fr;
+  }
+
+  /* Revert checkerboard overrides - simple odd/even alternation in 1-col */
+  .service-card-grid:nth-child(3) {
+    background: var(--color-background-light);
+  }
+
+  .service-card-grid:nth-child(4) {
+    background: var(--color-background-light-2);
+  }
+
+  .service-card-grid {
+    padding: 28px 24px;
   }
 
   .service-title-inditex {
-    font-size: clamp(28px, 6vw, 42px);
-    margin-bottom: 20px;
+    font-size: clamp(20px, 5vw, 28px);
+    margin-bottom: 8px;
   }
 
   .service-description-inditex {
-    font-size: clamp(15px, 3vw, 18px);
+    font-size: clamp(14px, 3vw, 16px);
   }
 
   .service-image-section {
-    min-height: 40vh;
-    padding: 40px 20px;
+    height: 220px;
+    padding: 20px 16px;
+  }
+
+  .service-bullets-backdrop {
+    padding: 12px;
   }
 
   /* Bullets responsive - Stack vertically */
   .service-bullets-container {
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
   }
 
   .service-bullet-box {
-    min-width: 100%;
-    max-width: 100%;
-    padding: 14px 20px;
-    font-size: 16px;
+    flex: 1 1 100%;
+    padding: 8px 12px;
+    font-size: 13px;
     font-weight: 700;
   }
 
@@ -2055,79 +2094,50 @@ section {
 }
 
 .value-prop-card {
-  padding: 40px 32px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  padding: 32px 0;
+  border-top: 1px solid #E0E0E0;
 }
 
 .value-prop-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--color-accent);
+  /* no hover effect */
 }
 
 .value-prop-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
+  display: none;
 }
 
 .value-prop-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
+  font-size: 1.125rem;
+  margin-bottom: 12px;
   color: var(--color-primary);
+  font-weight: 600;
 }
 
 .value-prop-card p {
   color: var(--color-text-light);
-  line-height: 1.7;
+  line-height: 1.6;
+  font-size: 0.9375rem;
 }
 
 .value-prop-metric {
   display: inline-block;
-  margin-top: 16px;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--color-accent);
+  margin-top: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
   .value-prop-card {
-    padding: 32px 24px;
-  }
-
-  .value-prop-card h3 {
-    font-size: 1.25rem;
-  }
-
-  .value-prop-metric {
-    font-size: 1.5rem;
+    padding: 24px 0;
   }
 }
 
 @media (max-width: 480px) {
   .value-prop-card {
-    padding: 28px 20px;
-  }
-
-  .value-prop-card h3 {
-    font-size: 1.125rem;
-    margin-bottom: 12px;
-  }
-
-  .value-prop-card p {
-    font-size: 0.9375rem;
-  }
-
-  .value-prop-icon {
-    font-size: 2.5rem;
-    margin-bottom: 16px;
-  }
-
-  .value-prop-metric {
-    font-size: 1.25rem;
-    margin-top: 12px;
+    padding: 20px 0;
   }
 }
 
@@ -2145,46 +2155,46 @@ section {
 
 .capability-item {
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 32px;
-  padding: 40px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  border-left: 4px solid var(--color-accent);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  grid-template-columns: 40px 1fr;
+  gap: 24px;
+  padding: 32px 0;
+  background: transparent;
+  border-radius: 0;
+  border-top: 1px solid #E0E0E0;
+  transition: none;
 }
 
 .capability-item:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transform: translateX(8px);
+  /* no hover effect */
 }
 
 .capability-number {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
-  border-radius: 50%;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  font-weight: 700;
-  color: #FFFFFF;
+  font-weight: 600;
+  color: var(--color-text);
   flex-shrink: 0;
+  font-size: 1rem;
 }
 
 .capability-content h3 {
-  font-size: 1.75rem;
-  margin-bottom: 16px;
+  font-size: 1.125rem;
+  margin-bottom: 12px;
   color: var(--color-primary);
+  font-weight: 600;
 }
 
 .capability-content p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: var(--color-text);
-  margin-bottom: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: 16px;
 }
 
 .capability-features {
@@ -2192,23 +2202,24 @@ section {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .capability-features li {
-  padding-left: 32px;
+  padding-left: 16px;
   position: relative;
   color: var(--color-text-light);
-  line-height: 1.6;
+  line-height: 1.5;
+  font-size: 0.875rem;
 }
 
 .capability-features li::before {
-  content: '✓';
+  content: '—';
   position: absolute;
   left: 0;
-  color: var(--color-accent);
-  font-weight: 700;
-  font-size: 1.25rem;
+  color: var(--color-text-light);
+  font-weight: 400;
+  font-size: 0.875rem;
 }
 
 /* Use Cases Section */
@@ -2224,54 +2235,90 @@ section {
   margin-top: 60px;
 }
 
+.use-cases-table {
+  margin-top: 60px;
+}
+
+.use-cases-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 24px 0;
+}
+
+.use-cases-row--bordered {
+  border-top: 1px solid #E0E0E0;
+}
+
+.use-cases-row h3 {
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .use-cases-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 0;
+  }
+
+  .use-cases-row > *:not(:first-child) {
+    padding-top: 20px;
+    border-top: 1px solid #F0F0F0;
+  }
+}
+
 .use-case-card {
-  background: #F9FAFB;
-  border: 1px solid #E5E7EB;
-  border-radius: 12px;
-  padding: 40px;
-  transition: all 0.3s ease;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #E0E0E0;
+  border-radius: 0;
+  padding: 32px 0;
+  transition: none;
 }
 
 .use-case-card:hover {
-  background: #FFFFFF;
-  border-color: var(--color-accent);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* no hover effect */
 }
 
 .use-case-label {
   display: inline-block;
-  background: var(--color-accent);
-  color: var(--color-primary);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 0.875rem;
+  background: none;
+  color: var(--color-text-light);
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .use-case-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.125rem;
+  margin-bottom: 16px;
   color: var(--color-primary);
+  font-weight: 600;
 }
 
 .use-case-flow {
   display: grid;
-  gap: 24px;
-  margin-top: 24px;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .flow-step {
-  padding: 20px;
-  background: #FFFFFF;
-  border-left: 3px solid var(--color-accent);
-  border-radius: 8px;
+  padding: 0;
+  background: transparent;
+  border-left: none;
+  border-radius: 0;
 }
 
 .flow-step-label {
-  font-size: 0.875rem;
-  color: var(--color-accent);
+  font-size: 0.75rem;
+  color: var(--color-text);
   font-weight: 600;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -2279,8 +2326,9 @@ section {
 }
 
 .flow-step-content {
-  color: var(--color-text);
-  line-height: 1.6;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  font-size: 0.9375rem;
 }
 
 /* Tech Stack Section */
@@ -2563,14 +2611,9 @@ section {
   }
 
   .capability-item {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .capability-number {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
+    grid-template-columns: 32px 1fr;
+    gap: 16px;
+    padding: 24px 0;
   }
 
   .use-cases-grid {
