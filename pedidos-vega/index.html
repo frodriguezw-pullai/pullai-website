@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedidos de La Vega por WhatsApp — Pullai</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta name="description" content="Tus clientes piden por WhatsApp; nosotros convertimos ese mensaje en un pedido limpio, en kilos y en tu base de datos.">
+<meta property="og:title" content="Pedidos de La Vega por WhatsApp — Pullai">
+<meta property="og:description" content="Pedidos B2B y B2C por WhatsApp, precios del día y conversión de unidades a kilos. Todo queda registrado.">
+<meta property="og:type" content="website">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS996ZL7F7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BS996ZL7F7');</script>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --color-primary: #1B1834;
+  --color-accent: #6357F0;
+  --color-background: #FFFFFF;
+  --color-background-alt: #F5F4FA;
+  --color-background-dark: #131127;
+  --color-text: #17151F;
+  --color-text-light: #6B6878;
+  --color-text-on-dark: #FFFFFF;
+  --color-border: #E3E1ED;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1 { font-weight: 300; font-size: 50px; letter-spacing: -1.5px; line-height: 1.15; }
+h2 { font-weight: 400; font-size: 42px; letter-spacing: -0.4px; line-height: 1.2; }
+h3 { font-weight: 600; font-size: 20px; letter-spacing: -0.2px; }
+p, .body-text { font-weight: 400; font-size: 20px; line-height: 1.6; letter-spacing: 0.4px; }
+
+/* ===== PROGRESS BAR ===== */
+#progress-bar {
+  position: fixed; top: 0; left: 0; height: 2px;
+  background: var(--color-accent);
+  z-index: 1000; transition: width 0.3s ease;
+}
+
+/* ===== NAV BAR ===== */
+#navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 60px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 40px;
+  z-index: 999; background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+#navbar.dark-mode {
+  background: rgba(19,17,39,0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 18px; font-weight: 700;
+  color: var(--color-primary); letter-spacing: -0.02em;
+}
+.nav-logo-mark {
+  height: 24px; width: auto; display: block;
+}
+#navbar.dark-mode .nav-logo { color: #fff; }
+.nav-slide-num { font-size: 14px; color: var(--color-text-light); letter-spacing: 1px; }
+#navbar.dark-mode .nav-slide-num { color: rgba(255,255,255,0.6); }
+
+/* ===== SLIDES CONTAINER ===== */
+#slides-container { width: 100%; height: 100%; position: relative; }
+
+.slide {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(10px);
+  overflow: hidden;
+}
+.slide.active { opacity: 1; visibility: visible; transform: translateY(0); }
+.slide-inner {
+  width: 100%; max-width: 1200px;
+  padding: 80px 60px 60px;
+  position: relative; z-index: 2;
+}
+
+/* ===== BACKGROUNDS ===== */
+.bg-white { background: var(--color-background); }
+.bg-alt { background: var(--color-background-alt); }
+.bg-dark { background: var(--color-background-dark); color: var(--color-text-on-dark); }
+
+/* Side image for split layouts */
+.slide-layout-split {
+  display: flex; align-items: center; gap: 56px;
+  width: 100%; max-width: 1200px;
+  padding: 80px 60px 60px;
+  position: relative; z-index: 2;
+}
+.split-text { flex: 0 0 44%; }
+.split-image { flex: 0 0 52%; overflow: hidden; }
+.slide-layout-split.reverse { flex-direction: row-reverse; }
+
+/* ===== WHATSAPP CHAT MOCKUP ===== */
+.wa-frame {
+  border-radius: 16px; overflow: hidden;
+  background: #ECE5DD;
+  box-shadow: 0 24px 48px rgba(20,18,45,0.22);
+  border: 1px solid var(--color-border);
+  max-width: 420px; margin: 0 auto;
+}
+.wa-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: var(--color-primary); color: #fff;
+}
+.wa-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--color-accent); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px; flex-shrink: 0;
+}
+.wa-contact { display: flex; flex-direction: column; line-height: 1.2; }
+.wa-name { font-size: 15px; font-weight: 600; }
+.wa-status { font-size: 12px; color: rgba(255,255,255,0.6); }
+.wa-body {
+  padding: 18px 14px; display: flex; flex-direction: column; gap: 8px;
+  max-height: 52vh; overflow-y: auto;
+}
+.wa-bubble {
+  max-width: 82%; padding: 8px 12px 18px; border-radius: 10px;
+  font-size: 14.5px; line-height: 1.45; position: relative;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.08); letter-spacing: 0.2px;
+}
+.wa-bubble.in { align-self: flex-start; background: #fff; border-top-left-radius: 2px; }
+.wa-bubble.out { align-self: flex-end; background: #D9FDD3; border-top-right-radius: 2px; }
+.wa-time {
+  position: absolute; bottom: 5px; right: 10px;
+  font-size: 10.5px; color: rgba(0,0,0,0.42);
+}
+.wa-list { margin: 6px 0 2px; list-style: none; }
+.wa-list li {
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 3px 0; font-size: 14px; border-bottom: 1px dashed rgba(0,0,0,0.08);
+}
+.wa-list li:last-child { border-bottom: none; }
+.wa-list .wa-price { font-weight: 600; white-space: nowrap; }
+.wa-strong { font-weight: 700; }
+.wa-total {
+  margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.12);
+  display: flex; justify-content: space-between; font-weight: 700; font-size: 15px;
+}
+
+/* ===== ORDER CARD MOCKUP ===== */
+.order-card {
+  background: #fff; border: 1px solid var(--color-border); border-radius: 14px;
+  overflow: hidden; box-shadow: 0 24px 48px rgba(20,18,45,0.22); max-width: 460px; margin: 0 auto;
+}
+.order-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; background: var(--color-primary); color: #fff;
+}
+.order-id { font-size: 15px; font-weight: 600; }
+.order-badge {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+  background: rgba(99,87,240,0.85); color: #fff; padding: 5px 12px; border-radius: 999px;
+}
+.order-meta { padding: 14px 20px 6px; font-size: 13px; color: var(--color-text-light); }
+.order-meta strong { color: var(--color-text); font-weight: 600; }
+.order-table { width: 100%; border-collapse: collapse; }
+.order-table th, .order-table td { text-align: left; padding: 10px 20px; font-size: 14px; }
+.order-table th {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px;
+  color: var(--color-text-light); font-weight: 700; border-bottom: 1px solid var(--color-border);
+}
+.order-table td { border-bottom: 1px solid var(--color-border); }
+.order-table td.num, .order-table th.num { text-align: right; white-space: nowrap; }
+.order-total-row td { font-weight: 700; font-size: 15px; border-bottom: none; padding-top: 14px; }
+.stock-pill { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; padding: 4px 10px; border-radius: 999px; }
+.stock-pill.ok { background: rgba(40,200,64,0.14); color: #1a8f31; }
+.stock-pill.low { background: rgba(255,189,46,0.18); color: #b07d06; }
+.stock-pill.out { background: rgba(255,95,87,0.14); color: #d64036; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block; padding: 16px 44px;
+  text-transform: uppercase; letter-spacing: 0.75px;
+  font-size: 15px; font-weight: 500;
+  border: 2px solid var(--color-primary);
+  cursor: pointer; transition: all 0.25s ease; text-decoration: none;
+}
+.btn-primary { background: var(--color-accent); border-color: var(--color-accent); color: #fff; }
+.btn-primary:hover { background: #4f44d6; border-color: #4f44d6; }
+.btn-secondary { background: transparent; color: var(--color-primary); }
+.btn-secondary:hover { background: var(--color-primary); color: #fff; }
+.btn-group { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+
+/* ===== TAGS ===== */
+.tags-group { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.tag {
+  display: inline-block; padding: 7px 18px;
+  border: 1.5px solid rgba(255,255,255,0.35); border-radius: 999px;
+  font-size: 13px; letter-spacing: 0.4px; color: rgba(255,255,255,0.85);
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: #fff; border: 1px solid var(--color-border); border-radius: 10px;
+  padding: 30px 26px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: all 0.25s ease; position: relative;
+}
+.card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(99,87,240,0.14);
+}
+.card-number {
+  font-size: 34px; font-weight: 300; color: var(--color-accent);
+  margin-bottom: 10px; letter-spacing: -1px;
+}
+.card h3 { margin-bottom: 10px; }
+.card p { font-size: 16px; color: var(--color-text-light); line-height: 1.55; }
+.cards-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.card-click-hint {
+  font-size: 11px; font-weight: 600; color: var(--color-text-light);
+  text-transform: uppercase; letter-spacing: 0.5px;
+  position: absolute; bottom: 14px; right: 16px; transition: color 0.25s ease;
+}
+.card:hover .card-click-hint { color: var(--color-accent); }
+
+/* ===== INVESTMENT ===== */
+.invest-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--color-accent); background: rgba(99,87,240,0.1); padding: 5px 12px; border-radius: 999px; }
+.impl-row { display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; font-size: 17px; color: var(--color-text-light); }
+.impl-row strong { color: var(--color-text); font-weight: 600; font-size: 19px; }
+.mod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 26px; }
+.mod-card { background: #fff; border: 1px solid var(--color-border); border-radius: 12px; padding: 24px 22px; transition: all 0.25s ease; }
+.mod-card:hover { border-color: var(--color-accent); transform: translateY(-3px); box-shadow: 0 12px 26px rgba(99,87,240,0.13); }
+.mod-name { font-size: 17px; font-weight: 600; }
+.mod-price { font-size: 32px; font-weight: 300; letter-spacing: -1px; color: var(--color-primary); margin-top: 8px; line-height: 1; }
+.mod-permes { font-size: 13px; color: var(--color-text-light); margin-top: 4px; }
+.mod-incl { font-size: 14px; color: var(--color-text-light); line-height: 1.5; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--color-border); }
+.full-strip { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px; background: var(--color-primary); color: #fff; border-radius: 12px; padding: 20px 28px; }
+.full-left { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.full-name { font-size: 16px; font-weight: 600; }
+.full-sub { font-size: 14px; color: rgba(255,255,255,0.6); }
+.full-right { display: flex; align-items: center; gap: 16px; }
+.full-price { font-size: 30px; font-weight: 300; letter-spacing: -1px; white-space: nowrap; }
+.full-permes { font-size: 14px; color: rgba(255,255,255,0.6); }
+.mod-included { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--color-accent); background: rgba(99,87,240,0.1); padding: 5px 12px; border-radius: 999px; }
+.usage-note { margin-top: 22px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: var(--color-text-light); }
+.usage-chip { background: #fff; border: 1px solid var(--color-border); border-radius: 999px; padding: 6px 14px; }
+.usage-chip strong { color: var(--color-text); font-weight: 600; }
+
+/* ===== LABEL / DECO ===== */
+.label-accent {
+  text-transform: uppercase; color: var(--color-accent);
+  font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-bottom: 14px;
+}
+.deco-line { width: 56px; height: 2px; background: var(--color-accent); margin-bottom: 20px; }
+.subtitle { color: var(--color-text-light); font-size: 18px; margin-top: 6px; }
+
+/* ===== BULLETS ===== */
+.bullet-list { list-style: none; margin-top: 24px; }
+.bullet-list li {
+  padding: 9px 0; font-size: 18px; display: flex; align-items: flex-start; gap: 12px;
+  opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+}
+.bullet-list li.visible { opacity: 1; transform: translateY(0); }
+.bullet-check {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 22px; height: 22px; flex-shrink: 0; margin-top: 1px;
+}
+.bullet-check svg { width: 17px; height: 17px; stroke: var(--color-accent); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.bg-dark .bullet-list li { color: rgba(255,255,255,0.82); }
+
+/* ===== SUMMARY LIST (dark) ===== */
+.summary-list { list-style: none; margin-top: 40px; display: grid; gap: 4px; }
+.summary-list li {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+  font-size: 18px; color: rgba(255,255,255,0.72);
+  opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+}
+.summary-list li.visible { opacity: 1; transform: translateY(0); }
+.summary-list li:last-child { border-bottom: none; }
+.summary-list strong { color: #fff; font-weight: 600; flex-shrink: 0; min-width: 230px; }
+
+/* ===== CENTER ===== */
+.slide-center-content { text-align: center; max-width: 740px; margin: 0 auto; }
+.contact-lines { margin: 24px 0 32px; }
+.contact-line { font-size: 18px; padding: 8px 0; transition: color 0.2s ease; }
+.contact-line:hover { color: var(--color-accent); }
+
+/* ===== TYPING ===== */
+.typing-cursor {
+  display: inline-block; width: 2px; height: 1em; background: var(--color-accent);
+  margin-left: 4px; vertical-align: text-bottom; animation: blink-cursor 0.7s step-end infinite;
+}
+@keyframes blink-cursor { 50% { opacity: 0; } }
+
+/* ===== ARROWS / DOTS ===== */
+.nav-arrow {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; cursor: pointer; z-index: 998;
+  background: rgba(255,255,255,0.9); border: 1px solid var(--color-border); border-radius: 8px;
+  transition: all 0.2s ease; color: var(--color-text);
+}
+.nav-arrow:hover { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+.nav-arrow.left { left: 20px; } .nav-arrow.right { right: 20px; }
+#dots { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 998; }
+.dot { width: 10px; height: 10px; border-radius: 999px; background: var(--color-border); cursor: pointer; transition: all 0.25s ease; }
+.dot.active { background: var(--color-accent); width: 28px; }
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(15,13,30,0.6); z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-content {
+  background: #fff; max-width: 560px; width: 90%; padding: 48px 40px 40px; position: relative;
+  border-radius: 14px; box-shadow: 0 24px 48px rgba(0,0,0,0.25);
+  transform: scale(0.95); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal-overlay.active .modal-content { transform: scale(1); opacity: 1; }
+.modal-close {
+  position: absolute; top: 16px; right: 16px; width: 32px; height: 32px;
+  background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-light); transition: color 0.2s ease;
+}
+.modal-close:hover { color: var(--color-accent); }
+.modal-close svg { width: 20px; height: 20px; }
+.modal-number { font-size: 40px; font-weight: 300; color: var(--color-accent); letter-spacing: -1px; line-height: 1; margin-bottom: 8px; }
+.modal-title { font-weight: 600; font-size: 22px; margin-bottom: 16px; }
+.modal-description { font-size: 17px; line-height: 1.65; color: var(--color-text-light); margin-bottom: 24px; }
+.modal-bullets { list-style: none; }
+.modal-bullets li { padding: 6px 0; font-size: 16px; display: flex; align-items: flex-start; gap: 10px; }
+.modal-bullets li .bullet-check { flex-shrink: 0; margin-top: 2px; }
+
+/* ===== ANIMATION ===== */
+.anim-in { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.slide.active .anim-in { opacity: 1; transform: translateY(0); }
+.slide.active .anim-in.d1 { transition-delay: 0.1s; }
+.slide.active .anim-in.d2 { transition-delay: 0.2s; }
+.slide.active .anim-in.d3 { transition-delay: 0.3s; }
+.slide.active .anim-in.d4 { transition-delay: 0.4s; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .slide-inner { padding: 70px 40px 50px; }
+  .slide-layout-split { padding: 70px 40px 50px; gap: 36px; }
+  h1 { font-size: 40px; } h2 { font-size: 34px; } p, .body-text { font-size: 18px; }
+  .cards-grid-3 { grid-template-columns: 1fr; }
+  .summary-list strong { min-width: 200px; }
+}
+@media (max-width: 768px) {
+  .slide { overflow: hidden auto !important; align-items: flex-start !important; height: 100% !important; -webkit-overflow-scrolling: touch; }
+  .slide-inner { padding: 64px 20px 80px; max-width: 100%; }
+  .slide-layout-split { flex-direction: column; padding: 64px 20px 80px; gap: 24px; max-width: 100%; align-items: stretch; }
+  .slide-layout-split.reverse { flex-direction: column; }
+  .split-text, .split-image { flex: none; width: 100%; }
+  .wa-frame, .order-card { max-width: 100%; }
+  .wa-body { max-height: none; }
+  h1 { font-size: 28px !important; letter-spacing: -1px; } h2 { font-size: 24px !important; } h3 { font-size: 17px; }
+  p, .body-text { font-size: 16px !important; } .subtitle { font-size: 15px; }
+  #navbar { padding: 0 16px; height: 48px; } .nav-logo { font-size: 15px; } .nav-slide-num { font-size: 11px; }
+  .nav-arrow { width: 32px; height: 32px; font-size: 15px; opacity: 0.6; } .nav-arrow.left { left: 4px; } .nav-arrow.right { right: 4px; }
+  #dots { bottom: 12px; gap: 5px; } .dot { width: 7px; height: 7px; } .dot.active { width: 20px; }
+  .cards-grid-3 { gap: 14px; margin-top: 24px; } .card { padding: 22px 18px; }
+  .mod-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 20px; } .mod-card { padding: 18px 16px; } .mod-price { font-size: 28px; }
+  .full-strip { flex-direction: column; align-items: flex-start; gap: 12px; padding: 18px 20px; } .full-right { width: 100%; justify-content: space-between; gap: 10px; }
+  .usage-note { gap: 8px; margin-top: 18px; }
+  .bullet-list li { font-size: 15px; } .bullet-list { margin-top: 16px; }
+  .summary-list { margin-top: 24px; } .summary-list li { flex-direction: column; gap: 4px; font-size: 15px; padding: 12px 0; }
+  .summary-list strong { min-width: 0; }
+  .btn { padding: 12px 28px; font-size: 13px; } .btn-group { flex-direction: column; align-items: stretch; text-align: center; gap: 10px; }
+  .label-accent { font-size: 11px; letter-spacing: 1.5px; } .deco-line { width: 40px; margin-bottom: 12px; }
+  .modal-content { padding: 32px 20px 24px; width: 95%; max-height: 85vh; overflow-y: auto; }
+}
+@media (max-width: 480px) {
+  .slide-inner { padding: 56px 14px 72px; } .slide-layout-split { padding: 56px 14px 72px; }
+  h1 { font-size: 24px !important; } h2 { font-size: 21px !important; }
+  .nav-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar" style="width: 0%"></div>
+
+<nav id="navbar">
+  <div class="nav-logo"><img class="nav-logo-mark" src="assets/favicon.svg" alt="Pullai"> Pullai · Vega</div>
+  <div class="nav-slide-num" id="slide-counter">01 / 10</div>
+</nav>
+
+<div class="nav-arrow left" onclick="changeSlide(-1)">&#8592;</div>
+<div class="nav-arrow right" onclick="changeSlide(1)">&#8594;</div>
+<div id="dots"></div>
+
+<div id="slides-container">
+
+  <!-- SLIDE 1 — PORTADA -->
+  <div class="slide bg-dark active" data-slide="1">
+    <div class="slide-inner">
+      <div class="label-accent anim-in">Pedidos por WhatsApp · La Vega</div>
+      <h1 class="anim-in d1 type-title" style="color:#fff;" data-type-text="Tu puesto de La Vega,\nordenado por WhatsApp."></h1>
+      <p class="body-text anim-in d3" style="margin-top: 24px; max-width: 660px; color: rgba(255,255,255,0.66);">Tus clientes piden como siempre: por WhatsApp, en cajones o en unidades. Nosotros convertimos ese mensaje en un pedido limpio, en kilos y en tu base de datos. Sin planillas, sin errores de conversión.</p>
+      <div class="tags-group anim-in d3">
+        <span class="tag">Pedidos B2B y B2C</span>
+        <span class="tag">Precios del día</span>
+        <span class="tag">Unidades a kilos</span>
+        <span class="tag">Todo queda registrado</span>
+      </div>
+      <div class="btn-group anim-in d4">
+        <a class="btn btn-primary" href="#" onclick="changeSlide(1); return false;">VER CÓMO FUNCIONA</a>
+        <a class="btn btn-secondary" style="border-color: rgba(255,255,255,0.4); color: rgba(255,255,255,0.85);" href="#" onclick="goToSlide(8); return false;">EN RESUMEN &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — EL PROBLEMA -->
+  <div class="slide bg-alt" data-slide="2">
+    <div class="slide-inner">
+      <div class="label-accent anim-in">El problema</div>
+      <h2 class="anim-in d1 type-title" data-type-text="El pedido llega en unidades.\nEl despacho necesita kilos."></h2>
+      <p class="subtitle anim-in d2">Entre lo que pide el cliente y lo que carga el camión se te va la plata.</p>
+      <div class="cards-grid-3 anim-in d3">
+        <div class="card" data-modal="dif" data-modal-index="0" style="cursor:pointer">
+          <span class="card-click-hint">Ver más</span>
+          <div class="card-number">01</div>
+          <h3>Cada uno pide distinto</h3>
+          <p>Uno pide 5 naranjas, otro un cajón, otro 2 kilos. Alguien tiene que traducir todo a la misma unidad, a mano, cada día.</p>
+        </div>
+        <div class="card" data-modal="dif" data-modal-index="1" style="cursor:pointer">
+          <span class="card-click-hint">Ver más</span>
+          <div class="card-number">02</div>
+          <h3>Los precios cambian a diario</h3>
+          <p>El valor de la fruta se mueve todos los días. Contestar "¿a cuánto está hoy?" cien veces por WhatsApp te consume la mañana.</p>
+        </div>
+        <div class="card" data-modal="dif" data-modal-index="2" style="cursor:pointer">
+          <span class="card-click-hint">Ver más</span>
+          <div class="card-number">03</div>
+          <h3>El pedido vive en el chat</h3>
+          <p>Los pedidos quedan enterrados en conversaciones. Ninguno llega ordenado a una base para despachar y cobrar sin errores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — B2B PEDIDOS -->
+  <div class="slide bg-white" data-slide="3">
+    <div class="slide-layout-split">
+      <div class="split-text">
+        <div class="deco-line anim-in"></div>
+        <div class="label-accent anim-in">01 · Pedidos B2B</div>
+        <h2 class="anim-in d1 type-title" data-type-text="El cliente escribe.\nEl pedido se arma solo."></h2>
+        <p class="body-text anim-in d2" style="margin-top: 16px;">Tus caseros y locatarios piden por WhatsApp como siempre. El bot entiende el mensaje, arma el pedido y lo confirma con productos, cantidades y kilos antes de cerrarlo.</p>
+        <ul class="bullet-list">
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Entiende pedidos escritos en lenguaje natural</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Confirma cantidades y precios antes de cerrar</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Genera el pedido directo en tu base de datos</li>
+        </ul>
+      </div>
+      <div class="split-image anim-in d3">
+        <div class="wa-frame">
+          <div class="wa-header">
+            <div class="wa-avatar">P</div>
+            <div class="wa-contact"><span class="wa-name">Frutas Pullai</span><span class="wa-status">en línea</span></div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-bubble in">Hola, para mañana necesito: 2 cajones de palta hass, 5 kilos de tomate y 1 malla de cebolla<span class="wa-time">08:41</span></div>
+            <div class="wa-bubble out">¡Anotado! Te dejo el pedido:
+              <ul class="wa-list">
+                <li><span>Palta hass · 2 cajones</span><span class="wa-price">≈ 20 kg</span></li>
+                <li><span>Tomate · 5 kg</span><span class="wa-price">5 kg</span></li>
+                <li><span>Cebolla · 1 malla</span><span class="wa-price">≈ 18 kg</span></li>
+              </ul>
+              ¿Lo confirmo así para despacho mañana?<span class="wa-time">08:41</span></div>
+            <div class="wa-bubble in">Sí, dale<span class="wa-time">08:42</span></div>
+            <div class="wa-bubble out"><span class="wa-strong">Pedido #1042 registrado.</span> Te llega el detalle al despachar.<span class="wa-time">08:42</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — REPORTE DE PRECIOS -->
+  <div class="slide bg-alt" data-slide="4">
+    <div class="slide-layout-split reverse">
+      <div class="split-text">
+        <div class="deco-line anim-in"></div>
+        <div class="label-accent anim-in">02 · Reporte de precios</div>
+        <h2 class="anim-in d1 type-title" data-type-text="'¿A cuánto está hoy?'\nRespondido al instante."></h2>
+        <p class="body-text anim-in d2" style="margin-top: 16px;">El bot conoce tu lista de precios del día. Cuando alguien pregunta, responde con el listado actualizado, o solo por el producto que le interesa. Tú actualizas una vez; él responde las veces que haga falta.</p>
+        <ul class="bullet-list">
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Precios del día, siempre al día</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Responde por producto o el listado completo</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Actualizas una vez; el bot responde mil veces</li>
+        </ul>
+      </div>
+      <div class="split-image anim-in d3">
+        <div class="wa-frame">
+          <div class="wa-header">
+            <div class="wa-avatar">P</div>
+            <div class="wa-contact"><span class="wa-name">Frutas Pullai</span><span class="wa-status">en línea</span></div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-bubble in">¿Me pasas los precios de hoy?<span class="wa-time">07:15</span></div>
+            <div class="wa-bubble out">Lista del día — martes:
+              <ul class="wa-list">
+                <li><span>Palta hass</span><span class="wa-price">$ __ / kg</span></li>
+                <li><span>Tomate larga vida</span><span class="wa-price">$ __ / kg</span></li>
+                <li><span>Naranja</span><span class="wa-price">$ __ / kg</span></li>
+                <li><span>Plátano</span><span class="wa-price">$ __ / kg</span></li>
+              </ul>
+              ¿Te armo un pedido?<span class="wa-time">07:15</span></div>
+            <div class="wa-bubble in">Solo la palta, ¿cómo está?<span class="wa-time">07:16</span></div>
+            <div class="wa-bubble out">Palta hass hoy: <span class="wa-strong">$ __ / kg</span>. El cajón sale ≈ 10 kg.<span class="wa-time">07:16</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5 — CONVERSIÓN A KILOS -->
+  <div class="slide bg-dark" data-slide="5">
+    <div class="slide-layout-split">
+      <div class="split-text">
+        <div class="deco-line anim-in"></div>
+        <div class="label-accent anim-in">03 · Unidades a kilos</div>
+        <h2 class="anim-in d1 type-title" style="color:#fff;" data-type-text="5 naranjas son 1,4 kilos.\nEl bot ya lo sabe."></h2>
+        <p class="body-text anim-in d2" style="margin-top: 16px; color: rgba(255,255,255,0.66);">Este es el detalle que arruina los despachos. El cliente piensa en unidades y cajones; tu camión y tu cobro funcionan en kilos. Convertimos automáticamente vía API, con el peso promedio de cada producto.</p>
+        <ul class="bullet-list">
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Traduce unidades, cajones y mallas a kilos</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Peso promedio por producto, vía API</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> El pedido sale en la unidad con que despachas y cobras</li>
+        </ul>
+      </div>
+      <div class="split-image anim-in d3">
+        <div class="wa-frame">
+          <div class="wa-header">
+            <div class="wa-avatar">P</div>
+            <div class="wa-contact"><span class="wa-name">Frutas Pullai</span><span class="wa-status">en línea</span></div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-bubble in">Quiero 5 naranjas<span class="wa-time">11:03</span></div>
+            <div class="wa-bubble out">5 naranjas son <span class="wa-strong">≈ 1,4 kg</span> (280 g c/u). ¿Las agrego así al pedido?<span class="wa-time">11:03</span></div>
+            <div class="wa-bubble in">Sí, y agrégame un cajón de manzana<span class="wa-time">11:04</span></div>
+            <div class="wa-bubble out">Listo:
+              <ul class="wa-list">
+                <li><span>Naranja · 5 un</span><span class="wa-price">1,4 kg</span></li>
+                <li><span>Manzana · 1 cajón</span><span class="wa-price">≈ 18 kg</span></li>
+              </ul>
+              <div class="wa-total"><span>Total pedido</span><span>≈ 19,4 kg</span></div>
+              <span class="wa-time">11:04</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6 — B2C -->
+  <div class="slide bg-alt" data-slide="6">
+    <div class="slide-layout-split reverse">
+      <div class="split-text">
+        <div class="deco-line anim-in"></div>
+        <div class="label-accent anim-in">04 · Consumidor final</div>
+        <h2 class="anim-in d1 type-title" data-type-text="También le vendes\nal cliente de la casa."></h2>
+        <p class="body-text anim-in d2" style="margin-top: 16px;">El mismo canal atiende al consumidor final. Pide desde tu listado, arma su compra y ve el total, sin que tú dejes de atender el mostrador. Un solo WhatsApp para el mayorista y para la casa.</p>
+        <ul class="bullet-list">
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Pide desde tu listado, sin app ni registro</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Arma la compra y ve el total al instante</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Un mismo WhatsApp para mayoristas y para la casa</li>
+        </ul>
+      </div>
+      <div class="split-image anim-in d3">
+        <div class="wa-frame">
+          <div class="wa-header">
+            <div class="wa-avatar">P</div>
+            <div class="wa-contact"><span class="wa-name">Frutas Pullai</span><span class="wa-status">en línea</span></div>
+          </div>
+          <div class="wa-body">
+            <div class="wa-bubble in">Hola! ¿Tienen frutilla? Quiero 1 kilo y 6 plátanos<span class="wa-time">19:22</span></div>
+            <div class="wa-bubble out">Sí tenemos. Te armo:
+              <ul class="wa-list">
+                <li><span>Frutilla · 1 kg</span><span class="wa-price">$ __</span></li>
+                <li><span>Plátano · 6 un (≈ 0,9 kg)</span><span class="wa-price">$ __</span></li>
+              </ul>
+              <div class="wa-total"><span>Total</span><span>$ __</span></div>
+              <span class="wa-time">19:22</span></div>
+            <div class="wa-bubble in">Perfecto, lo paso a buscar mañana<span class="wa-time">19:23</span></div>
+            <div class="wa-bubble out">¡Te espero! Queda guardado a tu nombre.<span class="wa-time">19:23</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7 — BASE DE DATOS -->
+  <div class="slide bg-white" data-slide="7">
+    <div class="slide-layout-split">
+      <div class="split-text">
+        <div class="deco-line anim-in"></div>
+        <div class="label-accent anim-in">05 · Tu base de datos</div>
+        <h2 class="anim-in d1 type-title" data-type-text="Cada pedido, ordenado\ny listo para despachar."></h2>
+        <p class="body-text anim-in d2" style="margin-top: 16px;">Ningún pedido se queda en el chat. Todos caen a una base con cliente, productos, kilos y total. Lista para preparar, despachar y cobrar sin adivinar.</p>
+        <ul class="bullet-list">
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Cliente, productos, cantidades y kilos en cada pedido</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Historial completo para reponer y ofrecer más</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Exportable para tu despacho y tu contabilidad</li>
+        </ul>
+      </div>
+      <div class="split-image anim-in d3">
+        <div class="order-card">
+          <div class="order-head">
+            <span class="order-id">Pedido #1042</span>
+            <span class="order-badge">Registrado</span>
+          </div>
+          <div class="order-meta"><strong>Frutas del Sur</strong> · Local 34 · Despacho mié. 06:00</div>
+          <table class="order-table">
+            <thead>
+              <tr><th>Producto</th><th class="num">Pedido</th><th class="num">Kilos</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Palta hass</td><td class="num">2 cajones</td><td class="num">20,0 kg</td></tr>
+              <tr><td>Tomate larga vida</td><td class="num">5 kg</td><td class="num">5,0 kg</td></tr>
+              <tr><td>Cebolla</td><td class="num">1 malla</td><td class="num">18,0 kg</td></tr>
+              <tr class="order-total-row"><td>Total</td><td class="num"></td><td class="num">43,0 kg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8 — INTEGRACIÓN / STOCK -->
+  <div class="slide bg-alt" data-slide="8">
+    <div class="slide-layout-split reverse">
+      <div class="split-text">
+        <div class="deco-line anim-in"></div>
+        <div class="label-accent anim-in">06 · Stock e inventario</div>
+        <h2 class="anim-in d1 type-title" data-type-text="Chequea el stock antes\nde cerrar un pedido."></h2>
+        <p class="body-text anim-in d2" style="margin-top: 16px;">Conectamos el bot con tu base de datos para que sepa qué hay y qué no, en tiempo real. Y si todavía no tienes un sistema, te armamos uno a la medida para gestionar productos, precios y stock.</p>
+        <ul class="bullet-list">
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> Se integra con tu base de datos actual para chequear stock e inventario</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> El bot no vende lo que no tienes: avisa faltantes al instante</li>
+          <li><span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span> ¿No tienes sistema? Te armamos un CRUD para productos, precios y stock</li>
+        </ul>
+      </div>
+      <div class="split-image anim-in d3">
+        <div class="order-card">
+          <div class="order-head">
+            <span class="order-id">Inventario · hoy</span>
+            <span class="order-badge">En vivo</span>
+          </div>
+          <table class="order-table">
+            <thead>
+              <tr><th>Producto</th><th class="num">Stock</th><th class="num">Estado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Palta hass</td><td class="num">5 cajones</td><td class="num"><span class="stock-pill ok">Disponible</span></td></tr>
+              <tr><td>Tomate larga vida</td><td class="num">40 kg</td><td class="num"><span class="stock-pill ok">Disponible</span></td></tr>
+              <tr><td>Frutilla</td><td class="num">3 kg</td><td class="num"><span class="stock-pill low">Bajo</span></td></tr>
+              <tr><td>Naranja</td><td class="num">0 kg</td><td class="num"><span class="stock-pill out">Agotado</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 9 — EN RESUMEN -->
+  <div class="slide bg-dark" data-slide="9">
+    <div class="slide-inner">
+      <div class="label-accent anim-in">En resumen</div>
+      <h2 class="anim-in d1 type-title" style="color:#fff;" data-type-text="Tú vendes la fruta.\nNosotros ordenamos el pedido."></h2>
+      <ul class="summary-list anim-in d2">
+        <li><strong>Pide por WhatsApp</strong> B2B y B2C escriben como siempre; el bot entiende y arma el pedido.</li>
+        <li><strong>Precios del día</strong> Actualizas una vez y el bot responde por ti las veces que haga falta.</li>
+        <li><strong>Unidades a kilos</strong> Conversión automática vía API; el despacho nunca falla por unidades.</li>
+        <li><strong>Todo en tu base</strong> Cada pedido registrado, ordenado y listo para despachar y cobrar.</li>
+        <li><strong>Stock en tiempo real</strong> Se integra con tu inventario; si no tienes sistema, te armamos el CRUD.</li>
+        <li><strong>Crece contigo</strong> Historial de clientes para reponer, ofrecer más y fidelizar.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SLIDE 10 — INVERSIÓN -->
+  <div class="slide bg-alt" data-slide="10">
+    <div class="slide-inner">
+      <div class="label-accent anim-in">Inversión</div>
+      <h2 class="anim-in d1 type-title" data-type-text="Un plan a la medida de tu puesto."></h2>
+      <div class="impl-row anim-in d2"><span class="invest-tag">Pago único</span> Implementación <strong>100 UF</strong></div>
+      <div class="mod-grid anim-in d3">
+        <div class="mod-card">
+          <div class="mod-name">Pedidos</div>
+          <div class="mod-included">Incluido</div>
+          <div class="mod-incl">El bot recibe, arma y registra pedidos B2B y B2C directo en tu base de datos.</div>
+        </div>
+        <div class="mod-card">
+          <div class="mod-name">Precios del día</div>
+          <div class="mod-included">Incluido</div>
+          <div class="mod-incl">Consulta y respuesta de precios actualizados por WhatsApp, por producto o listado.</div>
+        </div>
+        <div class="mod-card">
+          <div class="mod-name">Conversión a kilos</div>
+          <div class="mod-included">Incluido</div>
+          <div class="mod-incl">API de unidades a kilos con peso promedio por producto, siempre en tu unidad de despacho.</div>
+        </div>
+      </div>
+      <div class="full-strip anim-in d3">
+        <div class="full-left">
+          <span class="full-name">Plan Vega · los 3 módulos</span>
+          <span class="full-sub">Pedidos + Precios + Conversión · hasta 5.000 conversaciones / mes</span>
+        </div>
+        <div class="full-right">
+          <span class="full-price">20 UF<span class="full-permes"> / mes</span></span>
+        </div>
+      </div>
+      <div class="usage-note anim-in d4">
+        <span>Sobre las 5.000 conversaciones incluidas:</span>
+        <span class="usage-chip">Conversación extra <strong>$80</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 11 — CONTACTO -->
+  <div class="slide bg-white" data-slide="11">
+    <div class="slide-inner">
+      <div class="slide-center-content">
+        <div class="label-accent anim-in">Hablemos</div>
+        <h1 class="anim-in d1 type-title" data-type-text="Tu Vega, en orden."></h1>
+        <p class="body-text anim-in d2" style="margin-top: 16px; color: var(--color-text-light);">Tú traes el puesto y la fruta. Nosotros lo convertimos en pedidos limpios, en kilos y en tu base de datos.</p>
+        <div class="contact-lines anim-in d3">
+          <div class="contact-line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>contacto@pullai.cl</div>
+          <div class="contact-line"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>pullai.cl</div>
+        </div>
+        <div class="anim-in d4">
+          <a class="btn btn-primary" href="mailto:contacto@pullai.cl?subject=Quiero%20pedidos%20de%20La%20Vega%20por%20WhatsApp">AGENDAR UNA CONVERSACIÓN &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /slides-container -->
+
+<!-- Modal -->
+<div class="modal-overlay" id="service-modal">
+  <div class="modal-content">
+    <button class="modal-close" id="modal-close-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="modal-number" id="modal-number"></div>
+    <div class="modal-title" id="modal-title"></div>
+    <p class="modal-description" id="modal-description"></p>
+    <ul class="modal-bullets" id="modal-bullets"></ul>
+  </div>
+</div>
+
+<script>
+// ===== SLIDE NAVIGATION =====
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+let currentSlide = 0;
+
+const dotsContainer = document.getElementById('dots');
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goToSlide(i));
+  dotsContainer.appendChild(dot);
+}
+
+function goToSlide(index) {
+  if (index < 0 || index >= totalSlides || index === currentSlide) return;
+  slides[currentSlide].classList.remove('active');
+  dotsContainer.children[currentSlide].classList.remove('active');
+  currentSlide = index;
+  slides[currentSlide].classList.add('active');
+  dotsContainer.children[currentSlide].classList.add('active');
+  updateUI();
+  triggerSlideEffects();
+}
+function changeSlide(dir) {
+  const next = currentSlide + dir;
+  if (next >= 0 && next < totalSlides) goToSlide(next);
+}
+function updateUI() {
+  const pct = ((currentSlide + 1) / totalSlides) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  const num = String(currentSlide + 1).padStart(2, '0');
+  document.getElementById('slide-counter').textContent = num + ' / ' + totalSlides;
+  const isDark = slides[currentSlide].classList.contains('bg-dark');
+  document.getElementById('navbar').classList.toggle('dark-mode', isDark);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
+});
+
+let touchStartX = 0, touchStartY = 0;
+document.addEventListener('touchstart', (e) => {
+  touchStartX = e.changedTouches[0].screenX; touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+document.addEventListener('touchend', (e) => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  const dy = e.changedTouches[0].screenY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy) * 2 && Math.abs(dx) > 80) {
+    if (dx < 0) changeSlide(1); else changeSlide(-1);
+  }
+}, { passive: true });
+
+// ===== SLIDE EFFECTS =====
+function triggerSlideEffects() {
+  const activeSlide = slides[currentSlide];
+  const bullets = activeSlide.querySelectorAll('.bullet-list li, .summary-list li');
+  bullets.forEach((li, i) => {
+    li.classList.remove('visible');
+    setTimeout(() => li.classList.add('visible'), 300 + i * 130);
+  });
+  typeTitlesInSlide(currentSlide);
+}
+
+// ===== TITLE TYPING =====
+const typedSlides = new Set();
+function typeTitle(el, delay) {
+  const raw = el.dataset.typeText;
+  if (!raw) return;
+  el.innerHTML = '';
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  el.appendChild(cursor);
+  const parts = raw.split('\\n');
+  let charQueue = [];
+  parts.forEach((part, pi) => {
+    for (const ch of part) charQueue.push({ type: 'char', value: ch });
+    if (pi < parts.length - 1) charQueue.push({ type: 'br' });
+  });
+  let i = 0;
+  function tick() {
+    if (i < charQueue.length) {
+      const item = charQueue[i];
+      if (item.type === 'br') el.insertBefore(document.createElement('br'), cursor);
+      else el.insertBefore(document.createTextNode(item.value), cursor);
+      i++;
+      setTimeout(tick, 18);
+    } else {
+      setTimeout(() => cursor.remove(), 1400);
+    }
+  }
+  setTimeout(tick, delay || 300);
+}
+function typeTitlesInSlide(slideIndex) {
+  if (typedSlides.has(slideIndex)) return;
+  typedSlides.add(slideIndex);
+  slides[slideIndex].querySelectorAll('.type-title').forEach(el => typeTitle(el, 300));
+}
+
+// ===== MODAL DATA =====
+const difData = [
+  {
+    number: '01', title: 'Cada uno pide distinto',
+    description: 'Uno pide 5 naranjas, otro un cajón, otro 2 kilos. Traducir todo a la misma unidad, a mano y cada día, es lento y se presta para errores que terminan en un despacho equivocado.',
+    bullets: ['Unidades, cajones, mallas y kilos, todos mezclados', 'La conversión a mano se equivoca cuando hay apuro', 'Un error de unidad es fruta de más o de menos en el camión', 'El bot lo estandariza a kilos en cada pedido']
+  },
+  {
+    number: '02', title: 'Los precios cambian a diario',
+    description: 'El valor de la fruta se mueve todos los días. Responder "¿a cuánto está hoy?" decenas de veces por WhatsApp te quita tiempo de vender, y una respuesta desactualizada cuesta plata.',
+    bullets: ['Actualizas tu lista una sola vez', 'El bot responde el precio del día, siempre vigente', 'Contesta por producto o el listado completo', 'Deja de repetir lo mismo cien veces al día']
+  },
+  {
+    number: '03', title: 'El pedido vive en el chat',
+    description: 'Los pedidos quedan enterrados entre mensajes. Nadie los ordena en una base para preparar, despachar y cobrar sin adivinar; y cuando falta un dato, hay que volver a leer toda la conversación.',
+    bullets: ['Cada pedido cae ordenado a tu base de datos', 'Cliente, productos, kilos y total en un solo registro', 'Listo para despacho y contabilidad', 'Historial para reponer y ofrecer más']
+  }
+];
+const modalDataMap = { dif: difData };
+
+const modalOverlay = document.getElementById('service-modal');
+function openModal(data, index) {
+  const item = data[index];
+  if (!item) return;
+  document.getElementById('modal-number').textContent = item.number;
+  document.getElementById('modal-title').textContent = item.title;
+  document.getElementById('modal-description').textContent = item.description;
+  const ul = document.getElementById('modal-bullets');
+  ul.innerHTML = '';
+  item.bullets.forEach(b => {
+    const li = document.createElement('li');
+    li.innerHTML = '<span class="bullet-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>' + b + '</span>';
+    ul.appendChild(li);
+  });
+  modalOverlay.classList.add('active');
+}
+function closeModal() { modalOverlay.classList.remove('active'); }
+document.querySelectorAll('[data-modal]').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const data = modalDataMap[el.dataset.modal];
+    if (data) openModal(data, parseInt(el.dataset.modalIndex));
+  });
+});
+document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalOverlay.classList.contains('active')) { closeModal(); e.stopPropagation(); }
+});
+
+// Init
+updateUI();
+triggerSlideEffects();
+</script>
+</body>
+</html>
